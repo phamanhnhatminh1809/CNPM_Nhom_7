@@ -1,0 +1,205 @@
+﻿@model LapTrinhWeb_Nhom_12.Models.DashboardViewModel
+
+@{
+    ViewBag.Title = "Tổng quan";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row mb-4">
+    <div class="col-md-3">
+        <div class="card shadow-sm border-start border-4 border-success h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs fw-bold text-success text-uppercase mb-1">Doanh thu hôm nay</div>
+                        <div class="h5 mb-0 fw-bold text-gray-800">@Model.DoanhThuHomNay.ToString("N0") đ</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="bi bi-currency-dollar fs-2 text-gray-300 opacity-50"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow-sm border-start border-4 border-primary h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs fw-bold text-primary text-uppercase mb-1">Đơn hàng mới</div>
+                        <div class="h5 mb-0 fw-bold text-gray-800">@Model.DonHangHomNay</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="bi bi-cart-check fs-2 text-gray-300 opacity-50"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow-sm border-start border-4 border-warning h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs fw-bold text-warning text-uppercase mb-1">Lô sắp hết hạn</div>
+                        <div class="h5 mb-0 fw-bold text-gray-800">@Model.ThuocSapHetHan</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="bi bi-exclamation-triangle fs-2 text-gray-300 opacity-50"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow-sm border-start border-4 border-danger h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs fw-bold text-danger text-uppercase mb-1">Thuốc hết hàng</div>
+                        <div class="h5 mb-0 fw-bold text-gray-800">@Model.ThuocHetHang</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="bi bi-box-seam fs-2 text-gray-300 opacity-50"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-lg-8 mb-4">
+        <div class="card shadow-sm h-100">
+            <div class="card-header bg-white py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 fw-bold text-primary"><i class="bi bi-graph-up"></i> Biểu đồ doanh thu 7 ngày qua</h6>
+            </div>
+            <div class="card-body">
+                <div class="chart-area" style="height: 320px;">
+                    <canvas id="myAreaChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4 mb-4">
+        <div class="card shadow-sm h-100">
+            <div class="card-header bg-white py-3">
+                <h6 class="m-0 fw-bold text-success"><i class="bi bi-trophy"></i> Top 5 Bán Chạy</h6>
+            </div>
+            <div class="card-body p-0">
+                <div class="list-group list-group-flush">
+                    @foreach (var item in Model.TopBanChay)
+                    {
+                        <div class="list-group-item d-flex align-items-center p-3">
+                            <img src="~/Images/AnhThuoc/@(item.AnhThuoc ?? "default.png")" class="rounded border me-3" width="45" height="45" style="object-fit: contain;">
+                            <div class="flex-grow-1">
+                                <h6 class="mb-0 fw-bold text-truncate" style="max-width: 150px;">@item.TenThuoc</h6>
+                                <small class="text-muted">Đã bán: @item.SoLuongBan</small>
+                            </div>
+                            <span class="fw-bold text-success">@item.DoanhThu.ToString("#,##0")</span>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card shadow-sm mb-4">
+    <div class="card-header bg-white py-3">
+        <h6 class="m-0 fw-bold text-dark"><i class="bi bi-clock-history"></i> Giao dịch gần đây</h6>
+    </div>
+    <div class="table-responsive">
+        <table class="table align-middle mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th>Mã HĐ</th>
+                    <th>Khách hàng</th>
+                    <th>Thời gian</th>
+                    <th>Tổng tiền</th>
+                    <th>Trạng thái</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.DonHangMoi)
+                {
+                    <tr>
+                        <td><a href="#" class="text-decoration-none fw-bold">#@item.IdHoaDon</a></td>
+                        <td>@item.TenKhach</td>
+                        <td>@item.NgayBan.ToString("dd/MM/yyyy HH:mm")</td>
+                        <td class="fw-bold text-primary">@item.TongTien.ToString("N0") đ</td>
+                        <td><span class="badge bg-success bg-opacity-10 text-success px-3">Hoàn thành</span></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // Lấy dữ liệu từ C# đổ vào biến JS
+        var labels = @Html.Raw(Json.Encode(Model.ChartLabels));
+        var dataValues = @Html.Raw(Json.Encode(Model.ChartValues));
+
+        // Vẽ biểu đồ
+        var ctx = document.getElementById("myAreaChart");
+        var myLineChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: "Doanh thu",
+                    lineTension: 0.3,
+                    backgroundColor: "rgba(78, 115, 223, 0.05)",
+                    borderColor: "rgba(78, 115, 223, 1)",
+                    pointRadius: 3,
+                    pointBackgroundColor: "rgba(78, 115, 223, 1)",
+                    pointBorderColor: "rgba(78, 115, 223, 1)",
+                    pointHoverRadius: 3,
+                    pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
+                    pointHoverBorderColor: "rgba(78, 115, 223, 1)",
+                    pointHitRadius: 10,
+                    pointBorderWidth: 2,
+                    data: dataValues,
+                }],
+            },
+            options: {
+                maintainAspectRatio: false,
+                layout: { padding: { left: 10, right: 25, top: 25, bottom: 0 } },
+                scales: {
+                    x: { grid: { display: false, drawBorder: false } },
+                    y: {
+                        grid: { color: "rgb(234, 236, 244)", zeroLineColor: "rgb(234, 236, 244)", drawBorder: false, borderDash: [2], zeroLineBorderDash: [2] },
+                        ticks: {
+                            callback: function(value, index, values) {
+                                return value.toLocaleString('vi-VN') + ' đ';
+                            }
+                        }
+                    },
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                var label = context.dataset.label || '';
+                                if (label) { label += ': '; }
+                                if (context.parsed.y !== null) {
+                                    label += context.parsed.y.toLocaleString('vi-VN') + ' đ';
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+}

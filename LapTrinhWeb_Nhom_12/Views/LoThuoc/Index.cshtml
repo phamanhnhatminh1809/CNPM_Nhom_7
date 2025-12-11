@@ -1,0 +1,167 @@
+﻿@model IEnumerable<LapTrinhWeb_Nhom_12.Models.QuanLyLoThuocViewModel>
+
+@{
+    ViewBag.Title = "Quản lý lô hàng";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card p-3">
+    <div class="d-flex justify-content-between mb-3">
+        <h4 class="fw-bold">Quản lý Kho và Lô thuốc</h4>
+        <div>
+            <a href="?status=warning" class="btn btn-outline-warning">⚠️ Sắp hết hạn</a>
+            <a href="?status=expired" class="btn btn-outline-danger">⛔ Đã hết hạn</a>
+            <a href="?status=" class="btn btn-outline-secondary">Tất cả</a>
+        </div>
+    </div>
+
+    <table class="table table-bordered align-middle">
+        <thead class="table-light">
+            <tr>
+                <th>Thuốc</th>
+
+                <th>
+                    <a href="@Url.Action("Index", new {
+                        sortOrder = (ViewBag.CurrentSort == "solo_asc" ? "solo_desc" : "solo_asc"),
+                        search = Request.QueryString["search"],
+                        status = Request.QueryString["status"]
+                    })" class="text-dark text-decoration-none">
+                        Số lô
+
+                        @* Hiển thị icon mũi tên chỉ hướng *@
+                        @if (ViewBag.CurrentSort == "solo_asc")
+                        {
+                            <i class="bi bi-sort-alpha-down text-primary"></i>
+                        }
+                        else if (ViewBag.CurrentSort == "solo_desc")
+                        {
+                            <i class="bi bi-sort-alpha-down-alt text-primary"></i>
+                        }
+                        else
+                        {
+                            <i class="bi bi-arrow-down-up text-muted small" style="opacity: 0.5"></i>
+                        }
+                    </a>
+                </th>
+
+                <th>Hạn sử dụng</th>
+                <th>Giá nhập</th>
+                <th>Nhập / Tồn</th>
+                <th>Trạng thái</th>
+                <th>Tác vụ</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                // --- CẬP NHẬT LOGIC MÀU SẮC ---
+                // 1. Nếu hết hàng (Tồn = 0): Màu xám (table-secondary), chữ mờ (text-muted)
+                // 2. Nếu hết hạn: Màu đỏ (table-danger)
+                // 3. Nếu sắp hết hạn: Màu vàng (table-warning)
+                string rowClass = "";
+
+                if (item.SoLuongTon == 0)
+                {
+                    rowClass = "table-secondary text-muted";
+                }
+                else if (item.DaHetHan)
+                {
+                    rowClass = "table-danger";
+                }
+                else if (item.SapHetHan)
+                {
+                    rowClass = "table-warning";
+                }
+
+                <tr class="@rowClass">
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <img src="~/Images/AnhThuoc/@(item.AnhThuoc ?? "default.png")"
+                                 width="40" height="40"
+                                 class="me-2 rounded border @(item.SoLuongTon == 0 ? "opacity-75" : "")"
+                                 style="object-fit: contain; background: #fff;" />
+                            <div>
+                                <div class="fw-bold">@item.TenThuoc</div>
+                                <small class="@(item.SoLuongTon == 0 ? "" : "text-muted")">ID: @item.IdThuoc</small>
+                            </div>
+                        </div>
+                    </td>
+
+                    <td class="fw-bold text-primary">@item.SoLo</td>
+
+                    <td>
+                        @item.HanSuDung.ToString("dd/MM/yyyy")
+                        @if (item.DaHetHan)
+                        {
+                            <br /><small class="fw-bold text-danger">(Hết hạn)</small>
+                        }
+                    </td>
+
+                    <td>@item.GiaNhap.ToString("N0")</td>
+
+                    <td class="text-center">
+                        @item.SoLuongNhap <i class="bi bi-arrow-right mx-1 small"></i>
+
+                        @if (item.SoLuongTon == 0)
+                        {
+                            <span class="badge bg-secondary">0</span>
+                        }
+                        else
+                        {
+                            <strong>@item.SoLuongTon</strong>
+                        }
+                    </td>
+
+                    <td>
+                        @if (item.SoLuongTon == 0)
+                        {
+                            <span class="badge bg-secondary">Đã bán hết</span>
+                        }
+                        else if (item.DaHetHan)
+                        {
+                            <span class="badge bg-danger">Ngưng bán</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-success">Đang bán</span>
+                        }
+                    </td>
+
+                    <td class="text-center">
+                        @if (item.CoTheXoa)
+                        {
+                            <button class="btn btn-sm btn-danger" onclick="deleteLo(@item.IdLoThuoc, '@item.SoLo')">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        }
+                        else
+                        {
+                            <button class="btn btn-sm btn-secondary disabled border-0"
+                                    style="@(item.SoLuongTon == 0 ? "background-color: #ccc;" : "")"
+                                    title="Đã bán, không thể xóa">
+                                <i class="bi bi-lock-fill"></i>
+                            </button>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts {
+    <script>
+        function deleteLo(id, soLo) {
+            if(confirm("Bạn muốn xóa lô " + soLo + "?\nLưu ý: Chỉ xóa được lô chưa từng bán hàng.")) {
+                $.post('@Url.Action("Delete", "LoThuoc")', { id: id }, function(res) {
+                    if(res.success) {
+                        alert("Xóa thành công!");
+                        location.reload();
+                    } else {
+                        alert("Lỗi: " + res.message);
+                    }
+                });
+            }
+        }
+    </script>
+}

@@ -1,0 +1,167 @@
+﻿@model IEnumerable<LapTrinhWeb_Nhom_12.Models.ThuocAdminViewModel>
+
+@{
+    ViewBag.Title = "Danh sách thuốc & Kho hàng";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card p-4">
+    <div class="row mb-3 align-items-center">
+        <div class="col-md-4">
+            <form method="get" class="d-flex">
+                <input type="text" name="searchString" class="form-control me-2" placeholder="Tìm tên thuốc...">
+                @Html.DropDownList("categoryId", (SelectList)ViewBag.DanhMuc, "Tất cả danh mục", new { @class = "form-select me-2", @style = "width: 180px;" })
+                <button type="submit" class="btn btn-primary"><i class="bi bi-search"></i></button>
+            </form>
+        </div>
+        <div class="col-md-8 text-end">
+            <a href="@Url.Action("Create", "ThuocAdmin")" class="btn btn-success">
+                <i class="bi bi-plus-lg"></i> Thêm thuốc mới
+            </a>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th style="width: 60px;">Ảnh</th>
+                    <th>Tên thuốc / Hoạt chất</th>
+                    <th>Danh mục</th>
+                    <th class="text-center">Tồn kho</th>
+                    <th>Giá bán</th>
+                    <th class="text-center">Trạng thái</th>
+                    <th class="text-end">Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <img src="~/Images/AnhThuoc/@(item.AnhThuoc ?? "default.png")"
+                                 class="rounded border" width="50" height="50" style="object-fit: contain;">
+                        </td>
+                        <td>
+                            <div class="fw-bold text-primary">@item.TenThuoc</div>
+                            <small class="text-muted">ĐVT: @item.DonViTinh</small>
+                        </td>
+                        <td>
+                            <span class="badge bg-light text-dark border">@item.TenDanhMuc</span>
+                        </td>
+                        <td class="text-center">
+                            @if (item.TongTonKho == 0)
+                            {
+                                <span class="badge bg-danger rounded-pill">Hết hàng</span>
+                            }
+                            else if (item.TongTonKho < 50)
+                            {
+                                <span class="badge bg-warning text-dark rounded-pill">@item.TongTonKho (Thấp)</span>
+                            }
+                            else
+                            {
+                                <span class="fw-bold text-success">@item.TongTonKho</span>
+                            }
+                        </td>
+                        <td>@item.GiaBan.ToString("N0") đ</td>
+                        <td class="text-center">
+                            @if (item.SoLoSapHetHan > 0)
+                            {
+                                <i class="bi bi-exclamation-triangle-fill text-warning"
+                                   data-bs-toggle="tooltip" title="Có @item.SoLoSapHetHan lô sắp hết hạn"></i>
+                            }
+                            else
+                            {
+                                <i class="bi bi-check-circle-fill text-success" title="Ổn định"></i>
+                            }
+                        </td>
+                        <td class="text-end">
+                            <div class="btn-group">
+                                <a href="@Url.Action("NhapHang", "ThuocAdmin", new { id = item.IdThuoc })"
+                                   class="btn btn-sm btn-warning text-dark"
+                                   title="Nhập lô hàng mới">
+                                    <i class="bi bi-box-arrow-in-down"></i> Nhập
+                                </a>
+                                <button type="button" class="btn btn-sm btn-outline-info"
+                                        onclick="showBatchDetails(@item.IdThuoc, '@HttpUtility.JavaScriptStringEncode(item.TenThuoc)')">
+                                    <i class="bi bi-list-ul"></i> Lô
+                                </button>
+                                <a href="@Url.Action("Edit", "ThuocAdmin", new { id = item.IdThuoc })"
+                                   class="btn btn-sm btn-outline-secondary" title="Sửa">
+                                    <i class="bi bi-pencil-square"></i>
+                                </a>
+
+                                <button type="button" class="btn btn-sm btn-outline-danger" title="Xóa"
+                                        onclick="deleteThuoc(@item.IdThuoc, '@HttpUtility.JavaScriptStringEncode(item.TenThuoc)')">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="modal fade" id="batchModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Chi tiết lô hàng: <span id="modalThuocName" class="fw-bold text-primary"></span></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="modalBatchContent">
+                <div class="text-center py-3"><div class="spinner-border text-primary"></div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+    function showBatchDetails(id, name) {
+        // 1. Cập nhật tiêu đề Modal
+        $('#modalThuocName').text(name);
+
+        // 2. Hiển thị Modal
+        var modal = new bootstrap.Modal(document.getElementById('batchModal'));
+        modal.show();
+
+        // 3. Gọi Ajax 
+        var url = '@Url.Action("GetLoThuoc", "ThuocAdmin")' + '/' + id;
+
+        // Xóa nội dung cũ và hiện loading trước khi tải
+        $('#modalBatchContent').html('<div class="text-center py-3"><div class="spinner-border text-primary"></div></div>');
+
+        $.get(url, function (data) {
+            $('#modalBatchContent').html(data);
+        }).fail(function() {
+            $('#modalBatchContent').html('<p class="text-danger">Lỗi tải dữ liệu lô thuốc.</p>');
+        });
+    }
+    function deleteThuoc(id, name) {
+        if (confirm("Bạn có chắc chắn muốn xóa thuốc: " + name + " không?\nHành động này không thể hoàn tác.")) {
+
+            // Gọi Ajax lên Server
+            $.ajax({
+                url: '@Url.Action("Delete", "ThuocAdmin")',
+                type: 'POST',
+                data: { id: id },
+                success: function (res) {
+                    if (res.success) {
+                        alert(res.message);
+                        // Reload lại trang để cập nhật danh sách
+                        location.reload();
+                    } else {
+                        alert("Lỗi: " + res.message);
+                    }
+                },
+                error: function () {
+                    alert("Đã xảy ra lỗi khi gửi yêu cầu xóa.");
+                }
+            });
+        }
+    }
+    </script>
+}

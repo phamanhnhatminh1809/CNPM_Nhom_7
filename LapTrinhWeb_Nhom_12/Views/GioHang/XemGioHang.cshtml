@@ -1,0 +1,708 @@
+﻿@model List<LapTrinhWeb_Nhom_12.Models.CartItem>
+
+@{
+    ViewBag.Title = "Giỏ hàng của bạn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    /* CSS tùy chỉnh cho giao diện thanh toán */
+    .checkout-section {
+        background: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        margin-top: 20px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .section-title {
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: #1A3A6B; /* Màu chủ đạo của bạn */
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* Style cho Radio button chọn phương thức nhận hàng */
+    .delivery-method-label {
+        cursor: pointer;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        border: 1px solid #dee2e6;
+        background-color: #fff;
+        color: #495057;
+        transition: all 0.2s;
+    }
+
+    .btn-check:checked + .delivery-method-label {
+        background-color: #e8f0fe;
+        color: #0d6efd;
+        border-color: #0d6efd;
+        font-weight: 600;
+    }
+
+    /* Style cho phương thức thanh toán */
+    .payment-option {
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        padding: 12px 15px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        transition: all 0.2s;
+        display: flex;
+        align-items: center;
+    }
+
+        .payment-option:hover {
+            background-color: #f8f9fa;
+            border-color: #adb5bd;
+        }
+
+    /* Khi radio được chọn */
+    .form-check-input:checked ~ .payment-content {
+        color: #0d6efd;
+        font-weight: 500;
+    }
+
+    .payment-icon {
+        width: 32px;
+        height: 32px;
+        object-fit: contain;
+        margin-right: 15px;
+    }
+    /* Style cho thẻ nhà thuốc */
+    .pharmacy-card {
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        transition: all 0.2s;
+        position: relative;
+        background: #fff;
+    }
+
+        .pharmacy-card:hover {
+            border-color: #0d6efd;
+            background-color: #f8faff;
+        }
+
+    /* Khi radio được chọn, thẻ cha sẽ đổi màu */
+    .pharmacy-radio:checked + .pharmacy-info {
+        color: #0d6efd;
+    }
+
+    /* Ẩn radio mặc định, thay bằng custom style nếu muốn, hoặc để nguyên */
+    .pharmacy-header {
+        display: flex;
+        align-items: start;
+        gap: 10px;
+    }
+
+    .badge-stock {
+        color: #198754; /* Màu xanh lá */
+        font-weight: 600;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+</style>
+
+@*Style: Số lượng thuốc*@
+<style>
+    /* Style cho bộ chọn số lượng hình viên thuốc */
+    .quantity-pill {
+        background-color: #fff;
+        border: 1px solid #dee2e6;
+        border-radius: 50px; /* Bo tròn viên thuốc */
+        width: 110px; /* Độ rộng cố định */
+        height: 38px;
+        padding: 0 5px;
+        overflow: hidden; /* Giữ các con nằm trong khung bo tròn */
+    }
+
+    /* Style cho nút + và - */
+    .btn-qty {
+        border: none;
+        background: transparent;
+        width: 30px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 18px;
+        color: #333;
+        transition: color 0.2s;
+    }
+
+        .btn-qty:hover {
+            color: #1A3A6B; /* Màu xanh chủ đạo khi hover */
+        }
+
+    /* Style cho ô input ở giữa */
+    .input-qty {
+        width: 40px;
+        font-weight: 600;
+        color: #1A3A6B;
+        outline: none;
+        /* Ẩn nút tăng giảm mặc định của trình duyệt */
+        -moz-appearance: textfield;
+    }
+
+        .input-qty::-webkit-outer-spin-button,
+        .input-qty::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+</style>
+<div class="container py-5">
+    @if (Model == null || Model.Count == 0)
+    {
+        <div class="alert alert-info text-center">
+            <h4>Giỏ hàng đang trống!</h4>
+            <p>Hãy quay lại trang chủ để chọn thuốc nhé.</p>
+            <a href="@Url.Action("TrangChu", "TrangChu")" class="btn btn-primary mt-2">
+                <i class="bi bi-arrow-left"></i> Tiếp tục mua hàng
+            </a>
+        </div>
+    }
+    else
+    {
+        <form action="@Url.Action("DatHang", "GioHang")" method="post" id="checkoutForm">
+
+            <div class="row">
+                <div class="col-lg-8">
+
+                    <div class="table-responsive mb-4 bg-white rounded shadow-sm p-3">
+                        <table class="table table-borderless table-hover align-middle mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th style="width: 100px;">Ảnh</th>
+                                    <th>Tên thuốc</th>
+                                    <th>Giá</th>
+                                    <th style="width: 120px;">Số lượng</th>
+                                    <th>Thành tiền</th>
+                                    <th style="width: 50px;"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            <img src="~/Images/AnhThuoc/@item.AnhThuoc" alt="@item.AnhThuoc" class="img-fluid rounded border" style="max-height: 60px;" />
+                                        </td>
+                                        <td>
+                                            <a href="@Url.Action("ChiTiet", "TrangChu", new { id = item.IdThuoc })" class="text-decoration-none fw-bold text-dark">
+                                                @item.TenThuoc
+                                            </a>
+                                        </td>
+                                        <td>@item.DonGia.ToString("N0") đ</td>
+                                        <td style="width: 140px;">
+                                            <div class="d-flex align-items-center justify-content-center">
+                                                <div class="quantity-pill d-flex align-items-center justify-content-between">
+
+                                                    <button class="btn-qty btn-minus" type="button"
+                                                            onclick="updateQuantity(@item.IdThuoc, -1)">
+                                                        <i class="bi bi-dash"></i>
+                                                    </button>
+
+                                                    <input type="number"
+                                                           id="qty-@item.IdThuoc"
+                                                           value="@item.SoLuong"
+                                                           min="1"
+                                                           class="input-qty text-center bg-transparent border-0"
+                                                           readonly />
+
+                                                    <button class="btn-qty btn-plus" type="button"
+                                                            onclick="updateQuantity(@item.IdThuoc, 1)">
+                                                        <i class="bi bi-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </td>
+
+                                        <td class="fw-bold text-primary" id="total-price-@item.IdThuoc">
+                                            @item.ThanhTien.ToString("N0") đ
+                                        </td>
+                                        <td>
+                                            <a href="javascript:void(0);"
+                                               class="btn btn-sm btn-outline-danger border-0"
+                                               onclick="confirmDelete('@Url.Action("XoaGioHang", "GioHang", new { id = item.IdThuoc })')">
+                                                <i class="bi bi-trash"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="checkout-section mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <label class="fw-bold text-dark">Chọn hình thức nhận hàng</label>
+                        </div>
+                        <div class="row g-0">
+                            <div class="col-6">
+                                <input type="radio" class="btn-check" name="hinhThucNhan" id="GiaoHang" value="GiaoHang" checked onchange="toggleDeliveryMethod()">
+                                <label class="delivery-method-label rounded-start" for="GiaoHang">Giao hàng tận nơi</label>
+                            </div>
+                            <div class="col-6">
+                                <input type="radio" class="btn-check" name="hinhThucNhan" id="NhanTaiQuay" value="NhanTaiQuay" onchange="toggleDeliveryMethod()">
+                                <label class="delivery-method-label rounded-end" for="NhanTaiQuay">Nhận tại nhà thuốc</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checkout-section mb-4">
+                        <h5 class="section-title"><i class="bi bi-person-circle"></i> Thông tin người đặt</h5>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="TenNguoiDat" placeholder="Họ và tên người đặt" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="SdtNguoiDat" placeholder="Số điện thoại" required>
+                            </div>
+                            <div class="col-12">
+                                <input type="email" class="form-control" name="EmailNguoiDat" placeholder="Email (không bắt buộc)">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="shipping-form" class="checkout-section mb-4">
+                        <h5 class="section-title"><i class="bi bi-geo-alt-fill"></i> Địa chỉ giao hàng</h5>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="TenNguoiNhan" placeholder="Họ và tên người nhận">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="SdtNguoiNhan" placeholder="Số điện thoại người nhận">
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-select" id="dataApiTinhThanh" name="id_tinh_thanh_ship">
+                                    <option value="">-- Tỉnh/Thành --</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-select" id="dataApiQuanHuyen" name="id_quan_huyen_ship" disabled>
+                                    <option value="">-- Quận/Huyện --</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-select" id="dataApiPhuongXa" name="id_phuong_xa_ship" disabled>
+                                    <option value="">-- Phường/Xã --</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control" name="DiaChiCuThe" placeholder="Số nhà, tên đường...">
+                            </div>
+                            <div class="col-12">
+                                <textarea class="form-control" name="GhiChu" rows="2" placeholder="Ghi chú giao hàng"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="pickup-form" class="checkout-section mb-4" style="display: none;">
+                        <h5 class="section-title"><i class="bi bi-shop"></i> Chọn nhà thuốc lấy hàng</h5>
+
+                        <div class="alert alert-primary bg-opacity-10 border-0 fs-6">
+                            <i class="bi bi-info-circle"></i> Vui lòng chọn đầy đủ khu vực để tìm nhà thuốc gần nhất.
+                        </div>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label text-muted small">Tỉnh/Thành phố</label>
+                                <select class="form-select" id="ddlTinh_Pickup">
+                                    <option value="">-- Chọn Tỉnh/Thành --</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label text-muted small">Quận/Huyện</label>
+                                <select class="form-select" id="ddlQuan_Pickup" disabled>
+                                    <option value="">-- Chọn Quận/Huyện --</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <p class="text-muted small mb-2">Danh sách nhà thuốc phù hợp:</p>
+
+                        <div class="pharmacy-list-container border rounded p-2" style="max-height: 400px; overflow-y: auto; background-color: #f8f9fa;">
+                            <div id="listNhaThuocArea">
+                                <div class="text-center text-muted py-5">
+                                    <i class="bi bi-search" style="font-size: 2rem;"></i> <br>
+                                    Kết quả tìm kiếm sẽ hiện ở đây.
+                                </div>
+                            </div>
+                        </div>
+
+                        <input type="hidden" name="id_dia_diem_nha_thuoc" id="selectedPharmacyId" required disabled>
+                    </div>
+
+                    <div class="checkout-section">
+                        <h5 class="section-title">Chọn phương thức thanh toán</h5>
+
+                        <label class="payment-option">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="PhuongThucThanhToan" value="COD" checked>
+                            </div>
+                            <div class="payment-content d-flex align-items-center ms-2">
+                                <img src="https://cdn-icons-png.flaticon.com/512/2331/2331941.png" class="payment-icon" alt="Cash">
+                                <span>Thanh toán tiền mặt khi nhận hàng</span>
+                            </div>
+                        </label>
+
+                        <label class="payment-option">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="PhuongThucThanhToan" value="BANK">
+                            </div>
+                            <div class="payment-content d-flex align-items-center ms-2">
+                                <img src="https://cdn-icons-png.flaticon.com/512/10003/10003910.png" class="payment-icon" alt="QR">
+                                <span>Thanh toán chuyển khoản (QR Code)</span>
+                            </div>
+                        </label>
+
+                        <label class="payment-option">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="PhuongThucThanhToan" value="MOMO">
+                            </div>
+                            <div class="payment-content d-flex align-items-center ms-2">
+                                <img src="https://upload.wikimedia.org/wikipedia/vi/f/fe/MoMo_Logo.png" class="payment-icon" alt="MoMo">
+                                <span>Thanh toán bằng ví MoMo</span>
+                            </div>
+                        </label>
+
+                        <label class="payment-option">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="PhuongThucThanhToan" value="CARD">
+                            </div>
+                            <div class="payment-content d-flex align-items-center ms-2">
+                                <img src="https://cdn-icons-png.flaticon.com/512/6963/6963703.png" class="payment-icon" alt="Card">
+                                <span>Thanh toán thẻ quốc tế / ATM</span>
+                            </div>
+                        </label>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card border-0 shadow-sm bg-white" style="position: sticky; top: 20px;">
+                        <div class="card-body">
+                            <h5 class="card-title mb-3 fw-bold text-uppercase">Đơn hàng của bạn</h5>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-muted">Tạm tính:</span>
+                                <span class="fw-bold cart-total-display">@ViewBag.TongTien.ToString("N0") đ</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="text-muted">Phí vận chuyển:</span>
+                                <span class="text-success fw-bold">Miễn phí</span>
+                            </div>
+                            <hr class="my-3" />
+                            <div class="d-flex justify-content-between mb-4">
+                                <strong class="fs-5 text-dark">Tổng tiền:</strong>
+                                <strong class="fs-4 text-danger cart-total-display">@ViewBag.TongTien.ToString("N0") đ</strong>
+                            </div>
+                            <div class="text-end mb-3">
+                                <small class="text-muted">(Đã bao gồm VAT nếu có)</small>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100 py-3 fw-bold fs-6 text-uppercase rounded-pill shadow-sm">
+                                Đặt hàng ngay
+                            </button>
+
+                            <a href="@Url.Action("TrangChu", "TrangChu")" class="btn btn-outline-secondary w-100 mt-3 rounded-pill border-0 bg-light">
+                                <i class="bi bi-chevron-left"></i> Mua thêm thuốc khác
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    }
+</div>
+
+
+<style>
+    /* Làm mờ nền phía sau khi Modal hiện lên */
+    .modal-backdrop.show {
+        backdrop-filter: blur(5px); /* Hiệu ứng mờ kính */
+        opacity: 0.5; /* Độ tối của nền */
+    }
+
+    /* Tùy chỉnh khung Modal */
+    .custom-modal-content {
+        border-radius: 24px; /* Bo góc cực mạnh giống thiết kế */
+        border: none; /* Bỏ viền mặc định */
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    /* Tùy chỉnh nút 'Đóng' màu xanh nhạt */
+    .bg-blue-light {
+        background-color: #E8F0FE !important; /* Màu nền xanh nhạt giống ảnh */
+        color: #1A3A6B !important; /* Màu chữ xanh đậm */
+        border: none;
+    }
+
+        .bg-blue-light:hover {
+            background-color: #d0e1fd !important;
+        }
+
+    /* Style cho nút X (Close) để nó không bị lệch */
+    .btn-close {
+        background-size: 0.8em;
+    }
+</style>
+
+
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content custom-modal-content">
+
+            <button type="button" class="btn-close position-absolute top-0 end-0 m-3 z-3" data-bs-dismiss="modal" aria-label="Close"></button>
+
+            <div class="modal-body text-center p-4">
+                <div class="mb-3">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3221/3221897.png"
+                         alt="Trash Bin"
+                         style="width: 120px; height: auto; object-fit: contain;">
+                </div>
+
+                <h5 class="fw-bold mb-2 text-dark">Thông báo</h5>
+
+                <p class="text-secondary mb-4">
+                    Bạn chắc chắn muốn xóa sản phẩm này <br> khỏi giỏ hàng?
+                </p>
+
+                <div class="d-flex justify-content-center gap-3">
+                    <button type="button" class="btn btn-light rounded-pill px-4 py-2 fw-bold text-primary bg-blue-light" data-bs-dismiss="modal" style="min-width: 120px;">
+                        Đóng
+                    </button>
+
+                    <a href="#" class="btn btn-primary rounded-pill px-4 py-2 fw-bold" style="min-width: 120px; background-color: #1A3A6B; border: none;">
+                        Xóa
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function confirmDelete(deleteUrl) {
+        // 1. Tìm thẻ <a> nút Xóa bên trong Modal (ID modal là #deleteModal)
+        // Lưu ý: Class .btn-primary là class của nút Xóa trong code Modal tôi gửi trước đó
+        var btnConfirm = document.querySelector('#deleteModal .modal-body a.btn-primary');
+
+        // 2. Gán đường dẫn xóa (href) cho nút đó
+        if (btnConfirm) {
+            btnConfirm.setAttribute('href', deleteUrl);
+        }
+
+        // 3. Hiển thị Modal
+        var myModal = new bootstrap.Modal(document.getElementById('deleteModal'));
+        myModal.show();
+    }
+</script>
+@section Scripts {
+    <script>
+        // --- CÁC HÀM XỬ LÝ CHUNG ---
+
+        function toggleDeliveryMethod() {
+            if ($('#GiaoHang').is(':checked')) {
+                // Hiển thị Giao hàng
+                $('#shipping-form').show();
+                $('#pickup-form').hide();
+                $('#shipping-form input, #shipping-form select').prop('disabled', false);
+                $('#pickup-form input, #pickup-form select').prop('disabled', true);
+                $('#selectedPharmacyId').prop('disabled', true);
+            } else {
+                // Hiển thị Nhận tại quầy
+                $('#shipping-form').hide();
+                $('#pickup-form').show();
+                $('#shipping-form input, #shipping-form select').prop('disabled', true);
+                $('#pickup-form input, #pickup-form select').prop('disabled', false);
+                $('#selectedPharmacyId').prop('disabled', false);
+
+                if ($('#ddlQuan_Pickup').val() == "") $('#ddlQuan_Pickup').prop('disabled', true);
+
+                // Load Tỉnh có nhà thuốc
+                if ($('#ddlTinh_Pickup option').length <= 1) {
+                    loadTinhThanhPickup();
+                }
+            }
+        }
+
+        // CẬP NHẬT: Load Tỉnh từ bảng DIA_DIEM_NHA_THUOC
+        function loadTinhThanhPickup() {
+            if ($('#ddlTinh_Pickup option').length > 1) return;
+
+            $.ajax({
+                url: '/DiaDiem/GetTinhThanhCoNhaThuoc', // API mới
+                type: 'GET',
+                success: function (data) {
+                    // data trả về là mảng string: ["Hà Nội", "Hồ Chí Minh"]
+                    $.each(data, function (i, item) {
+                        $('#ddlTinh_Pickup').append($('<option>', {
+                            value: item, // Value là tên luôn
+                            text: item
+                        }));
+                    });
+                }
+            });
+        }
+
+        // Hàm tìm kiếm
+        function timKiemNhaThuoc(tinh, quan) {
+            $('#listNhaThuocArea').html('<div class="text-center py-3"><div class="spinner-border text-primary"></div> Đang tìm...</div>');
+
+            $.ajax({
+                url: '/DiaDiem/GetDanhSachNhaThuoc',
+                type: 'GET',
+                data: { tenTinh: tinh, tenQuan: quan },
+                success: function (data) {
+                    var html = '';
+                    if (data.length == 0) {
+                        html = '<div class="text-center text-danger py-3">Không có kết quả!</div>';
+                    } else {
+                        $.each(data, function (i, item) {
+                            html += `
+                                    <label class="pharmacy-card d-block bg-white p-3 mb-2 border rounded position-relative" style="cursor: pointer;">
+                                        <div class="d-flex align-items-start">
+                                            <div class="me-3 mt-1">
+                                                <input type="radio" name="radioNhaThuoc" class="form-check-input" value="${item.id_dia_diem}" onchange="selectPharmacy(this)" style="transform: scale(1.2);">
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <h6 class="fw-bold text-primary mb-1">${item.ten_nha_thuoc}</h6>
+                                                <div class="badge bg-success bg-opacity-10 text-success mb-2 px-2 py-1"><i class="bi bi-check-circle-fill"></i> Còn hàng</div>
+                                                <div class="small text-secondary">
+                                                    <i class="bi bi-geo-alt-fill text-danger"></i>
+                                                    ${item.so_duong_ten_duong}, ${item.quan_huyen}, ${item.thanh_pho_tinh}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </label>`;
+                        });
+                    }
+                    $('#listNhaThuocArea').html(html);
+                }
+            });
+        }
+
+        function selectPharmacy(radio) {
+            $('#selectedPharmacyId').val(radio.value);
+            $('.pharmacy-card').removeClass('border-primary shadow-sm bg-light');
+            $(radio).closest('.pharmacy-card').addClass('border-primary shadow-sm bg-light');
+        }
+
+        // --- MAIN LOGIC ---
+        $(document).ready(function () {
+
+            // 1. Logic cho FORM GIAO HÀNG (Giữ nguyên API hành chính cũ)
+            $.ajax({
+                url: '/DiaDiem/GetTinhThanh',
+                type: 'GET',
+                success: function (data) {
+                    $.each(data, function (i, item) {
+                        $('#dataApiTinhThanh').append($('<option>', { value: item.id_tinh_thanh, text: item.ten }));
+                    });
+                }
+            });
+            // ... (Giữ nguyên phần logic load Quận/Phường cho Ship như cũ) ...
+            $('#dataApiTinhThanh').change(function () {
+                var idTinh = $(this).val();
+                // Logic cũ load quận huyện theo ID...
+                // Bạn tự điền lại phần logic cũ ở đây nếu cần
+            });
+
+
+            // 2. Logic cho FORM PICKUP (Mới)
+
+            // Khi chọn Tỉnh -> Load Quận (Chỉ quận có nhà thuốc)
+            $('#ddlTinh_Pickup').change(function () {
+                var tenTinh = $(this).val(); // Lấy tên Tỉnh (String)
+
+                $('#ddlQuan_Pickup').empty().append('<option value="">-- Chọn Quận/Huyện --</option>').prop('disabled', true);
+                $('#listNhaThuocArea').html('<div class="text-center text-muted py-5">Vui lòng chọn Quận/Huyện.</div>');
+
+                if (tenTinh) {
+                    $.ajax({
+                        url: '/DiaDiem/GetQuanHuyenCoNhaThuoc', // API mới
+                        type: 'GET',
+                        data: { tenTinh: tenTinh },
+                        success: function (data) {
+                            // data là mảng string: ["Quận Hoàn Kiếm", "Quận Ba Đình"]
+                            $.each(data, function (i, item) {
+                                $('#ddlQuan_Pickup').append($('<option>', {
+                                    value: item, // Value là tên
+                                    text: item
+                                }));
+                            });
+                            $('#ddlQuan_Pickup').prop('disabled', false);
+                        }
+                    });
+                }
+            });
+
+            // Khi chọn Quận -> Tìm kiếm ngay
+            $('#ddlQuan_Pickup').change(function () {
+                var tenTinh = $("#ddlTinh_Pickup").val();
+                var tenQuan = $(this).val();
+
+                if (tenQuan) {
+                    timKiemNhaThuoc(tenTinh, tenQuan);
+                }
+            });
+
+            toggleDeliveryMethod();
+        });
+    </script>
+    @*Số lượng thuốc*@
+    <script>
+        // Hàm xử lý tăng giảm số lượng
+        function updateQuantity(idThuoc, change) {
+            var inputElement = document.getElementById('qty-' + idThuoc);
+            var currentQty = parseInt(inputElement.value);
+            var newQty = currentQty + change;
+
+            // Không cho phép số lượng < 1
+            if (newQty < 1) return;
+
+            // Cập nhật giao diện ngay lập tức (cho mượt)
+            inputElement.value = newQty;
+
+            // Gửi AJAX lên server để cập nhật giỏ hàng thật
+            fetch('/GioHang/CapNhatSoLuongAjax', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest'
+                },
+                body: JSON.stringify({ id: idThuoc, soLuong: newQty })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // 1. Cập nhật Thành tiền của dòng đó
+                        var itemTotalElement = document.getElementById('total-price-' + idThuoc);
+                        if (itemTotalElement) {
+                            itemTotalElement.innerText = data.itemTotal;
+                        }
+
+                        // 2. Cập nhật Tổng tiền cả giỏ hàng (Bạn cần thêm id="cart-total" vào chỗ hiển thị tổng tiền ở cột bên phải)
+                        var cartTotalElements = document.querySelectorAll('.cart-total-display');
+                        cartTotalElements.forEach(el => el.innerText = data.cartTotal);
+                    } else {
+                        alert(data.message);
+                        // Nếu lỗi (ví dụ hết hàng), trả lại số lượng cũ
+                        inputElement.value = currentQty;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    inputElement.value = currentQty;
+                });
+        }
+    </script>
+}
