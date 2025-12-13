@@ -1,0 +1,210 @@
+﻿@model List<LapTrinhWeb_Nhom_12.Models.ThuocAPI>
+
+@{
+    ViewBag.Title = "Tra Cứu Thuốc Online";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    /* Lớp phủ toàn màn hình */
+    #loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.9); /* Màu trắng mờ */
+        z-index: 9999; /* Luôn nằm trên cùng */
+        display: none; /* Mặc định ẩn */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Hiệu ứng xoay tròn đẹp mắt */
+    .custom-loader {
+        width: 50px;
+        height: 50px;
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid #15325E; /* Màu xanh chủ đạo của web */
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 15px;
+    }
+
+    @@keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .loading-text {
+        color: #15325E;
+        font-weight: bold;
+        font-size: 1.2rem;
+        animation: pulse 1.5s infinite;
+    }
+
+    @@keyframes pulse {
+        0% {
+            opacity: 0.6;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0.6;
+        }
+    }
+</style>
+
+<div id="loading-overlay">
+    <div class="custom-loader"></div>
+    <div class="loading-text">
+        @*<i class="bi bi-translate"></i>*@ Hệ thống đang tra cứu...
+    </div>
+    <div class="text-muted small mt-2">Vui lòng đợi trong giây lát</div>
+</div>
+
+<div class="container" style="margin-top: 30px; margin-bottom: 80px;">
+
+    <div class="text-center mb-5">
+        <h2 style="color: #15325E; font-weight: 700;">TRA CỨU DƯỢC ĐIỂN QUỐC TẾ (API)</h2>
+        <p class="text-muted">Nhập tên thuốc để xem thành phần và công dụng. Dữ liệu tham khảo, không bán trực tuyến.</p>
+    </div>
+
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-8">
+            @using (Html.BeginForm("Index", "TraCuu", FormMethod.Post, new { @class = "d-flex gap-2", @id = "searchForm" }))
+            {
+                <input type="text" name="keyword" class="form-control form-control-lg"
+                       placeholder="Nhập tên thuốc (VD: Advil, Tylenol...)"
+                       value="@ViewBag.Keyword" required />
+
+                <button type="submit" class="btn btn-primary btn-lg" style="background-color: #15325E;">
+                    <i class="bi bi-search"></i> Tra cứu
+                </button>
+            }
+        </div>
+    </div>
+
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-warning text-center">
+            <i class="bi bi-exclamation-triangle-fill"></i> @ViewBag.Error
+        </div>
+    }
+
+    @if (Model != null && Model.Count > 0)
+    {
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-12 mb-4">
+                    <div class="card shadow border-0">
+                        <div class="card-header text-white" style="background-color: #15325E;">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h4 class="mb-0 fw-bold" style="color: #ffffff">@item.BrandName</h4>
+                                    <small style="color: #4DD0C3;">Hoạt chất: @item.GenericName</small>
+                                </div>
+                                <span class="badge bg-danger">Không bán online</span>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <p class="mb-1"><strong><i class="bi bi-building"></i> Nhà sản xuất:</strong> @item.Manufacturer</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p class="mb-1"><strong><i class="bi bi-eyedropper"></i> Thành phần chính:</strong> @item.ActiveIngredient</p>
+                                </div>
+                            </div>
+
+                            <hr />
+
+                            <div class="accordion accordion-flush" id="accordion_@item.GetHashCode()">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePurpose_@item.GetHashCode()">
+                                            <i class="bi bi-journal-check me-2"></i> Công dụng
+                                        </button>
+                                    </h2>
+                                    <div id="collapsePurpose_@item.GetHashCode()" class="accordion-collapse collapse show">
+                                        <div class="accordion-body bg-light text-justify">@item.Purpose</div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed fw-bold text-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDosage_@item.GetHashCode()">
+                                            <i class="bi bi-prescription2 me-2"></i> Liều dùng
+                                        </button>
+                                    </h2>
+                                    <div id="collapseDosage_@item.GetHashCode()" class="accordion-collapse collapse">
+                                        <div class="accordion-body text-justify small">@item.Dosage</div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed fw-bold text-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWarn_@item.GetHashCode()">
+                                            <i class="bi bi-exclamation-triangle me-2"></i> Cảnh báo
+                                        </button>
+                                    </h2>
+                                    <div id="collapseWarn_@item.GetHashCode()" class="accordion-collapse collapse">
+                                        <div class="accordion-body text-justify small border-start border-4 border-danger">
+                                            @item.Warnings
+                                            <br /><br />
+                                            <strong>Khi nào ngừng sử dụng:</strong><br />
+                                            @item.StopUse
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed fw-bold text-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOther_@item.GetHashCode()">
+                                            <i class="bi bi-box-seam me-2"></i> Bảo quản & Khác
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOther_@item.GetHashCode()" class="accordion-collapse collapse">
+                                        <div class="accordion-body small">
+                                            <p><strong>Bảo quản:</strong> @item.Storage</p>
+                                            <p><strong>Thành phần khác:</strong> @item.InactiveIngredient</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-muted text-center small">
+                            Dữ liệu từ OpenFDA - Đã dịch tự động sang Tiếng Việt.
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+<script>
+    $(document).ready(function () {
+        // Khi form được submit
+        $('#searchForm').on('submit', function () {
+            // Kiểm tra xem input có dữ liệu không (tránh hiện loading khi ô tìm kiếm rỗng)
+            var keyword = $('input[name="keyword"]').val();
+
+            if (keyword.trim() !== "") {
+                // Hiện lớp phủ loading
+                $('#loading-overlay').css('display', 'flex').hide().fadeIn(200);
+            }
+        });
+    });
+</script>

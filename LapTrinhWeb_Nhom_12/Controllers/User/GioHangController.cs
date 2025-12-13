@@ -8,7 +8,6 @@ namespace LapTrinhWeb_Nhom_12.Controllers
     // GET: GioHang
     public class GioHangController : Controller
     {
-        // Khởi tạo DB Context (như bạn đã làm ở TrangChuController)
         private NHA_THUOCEntities db = new NHA_THUOCEntities();
 
         // Action Thêm vào giỏ hàng
@@ -73,7 +72,6 @@ namespace LapTrinhWeb_Nhom_12.Controllers
             // Mặc định thì về trang chủ
             return RedirectToAction("TrangChu", "TrangChu");
         }
-        // Xóa sản phẩm khỏi giỏ
         public ActionResult XoaGioHang(int id)
         {
             var gioHang = Session["GioHang"] as List<CartItem>;
@@ -88,8 +86,6 @@ namespace LapTrinhWeb_Nhom_12.Controllers
             }
             return RedirectToAction("XemGioHang");
         }
-
-        // Cập nhật số lượng mới
         public ActionResult CapNhatGioHang(int id, int soLuong)
         {
             var gioHang = Session["GioHang"] as List<CartItem>;
@@ -104,7 +100,6 @@ namespace LapTrinhWeb_Nhom_12.Controllers
             }
             return RedirectToAction("XemGioHang");
         }
-        // GET: Xem giỏ hàng
         public ActionResult XemGioHang()
         {
             // 1. Lấy giỏ hàng từ Session
@@ -125,7 +120,6 @@ namespace LapTrinhWeb_Nhom_12.Controllers
 
             return View(gioHang);
         }
-        // Nhớ Dispose DB   
         [HttpPost]
         public ActionResult CapNhatSoLuongAjax(int id, int soLuong)
         {
@@ -155,7 +149,71 @@ namespace LapTrinhWeb_Nhom_12.Controllers
 
             return Json(new { success = false, message = "Lỗi giỏ hàng" });
         }
+        // Action này dùng để load nội dung Mini Cart
+        public ActionResult GetMiniCart()
+        {
+            List<CartItem> gioHang = Session["GioHang"] as List<CartItem>;
+            if (gioHang == null) gioHang = new List<CartItem>();
 
+            return PartialView("_MiniCartPartial", gioHang);
+        }
+
+        // Action Thêm giỏ hàng trả về JSON (để dùng Ajax)
+        [HttpPost]
+        public ActionResult ThemGioHangAjax(int id)
+        {
+            // 1. Lấy giỏ hàng từ Session
+            List<CartItem> gioHang = Session["GioHang"] as List<CartItem>;
+
+            // 2. QUAN TRỌNG: Nếu chưa có thì tạo mới ngay (Khắc phục lỗi Null)
+            if (gioHang == null)
+            {
+                gioHang = new List<CartItem>();
+                Session["GioHang"] = gioHang;
+            }
+
+            // 3. Logic thêm sản phẩm (Bạn cần đoạn này để hàng thực sự vào giỏ)
+            var sanPham = gioHang.FirstOrDefault(s => s.IdThuoc == id);
+            if (sanPham != null)
+            {
+                sanPham.SoLuong++;
+            }
+            else
+            {
+                // Chưa có thì tìm trong DB và thêm mới
+                var thuoc = db.THUOCs.Find(id); // Đảm bảo 'db' đã được khai báo ở trên
+                if (thuoc != null)
+                {
+                    var newItem = new CartItem
+                    {
+                        IdThuoc = thuoc.id_thuoc,
+                        TenThuoc = thuoc.ten_thuoc,
+                        AnhThuoc = thuoc.anh_thuoc,
+                        DonGia = (int)(thuoc.gia_ban ?? 0),
+                        SoLuong = 1,
+                        DonViTinh = thuoc.don_vi_tinh
+                    };
+                    gioHang.Add(newItem);
+                }
+            }
+
+            // 4. Tính tổng và trả về JSON
+            int tongSoLuong = gioHang.Sum(x => x.SoLuong);
+            return Json(new { success = true, totalQty = tongSoLuong });
+        }
+
+        // Action Xóa item từ Mini Cart
+        [HttpPost]
+        public ActionResult XoaKhoiMiniCart(int id)
+        {
+            List<CartItem> gioHang = Session["GioHang"] as List<CartItem>;
+            var item = gioHang.FirstOrDefault(x => x.IdThuoc == id);
+            if (item != null)
+            {
+                gioHang.Remove(item);
+            }
+            return Json(new { success = true });
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing) db.Dispose();

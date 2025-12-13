@@ -175,14 +175,14 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Admin\ThuocAdminController.cs" />
     <Compile Include="Controllers\Admin\LoThuocController.cs" />
-    <Compile Include="Controllers\DashboardController.cs" />
-    <Compile Include="Controllers\HoaDonController.cs" />
+    <Compile Include="Controllers\Admin\DashboardController.cs" />
+    <Compile Include="Controllers\Admin\HoaDonController.cs" />
     <Compile Include="Controllers\User\DanhSachController.cs" />
     <Compile Include="Controllers\User\QuanLyThuocController.cs" />
-    <Compile Include="Controllers\User\ThuocAPIController.cs" />
     <Compile Include="Controllers\User\ToolController.cs" />
     <Compile Include="Controllers\User\DiaDiemController.cs" />
     <Compile Include="Controllers\User\TaiKhoanController.cs" />
+    <Compile Include="Controllers\User\TraCuuController.cs" />
     <Compile Include="Controllers\User\TrangChuController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -257,6 +257,7 @@
     <Compile Include="Models\THUOC.cs">
       <DependentUpon>NhaThuocDatabase.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ThuocAPI.cs" />
     <Compile Include="Models\ThuocViewModel.cs" />
     <Compile Include="Models\TINH_THANH.cs">
       <DependentUpon>NhaThuocDatabase.tt</DependentUpon>
@@ -327,6 +328,8 @@
     <Content Include="Views\HoaDon\Index.cshtml" />
     <Content Include="Views\HoaDon\_ChiTietPartial.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\GioHang\_MiniCartPartial.cshtml" />
+    <Content Include="Views\TraCuu\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

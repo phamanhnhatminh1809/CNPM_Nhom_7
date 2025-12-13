@@ -12,7 +12,7 @@ namespace LapTrinhWeb_Nhom_12.Models
         public string AnhThuoc { get; set; }
         public int DonGia { get; set; }
         public int SoLuong { get; set; }
-
+        public string DonViTinh { get; set; }
         // Thuộc tính tính toán thành tiền = đơn giá * số lượng
         public int ThanhTien
         {

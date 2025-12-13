@@ -1,10 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Minh\\Common\\T\u00E0i_Li\u1EC7u_H\u1ECDc_Win11\\\u0110\u1EA1i h\u1ECDc\\HK5\\L\u1EADp tr\u00ECnh web\\\u0110\u1ED3 \u00E1n\\LapTrinhWeb_Nhom_12\\",
+  "WorkspaceRootPath": "E:\\LuuDuLieuSinhVien\\BuiTrungDuc\\\u0110\u1ED3 \u00E1n\\LapTrinhWeb_Nhom_12\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F74B230D-6E59-4047-972F-26E9A0119023}|LapTrinhWeb_Nhom_12\\LapTrinhWeb_Nhom_12.csproj|c:\\users\\minh\\common\\t\u00E0i_li\u1EC7u_h\u1ECDc_win11\\\u0111\u1EA1i h\u1ECDc\\hk5\\l\u1EADp tr\u00ECnh web\\\u0111\u1ED3 \u00E1n\\laptrinhweb_nhom_12\\laptrinhweb_nhom_12\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{F74B230D-6E59-4047-972F-26E9A0119023}|LapTrinhWeb_Nhom_12\\LapTrinhWeb_Nhom_12.csproj|solutionrelative:laptrinhweb_nhom_12\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{F74B230D-6E59-4047-972F-26E9A0119023}|LapTrinhWeb_Nhom_12\\LapTrinhWeb_Nhom_12.csproj|e:\\luudulieusinhvien\\buitrungduc\\\u0111\u1ED3 \u00E1n\\laptrinhweb_nhom_12\\laptrinhweb_nhom_12\\views\\tracuu\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F74B230D-6E59-4047-972F-26E9A0119023}|LapTrinhWeb_Nhom_12\\LapTrinhWeb_Nhom_12.csproj|solutionrelative:laptrinhweb_nhom_12\\views\\tracuu\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F74B230D-6E59-4047-972F-26E9A0119023}|LapTrinhWeb_Nhom_12\\LapTrinhWeb_Nhom_12.csproj|e:\\luudulieusinhvien\\buitrungduc\\\u0111\u1ED3 \u00E1n\\laptrinhweb_nhom_12\\laptrinhweb_nhom_12\\controllers\\user\\tracuucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F74B230D-6E59-4047-972F-26E9A0119023}|LapTrinhWeb_Nhom_12\\LapTrinhWeb_Nhom_12.csproj|solutionrelative:laptrinhweb_nhom_12\\controllers\\user\\tracuucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F74B230D-6E59-4047-972F-26E9A0119023}|LapTrinhWeb_Nhom_12\\LapTrinhWeb_Nhom_12.csproj|e:\\luudulieusinhvien\\buitrungduc\\\u0111\u1ED3 \u00E1n\\laptrinhweb_nhom_12\\laptrinhweb_nhom_12\\views\\trangchu\\trangchu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F74B230D-6E59-4047-972F-26E9A0119023}|LapTrinhWeb_Nhom_12\\LapTrinhWeb_Nhom_12.csproj|solutionrelative:laptrinhweb_nhom_12\\views\\trangchu\\trangchu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F74B230D-6E59-4047-972F-26E9A0119023}|LapTrinhWeb_Nhom_12\\LapTrinhWeb_Nhom_12.csproj|e:\\luudulieusinhvien\\buitrungduc\\\u0111\u1ED3 \u00E1n\\laptrinhweb_nhom_12\\laptrinhweb_nhom_12\\models\\thuocapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F74B230D-6E59-4047-972F-26E9A0119023}|LapTrinhWeb_Nhom_12\\LapTrinhWeb_Nhom_12.csproj|solutionrelative:laptrinhweb_nhom_12\\models\\thuocapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F74B230D-6E59-4047-972F-26E9A0119023}|LapTrinhWeb_Nhom_12\\LapTrinhWeb_Nhom_12.csproj|e:\\luudulieusinhvien\\buitrungduc\\\u0111\u1ED3 \u00E1n\\laptrinhweb_nhom_12\\laptrinhweb_nhom_12\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F74B230D-6E59-4047-972F-26E9A0119023}|LapTrinhWeb_Nhom_12\\LapTrinhWeb_Nhom_12.csproj|solutionrelative:laptrinhweb_nhom_12\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F74B230D-6E59-4047-972F-26E9A0119023}|LapTrinhWeb_Nhom_12\\LapTrinhWeb_Nhom_12.csproj|e:\\luudulieusinhvien\\buitrungduc\\\u0111\u1ED3 \u00E1n\\laptrinhweb_nhom_12\\laptrinhweb_nhom_12\\controllers\\user\\trangchucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F74B230D-6E59-4047-972F-26E9A0119023}|LapTrinhWeb_Nhom_12\\LapTrinhWeb_Nhom_12.csproj|solutionrelative:laptrinhweb_nhom_12\\controllers\\user\\trangchucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F74B230D-6E59-4047-972F-26E9A0119023}|LapTrinhWeb_Nhom_12\\LapTrinhWeb_Nhom_12.csproj|e:\\luudulieusinhvien\\buitrungduc\\\u0111\u1ED3 \u00E1n\\laptrinhweb_nhom_12\\laptrinhweb_nhom_12\\views\\danhsach\\danhsachthuoc.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F74B230D-6E59-4047-972F-26E9A0119023}|LapTrinhWeb_Nhom_12\\LapTrinhWeb_Nhom_12.csproj|solutionrelative:laptrinhweb_nhom_12\\views\\danhsach\\danhsachthuoc.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -13,35 +37,99 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "DockedWidth": 127,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Web.config",
-              "DocumentMoniker": "C:\\Users\\Minh\\Common\\T\u00E0i_Li\u1EC7u_H\u1ECDc_Win11\\\u0110\u1EA1i h\u1ECDc\\HK5\\L\u1EADp tr\u00ECnh web\\\u0110\u1ED3 \u00E1n\\LapTrinhWeb_Nhom_12\\LapTrinhWeb_Nhom_12\\Web.config",
-              "RelativeDocumentMoniker": "LapTrinhWeb_Nhom_12\\Web.config",
-              "ToolTip": "C:\\Users\\Minh\\Common\\T\u00E0i_Li\u1EC7u_H\u1ECDc_Win11\\\u0110\u1EA1i h\u1ECDc\\HK5\\L\u1EADp tr\u00ECnh web\\\u0110\u1ED3 \u00E1n\\LapTrinhWeb_Nhom_12\\LapTrinhWeb_Nhom_12\\Web.config",
-              "RelativeToolTip": "LapTrinhWeb_Nhom_12\\Web.config",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAAFQAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2025-12-11T12:29:35.288Z",
+              "DocumentIndex": 3,
+              "Title": "ThuocAPI.cs",
+              "DocumentMoniker": "E:\\LuuDuLieuSinhVien\\BuiTrungDuc\\\u0110\u1ED3 \u00E1n\\LapTrinhWeb_Nhom_12\\LapTrinhWeb_Nhom_12\\Models\\ThuocAPI.cs",
+              "RelativeDocumentMoniker": "LapTrinhWeb_Nhom_12\\Models\\ThuocAPI.cs",
+              "ToolTip": "E:\\LuuDuLieuSinhVien\\BuiTrungDuc\\\u0110\u1ED3 \u00E1n\\LapTrinhWeb_Nhom_12\\LapTrinhWeb_Nhom_12\\Models\\ThuocAPI.cs",
+              "RelativeToolTip": "LapTrinhWeb_Nhom_12\\Models\\ThuocAPI.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAA8wCEAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-13T02:28:58.1Z",
               "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 127,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\LuuDuLieuSinhVien\\BuiTrungDuc\\\u0110\u1ED3 \u00E1n\\LapTrinhWeb_Nhom_12\\LapTrinhWeb_Nhom_12\\Views\\TraCuu\\Index.cshtml",
+              "RelativeDocumentMoniker": "LapTrinhWeb_Nhom_12\\Views\\TraCuu\\Index.cshtml",
+              "ToolTip": "E:\\LuuDuLieuSinhVien\\BuiTrungDuc\\\u0110\u1ED3 \u00E1n\\LapTrinhWeb_Nhom_12\\LapTrinhWeb_Nhom_12\\Views\\TraCuu\\Index.cshtml",
+              "RelativeToolTip": "LapTrinhWeb_Nhom_12\\Views\\TraCuu\\Index.cshtml",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAAEoAAABGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-13T02:26:06.41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TrangChuController.cs",
+              "DocumentMoniker": "E:\\LuuDuLieuSinhVien\\BuiTrungDuc\\\u0110\u1ED3 \u00E1n\\LapTrinhWeb_Nhom_12\\LapTrinhWeb_Nhom_12\\Controllers\\User\\TrangChuController.cs",
+              "RelativeDocumentMoniker": "LapTrinhWeb_Nhom_12\\Controllers\\User\\TrangChuController.cs",
+              "ToolTip": "E:\\LuuDuLieuSinhVien\\BuiTrungDuc\\\u0110\u1ED3 \u00E1n\\LapTrinhWeb_Nhom_12\\LapTrinhWeb_Nhom_12\\Controllers\\User\\TrangChuController.cs",
+              "RelativeToolTip": "LapTrinhWeb_Nhom_12\\Controllers\\User\\TrangChuController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-13T02:17:59.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TraCuuController.cs",
+              "DocumentMoniker": "E:\\LuuDuLieuSinhVien\\BuiTrungDuc\\\u0110\u1ED3 \u00E1n\\LapTrinhWeb_Nhom_12\\LapTrinhWeb_Nhom_12\\Controllers\\User\\TraCuuController.cs",
+              "RelativeDocumentMoniker": "LapTrinhWeb_Nhom_12\\Controllers\\User\\TraCuuController.cs",
+              "ToolTip": "E:\\LuuDuLieuSinhVien\\BuiTrungDuc\\\u0110\u1ED3 \u00E1n\\LapTrinhWeb_Nhom_12\\LapTrinhWeb_Nhom_12\\Controllers\\User\\TraCuuController.cs",
+              "RelativeToolTip": "LapTrinhWeb_Nhom_12\\Controllers\\User\\TraCuuController.cs",
+              "ViewState": "AQIAADwAAAAAAAAAAAAowIIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-13T02:18:06.771Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DanhSachThuoc.cshtml",
+              "DocumentMoniker": "E:\\LuuDuLieuSinhVien\\BuiTrungDuc\\\u0110\u1ED3 \u00E1n\\LapTrinhWeb_Nhom_12\\LapTrinhWeb_Nhom_12\\Views\\DanhSach\\DanhSachThuoc.cshtml",
+              "RelativeDocumentMoniker": "LapTrinhWeb_Nhom_12\\Views\\DanhSach\\DanhSachThuoc.cshtml",
+              "ToolTip": "E:\\LuuDuLieuSinhVien\\BuiTrungDuc\\\u0110\u1ED3 \u00E1n\\LapTrinhWeb_Nhom_12\\LapTrinhWeb_Nhom_12\\Views\\DanhSach\\DanhSachThuoc.cshtml",
+              "RelativeToolTip": "LapTrinhWeb_Nhom_12\\Views\\DanhSach\\DanhSachThuoc.cshtml",
+              "ViewState": "AQIAAMMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-13T01:51:52.658Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "E:\\LuuDuLieuSinhVien\\BuiTrungDuc\\\u0110\u1ED3 \u00E1n\\LapTrinhWeb_Nhom_12\\LapTrinhWeb_Nhom_12\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "LapTrinhWeb_Nhom_12\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "E:\\LuuDuLieuSinhVien\\BuiTrungDuc\\\u0110\u1ED3 \u00E1n\\LapTrinhWeb_Nhom_12\\LapTrinhWeb_Nhom_12\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "LapTrinhWeb_Nhom_12\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAJAAAAAAAAAAAAAAANoAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-13T01:45:20.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TrangChu.cshtml",
+              "DocumentMoniker": "E:\\LuuDuLieuSinhVien\\BuiTrungDuc\\\u0110\u1ED3 \u00E1n\\LapTrinhWeb_Nhom_12\\LapTrinhWeb_Nhom_12\\Views\\TrangChu\\TrangChu.cshtml",
+              "RelativeDocumentMoniker": "LapTrinhWeb_Nhom_12\\Views\\TrangChu\\TrangChu.cshtml",
+              "ToolTip": "E:\\LuuDuLieuSinhVien\\BuiTrungDuc\\\u0110\u1ED3 \u00E1n\\LapTrinhWeb_Nhom_12\\LapTrinhWeb_Nhom_12\\Views\\TrangChu\\TrangChu.cshtml",
+              "RelativeToolTip": "LapTrinhWeb_Nhom_12\\Views\\TrangChu\\TrangChu.cshtml",
+              "ViewState": "AQIAACQAAAAAAAAAAAAAABMAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-13T01:38:33.995Z",
+              "EditorCaption": ""
             }
           ]
         }

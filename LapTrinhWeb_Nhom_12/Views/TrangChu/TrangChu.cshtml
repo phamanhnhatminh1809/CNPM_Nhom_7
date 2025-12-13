@@ -139,11 +139,11 @@
                                     }
                                     else
                                     {
-                                        @* [UPDATE] QUAN TRỌNG: Thêm 'relative z-10' để nút này nổi lên trên link phủ *@
-                                        <a href="@Url.Action("ThemGioHang", "GioHang", new { id = item.IdThuoc })"
-                                           class="relative z-10 w-full bg-[#F3F6F9] text-[#1A3A6B] py-2 rounded-full font-bold hover:bg-[#E1E9F6] hover:text-[#0077B6] transition-all duration-200 flex items-center justify-center gap-2 text-sm cursor-pointer border border-transparent hover:border-[#1A3A6B]/10 no-underline">
+                                        <button type="button"
+                                                onclick="addToCart(@item.IdThuoc)"
+                                                class="relative z-10 w-full bg-[#F3F6F9] text-[#1A3A6B] py-2 rounded-full font-bold hover:bg-[#E1E9F6] hover:text-[#0077B6] transition-all duration-200 flex items-center justify-center gap-2 text-sm cursor-pointer border border-transparent hover:border-[#1A3A6B]/10 no-underline">
                                             <i class="bi bi-cart-plus text-lg"></i> Thêm vào giỏ
-                                        </a>
+                                        </button>
                                     }
                                 </div>
                             }
