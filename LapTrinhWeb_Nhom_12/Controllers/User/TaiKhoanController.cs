@@ -95,7 +95,7 @@ namespace LapTrinhWeb_Nhom_12.Controllers
 
                 var taiKhoanMoi = new TAI_KHOAN();
                 taiKhoanMoi.ten_dang_nhap = model.TenDangNhap;
-                taiKhoanMoi.mat_khau = MaHoa.ToMD5(model.MatKhau);
+                taiKhoanMoi.mat_khau = model.MatKhau;
                 taiKhoanMoi.email = model.Email;
 
                 var quyenKhach = db.PHAN_QUYEN.FirstOrDefault(q => q.ten_quyen == "KhachHang");
@@ -136,8 +136,6 @@ namespace LapTrinhWeb_Nhom_12.Controllers
         {
             if (ModelState.IsValid)
             {
-                // 1. Mã hóa mật khẩu đầu vào
-                var f_password = MaHoa.ToMD5(model.MatKhau);
 
                 // 2. Tìm tài khoản
                 var data = db.TAI_KHOAN.FirstOrDefault(s => s.ten_dang_nhap.Equals(model.TenDangNhap) && s.mat_khau.Equals(model.MatKhau));
@@ -238,7 +236,7 @@ namespace LapTrinhWeb_Nhom_12.Controllers
 
             return View(model);
         }
-        
+
         // ---------------- LỊCH SỬ ĐƠN HÀNG ----------------
 
         // 1. Danh sách đơn hàng

@@ -1,7 +1,10 @@
 ﻿using LapTrinhWeb_Nhom_12.Models;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 namespace LapTrinhWeb_Nhom_12.Controllers
 {
@@ -346,6 +349,47 @@ namespace LapTrinhWeb_Nhom_12.Controllers
         {
             if (disposing) db.Dispose();
             base.Dispose(disposing);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> KiemTraThanhToan(string noiDungChuyenKhoan, int soTien)
+        {
+            string apiToken = "M6SS8QZIE7EIHMYOURVPXJHQOWMYEIXAFOGGAWU7F81Q5T5B0SVBSI21W3FFKDPU";
+
+            string accountNumber = "6513796242";
+
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    string url = $"https://my.sepay.vn/userapi/transactions/list?account_number={accountNumber}&limit=20";
+                    client.DefaultRequestHeaders.Add("Authorization", "Bearer " + apiToken);
+
+                    var response = await client.GetAsync(url);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var jsonString = await response.Content.ReadAsStringAsync();
+                        var data = JObject.Parse(jsonString);
+                        var transactions = data["transactions"];
+
+                        foreach (var trans in transactions)
+                        {
+                            string content = trans["transaction_content"].ToString();
+                            decimal amount = (decimal)trans["amount_in"];
+
+                            if (content.Contains(noiDungChuyenKhoan) && amount >= soTien)
+                            {
+                                return Json(new { success = true }, JsonRequestBehavior.AllowGet);
+                            }
+                        }
+                    }
+                }
+            }
+            catch
+            {
+            }
+
+            return Json(new { success = false }, JsonRequestBehavior.AllowGet);
         }
     }
 }

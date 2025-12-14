@@ -206,7 +206,7 @@
                 <img src="@Url.Content("~/Images/logo.png")" alt="MedFor All" class="site-logo">
             </a>
 
-            <form class="header-search-form mx-4 w-100" action="@Url.Action("Search", "Home")" method="get" style="max-width: 500px;">
+            <form class="header-search-form mx-4 w-100" action="@Url.Action("TimKiem", "TrangChu")" method="get" style="max-width: 500px;">
                 <div class="input-group">
                     <button class="btn btn-search-icon" type="submit"><i class="bi bi-search"></i></button>
                     <input type="text" name="query" class="form-control" placeholder="Tìm kiếm sản phẩm" aria-label="Tìm kiếm sản phẩm">
@@ -304,8 +304,8 @@
 
                     <li class="nav-item mx-3">
                         <a class="nav-link @(ViewContext.RouteData.Values["controller"].ToString() == "TraCuu" ? "active" : "")"
-                           href="@Url.Action("Index", "TraCuu")">
-                            <i class="bi bi-search"></i> Tra Cứu Thuốc (API)
+                           href="@Url.Action("Index", "TraCuu")">       
+                            <i class="bi bi-search"></i> Tra Cứu Thuốc
                         </a>
                     </li>
 

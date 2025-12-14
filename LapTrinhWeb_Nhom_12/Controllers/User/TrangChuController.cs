@@ -80,5 +80,37 @@ namespace LapTrinhWeb_Nhom_12.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult TimKiem(string query)
+        {
+            // 1. Nếu từ khóa rỗng thì quay về trang chủ
+            if (string.IsNullOrEmpty(query))
+            {
+                return RedirectToAction("TrangChu");
+            }
+
+            // 2. Tìm kiếm trong database (Theo tên thuốc, gần đúng)
+            var ketQua = NhaThuocDatabase.THUOCs
+                            .Where(t => t.ten_thuoc.Contains(query)) // Logic tìm kiếm: Chứa từ khóa
+                            .Select(t => new TheThuocViewModel
+                            {
+                                IdThuoc = t.id_thuoc,
+                                TenThuoc = t.ten_thuoc,
+                                AnhThuoc = t.anh_thuoc,
+                                GiaBan = t.gia_ban ?? 0,
+                                TenDanhMuc = t.DANH_MUC_THUOC.ten_danh_muc,
+                                // Tính tổng tồn kho để hiển thị nút mua hàng đúng logic
+                                SoLuongTon = t.LO_THUOC.Sum(lt => lt.so_luong_ton) ?? 0,
+                                DonViTinh = t.don_vi_tinh,
+                                Hang = t.hang
+                            })
+                            .ToList();
+
+            // 3. Gửi từ khóa qua ViewBag để hiển thị thông báo (VD: Kết quả tìm kiếm cho 'Panadol')
+            ViewBag.TuKhoaTimKiem = query;
+
+            // 4. Tái sử dụng View "TrangChu" để hiển thị kết quả giống hệt trang chủ
+            return View("TrangChu", ketQua);
+        }
     }
 }

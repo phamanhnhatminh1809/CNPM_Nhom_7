@@ -261,13 +261,13 @@
                         <h5 class="section-title"><i class="bi bi-person-circle"></i> Thông tin người đặt</h5>
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="TenNguoiDat" placeholder="Họ và tên người đặt" required>
+                                <input type="text" class="form-control" id="txtHoTen" name="TenNguoiDat" placeholder="Họ và tên người đặt" required>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="SdtNguoiDat" placeholder="Số điện thoại" required>
+                                <input type="tel" class="form-control" id="txtSoDienThoai" name="SdtNguoiDat" placeholder="Số điện thoại (10 số)" maxlength="10" required>
                             </div>
                             <div class="col-12">
-                                <input type="email" class="form-control" name="EmailNguoiDat" placeholder="Email (không bắt buộc)">
+                                <input type="email" class="form-control" id="txtEmail" name="EmailNguoiDat" placeholder="Email (không bắt buộc)">
                             </div>
                         </div>
                     </div>
@@ -291,7 +291,7 @@
                                 </select>
                             </div>
                             <div class="col-12">
-                                <input type="text" class="form-control" name="DiaChiCuThe" placeholder="Số nhà, tên đường...">
+                                <input type="text" class="form-control" id="txtDiaChiCuThe" name="DiaChiCuThe" placeholder="Số nhà, tên đường...">
                             </div>
                         </div>
                     </div>
@@ -433,7 +433,7 @@
 </style>
 
 
-@*<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content custom-modal-content">
 
@@ -464,7 +464,7 @@
                 </div>
             </div>
         </div>
-    </div>*@
+    </div>
 
 <div class="modal fade" id="qrModal" tabindex="-1" aria-labelledby="qrModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered">
@@ -491,9 +491,11 @@
                 </div>
 
                 <div class="d-grid gap-2">
-                    <button type="button" class="btn btn-primary py-2 fw-bold" onclick="submitOrderAfterPayment()">
+                    <button type="button" id="btnConfirmPayment" class="btn btn-primary py-2 fw-bold">
                         <i class="bi bi-check-circle-fill me-2"></i> Tôi đã chuyển tiền
                     </button>
+
+                    <div id="payment-status" class="text-center mt-2 small" style="display:none; font-weight:bold;"></div>
                     <button type="button" class="btn btn-light text-muted py-2" data-bs-dismiss="modal">
                         Thanh toán sau / Đổi phương thức
                     </button>
@@ -685,21 +687,24 @@
 
             // Khi chọn Tỉnh -> Load Quận (Chỉ quận có nhà thuốc)
             $('#ddlTinh_Pickup').change(function () {
-                var tenTinh = $(this).val(); // Lấy tên Tỉnh (String)
+                var tenTinh = $(this).val();
+
+                // --- DÒNG MỚI THÊM: Xóa mã nhà thuốc cũ đi ---
+                $('#selectedPharmacyId').val('');
+                // ---------------------------------------------
 
                 $('#ddlQuan_Pickup').empty().append('<option value="">-- Chọn Quận/Huyện --</option>').prop('disabled', true);
                 $('#listNhaThuocArea').html('<div class="text-center text-muted py-5">Vui lòng chọn Quận/Huyện.</div>');
 
                 if (tenTinh) {
                     $.ajax({
-                        url: '/DiaDiem/GetQuanHuyenCoNhaThuoc', // API mới
+                        url: '/DiaDiem/GetQuanHuyenCoNhaThuoc',
                         type: 'GET',
                         data: { tenTinh: tenTinh },
                         success: function (data) {
-                            // data là mảng string: ["Quận Hoàn Kiếm", "Quận Ba Đình"]
                             $.each(data, function (i, item) {
                                 $('#ddlQuan_Pickup').append($('<option>', {
-                                    value: item, // Value là tên
+                                    value: item,
                                     text: item
                                 }));
                             });
@@ -714,8 +719,15 @@
                 var tenTinh = $("#ddlTinh_Pickup").val();
                 var tenQuan = $(this).val();
 
+                // --- DÒNG MỚI THÊM: Xóa mã nhà thuốc cũ đi ---
+                $('#selectedPharmacyId').val('');
+                // ---------------------------------------------
+
                 if (tenQuan) {
                     timKiemNhaThuoc(tenTinh, tenQuan);
+                } else {
+                    // Nếu người dùng chọn lại mục "-- Chọn Quận --" thì xóa danh sách
+                    $('#listNhaThuocArea').html('<div class="text-center text-muted py-5">Vui lòng chọn Quận/Huyện.</div>');
                 }
             });
 
@@ -772,25 +784,118 @@
     @*Xử lý thanh toán*@
 
     <script>
+        // Cấu hình thông tin QR 
         const MY_BANK = {
             BANK_ID: "BIDV",
-            ACCOUNT_NO: "6513796242",
-            TEMPLATE: "compact2",
+            ACCOUNT_NO: "96247060105", 
+            TEMPLATE: "qr_only",
             ACCOUNT_NAME: "BUI TRUNG DUC"
         };
+
+        let currentOrderInfo = ""; // Biến lưu mã đơn hàng (VD: DH123456)
 
         $(document).ready(function () {
             $('#btnPlaceOrder').click(function (e) {
                 e.preventDefault();
 
-                // 1. Kiểm tra Validate form (Họ tên, SĐT...)
-                var isValid = document.getElementById('checkoutForm').checkValidity();
-                if (!isValid) {
-                    document.getElementById('checkoutForm').reportValidity();
+                // --- 1. KIỂM TRA HỌ TÊN ---
+                var hoTenInput = $('input[name="TenNguoiDat"]')[0]; // Lấy thẻ DOM
+                // Xóa lỗi cũ (nếu có)
+                hoTenInput.setCustomValidity('');
+
+                if (!hoTenInput.checkValidity()) {
+                    hoTenInput.reportValidity();
                     return;
                 }
 
-                // 2. Kiểm tra phương thức thanh toán
+                // --- 2. KIỂM TRA SỐ ĐIỆN THOẠI ---
+                var sdtInput = $('input[name="SdtNguoiDat"]')[0];
+                var sdtVal = $(sdtInput).val().trim();
+                var regexSDT = /^(0)[0-9]{9}$/;
+
+                sdtInput.setCustomValidity(''); 
+
+                if (sdtVal === "") {
+                    sdtInput.setCustomValidity("Vui lòng điền vào trường này.");
+                    sdtInput.reportValidity();
+                    return;
+                }
+                if (!regexSDT.test(sdtVal)) {
+                    sdtInput.setCustomValidity("Số điện thoại không hợp lệ (Phải có 10 số và bắt đầu bằng 0)");
+                    sdtInput.reportValidity();
+                    return;
+                }
+
+                // --- 3. KIỂM TRA EMAIL (Nếu có nhập) ---
+                var emailInput = $('input[name="EmailNguoiDat"]')[0];
+                var emailVal = $(emailInput).val().trim();
+
+                // Dùng @@ để tránh lỗi Razor khi biên dịch
+                var regexEmail = /^[^\s@@]+@@[^\s@@]+\.[^\s@@]+$/;
+
+                emailInput.setCustomValidity('');
+
+                if (emailVal !== "" && !regexEmail.test(emailVal)) {
+                    emailInput.setCustomValidity("Địa chỉ Email không đúng định dạng!");
+                    emailInput.reportValidity();
+                    return;
+                }
+
+                // --- 4. KIỂM TRA ĐỊA CHỈ ---
+                var isGiaoHang = $('#GiaoHang').is(':checked');
+
+                if (isGiaoHang) {
+                    // 4.1. Kiểm tra Dropdown Tỉnh
+                    var tinhInput = $('#dataApiTinhThanh')[0];
+                    tinhInput.setCustomValidity('');
+                    if ($(tinhInput).val() === "") {
+                        tinhInput.setCustomValidity("Vui lòng chọn Tỉnh/Thành phố");
+                        tinhInput.reportValidity();
+                        return;
+                    }
+
+                    // 4.2. Kiểm tra Dropdown Huyện
+                    var huyenInput = $('#dataApiQuanHuyen')[0];
+                    huyenInput.setCustomValidity('');
+                    if ($(huyenInput).val() === "") {
+                        huyenInput.setCustomValidity("Vui lòng chọn Quận/Huyện");
+                        huyenInput.reportValidity();
+                        return;
+                    }
+
+                    // 4.3. Kiểm tra Dropdown Xã
+                    var xaInput = $('#dataApiPhuongXa')[0];
+                    xaInput.setCustomValidity('');
+                    if ($(xaInput).val() === "") {
+                        xaInput.setCustomValidity("Vui lòng chọn Phường/Xã");
+                        xaInput.reportValidity();
+                        return;
+                    }
+
+                    // 4.4. Kiểm tra Số nhà cụ thể
+                    var diaChiInput = $('input[name="DiaChiCuThe"]')[0];
+                    diaChiInput.setCustomValidity('');
+                    if ($(diaChiInput).val().trim() === "") {
+                        diaChiInput.setCustomValidity("Vui lòng điền số nhà, tên đường");
+                        diaChiInput.reportValidity();
+                        return;
+                    }
+
+                } else {
+                    // Nếu nhận tại quầy -> Bắt buộc phải chọn nhà thuốc
+                    var idNhaThuoc = $('#selectedPharmacyId').val();
+
+                    if (!idNhaThuoc) {
+                        // Vì radio thuốc nằm trong danh sách, khó hiện bong bóng chính xác
+                        // Ta sẽ hiện bong bóng ở Dropdown Quận để nhắc người dùng
+                        var quanPickup = $('#ddlQuan_Pickup')[0];
+                        quanPickup.setCustomValidity("Vui lòng chọn một nhà thuốc trong danh sách bên dưới!");
+                        quanPickup.reportValidity();
+                        return;
+                    }
+                }
+
+                // --- 5. NẾU HỢP LỆ -> TIẾN HÀNH THANH TOÁN ---
                 var paymentMethod = $('input[name="PhuongThucThanhToan"]:checked').val();
 
                 if (paymentMethod === "BANK") {
@@ -799,31 +904,77 @@
                     $('#checkoutForm').submit();
                 }
             });
+
+            // Mẹo nhỏ: Khi người dùng bắt đầu nhập lại, ta xóa ngay thông báo lỗi đỏ để họ không bị khó chịu
+            $('input, select').on('input change', function () {
+                this.setCustomValidity('');
+            });
+
+            // Nút "Tôi đã chuyển tiền" -> Gọi hàm kiểm tra
+            $('#btnConfirmPayment').click(function () {
+                checkPaymentStatus();
+            });
         });
 
         function showQRCode() {
-            // 1. Lấy tổng tiền từ nút đặt hàng
             var totalAmount = $('#btnPlaceOrder').data('total');
 
-            // Tạo mã đơn hàng giả lập hoặc lấy timestamp để làm nội dung chuyển khoản cho duy nhất
-            var orderInfo = "DH" + Math.floor(Math.random() * 1000000);
+            // Tạo mã nội dung CK ngẫu nhiên (DH + 6 số)
+            currentOrderInfo = "DH" + Math.floor(100000 + Math.random() * 900000);
 
-            // 2. Tạo Link API VietQR
-            var qrUrl = `https://img.vietqr.io/image/${MY_BANK.BANK_ID}-${MY_BANK.ACCOUNT_NO}-${MY_BANK.TEMPLATE}.png?amount=${totalAmount}&addInfo=${orderInfo}&accountName=${encodeURI(MY_BANK.ACCOUNT_NAME)}`;
+            // Tạo link QR VietQR
+            var qrUrl = `https://img.vietqr.io/image/${MY_BANK.BANK_ID}-${MY_BANK.ACCOUNT_NO}-${MY_BANK.TEMPLATE}.png?amount=${totalAmount}&addInfo=${currentOrderInfo}&accountName=${encodeURI(MY_BANK.ACCOUNT_NAME)}`;
 
-            // 3. Gán dữ liệu vào Modal
+            // Hiển thị lên Modal
             $('#img-qr-code').attr('src', qrUrl);
-            $('#qr-content').text(orderInfo);
+            $('#qr-content').text(currentOrderInfo);
             $('#qr-amount').text(parseInt(totalAmount).toLocaleString('vi-VN') + "đ");
 
-            // 4. Hiển thị Modal
+            // Reset trạng thái nút bấm
+            $('#payment-status').hide();
+            $('#btnConfirmPayment').prop('disabled', false).html('<i class="bi bi-check-circle-fill me-2"></i> Tôi đã chuyển tiền');
+
             var qrModal = new bootstrap.Modal(document.getElementById('qrModal'));
             qrModal.show();
         }
 
-        function submitOrderAfterPayment() {
-            // Người dùng xác nhận đã chuyển -> Submit form để lưu đơn hàng
-            $('#checkoutForm').submit();
+        function checkPaymentStatus() {
+            var totalAmount = $('#btnPlaceOrder').data('total');
+
+            // Hiện trạng thái đang kiểm tra
+            $('#payment-status').show().removeClass('text-danger').addClass('text-primary')
+                .html('<div class="spinner-border spinner-border-sm" role="status"></div> Đang kiểm tra giao dịch...');
+            $('#btnConfirmPayment').prop('disabled', true);
+
+            // Gọi về Server để check SePay
+            $.ajax({
+                url: '/GioHang/KiemTraThanhToan',
+                type: 'GET',
+                data: {
+                    noiDungChuyenKhoan: currentOrderInfo,
+                    soTien: totalAmount
+                },
+                success: function (res) {
+                    if (res.success) {
+                        // CÓ TIỀN -> Báo thành công và Submit form
+                        $('#payment-status').removeClass('text-primary').addClass('text-success')
+                            .html('<i class="bi bi-check-lg"></i> Đã nhận được tiền! Đang tạo đơn...');
+
+                        setTimeout(function () {
+                            $('#checkoutForm').submit();
+                        }, 1500);
+                    } else {
+                        // CHƯA CÓ TIỀN -> Báo lỗi
+                        $('#payment-status').removeClass('text-primary').addClass('text-danger')
+                            .html('<i class="bi bi-x-circle"></i> Chưa thấy tiền về. Vui lòng thử lại sau 30s!');
+                        $('#btnConfirmPayment').prop('disabled', false).html('Thử lại');
+                    }
+                },
+                error: function () {
+                    $('#payment-status').text('Lỗi kết nối Server!');
+                    $('#btnConfirmPayment').prop('disabled', false);
+                }
+            });
         }
     </script>
 }

@@ -17,14 +17,32 @@ namespace LapTrinhWeb_Nhom_12.Controllers
 
             if (id > -1)
             {
+                // Giữ nguyên id_loai_thuoc như code cũ của bạn
                 query = query.Where(t => t.id_loai_thuoc == id);
             }
 
             var allBrands = query.Select(t => t.hang).Distinct().ToList();
 
+            // --- PHẦN ĐƯỢC SỬA: THÊM LOGIC LỌC GIÁ ---
             if (!string.IsNullOrEmpty(giaBanRange))
             {
+                switch (giaBanRange)
+                {
+                    case "duoi-100":
+                        query = query.Where(t => t.gia_ban < 100000);
+                        break;
+                    case "100-300":
+                        query = query.Where(t => t.gia_ban >= 100000 && t.gia_ban <= 300000);
+                        break;
+                    case "300-500":
+                        query = query.Where(t => t.gia_ban >= 300000 && t.gia_ban <= 500000);
+                        break;
+                    case "tren-500":
+                        query = query.Where(t => t.gia_ban > 500000);
+                        break;
+                }
             }
+            // ------------------------------------------
 
             if (!string.IsNullOrEmpty(hang))
             {
@@ -35,21 +53,11 @@ namespace LapTrinhWeb_Nhom_12.Controllers
             {
                 IdThuoc = t.id_thuoc,
                 TenThuoc = t.ten_thuoc,
-
-                // Gán dữ liệu ảnh (Nguyên nhân mất ảnh)
                 AnhThuoc = t.anh_thuoc,
-
-                // Gán dữ liệu giá (Nguyên nhân giá = 0)
-                // Dùng ?? 0 để xử lý nếu trong DB giá là NULL
                 GiaBan = t.gia_ban ?? 0,
-
-                // Các thông tin khác
                 TenDanhMuc = t.DANH_MUC_THUOC != null ? t.DANH_MUC_THUOC.ten_danh_muc : "",
                 DonViTinh = t.don_vi_tinh,
-
-                // Tính tổng tồn kho từ các lô
                 SoLuongTon = t.LO_THUOC.Sum(l => l.so_luong_ton) ?? 0,
-
                 Hang = t.hang
             }).ToList();
 
@@ -58,7 +66,7 @@ namespace LapTrinhWeb_Nhom_12.Controllers
             var model = new DanhSachThuocViewModel
             {
                 DanhSachThuoc = listThuoc,
-                DanhSachHang = allBrands, 
+                DanhSachHang = allBrands,
                 DanhSachDanhMuc = allCategories,
                 LoaiThuocId = id,
                 GiaBanFilter = giaBanRange,
