@@ -132,7 +132,6 @@
         }
 </style>
 
-
 <div class="container auth-wrapper">
     <div class="auth-card">
 
@@ -142,6 +141,7 @@
         {
             @Html.AntiForgeryToken()
 
+            // Hiển thị thông báo lỗi từ Controller (ví dụ: Sai mật khẩu)
             if (ViewBag.Error != null)
             {
                 <div class="alert alert-danger text-center py-2 mb-3 small">
@@ -151,13 +151,13 @@
 
             <div class="mb-3">
                 <label class="form-label">Tên đăng nhập <span class="text-danger">*</span></label>
-                @Html.TextBoxFor(m => m.TenDangNhap, new { @class = "form-control", @placeholder = "" })
+                @Html.TextBoxFor(m => m.TenDangNhap, new { @class = "form-control", @placeholder = "Nhập tên đăng nhập" })
                 @Html.ValidationMessageFor(m => m.TenDangNhap, "", new { @class = "text-danger small" })
             </div>
 
             <div class="mb-1">
                 <label class="form-label">Mật khẩu <span class="text-danger">*</span></label>
-                @Html.PasswordFor(m => m.MatKhau, new { @class = "form-control", @placeholder = "" })
+                @Html.PasswordFor(m => m.MatKhau, new { @class = "form-control", @placeholder = "Nhập mật khẩu" })
                 @Html.ValidationMessageFor(m => m.MatKhau, "", new { @class = "text-danger small" })
             </div>
 

@@ -1,4 +1,5 @@
 ﻿using LapTrinhWeb_Nhom_12.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
@@ -15,13 +16,12 @@ namespace LapTrinhWeb_Nhom_12.Controllers
         public ActionResult ThemGioHang(int id, int soLuong = 1)
         {
             // 1. Lấy giỏ hàng hiện tại từ Session
-            // Ép kiểu về List<CartItem>
-            var gioHang = Session["GioHang"] as List<CartItem>;
+            var gioHang = Session["GioHang"] as List<SanPhamTrongGioHang>;
 
             // Nếu Session chưa có gì (giỏ hàng rỗng), thì khởi tạo List mới
             if (gioHang == null)
             {
-                gioHang = new List<CartItem>();
+                gioHang = new List<SanPhamTrongGioHang>();
                 Session["GioHang"] = gioHang;
             }
 
@@ -43,8 +43,8 @@ namespace LapTrinhWeb_Nhom_12.Controllers
                     return RedirectToAction("TrangChu", "TrangChu");
                 }
 
-                // Tạo đối tượng CartItem mới
-                item = new CartItem
+                // Tạo đối tượng SanPhamTrongGioHang mới
+                item = new SanPhamTrongGioHang
                 {
                     IdThuoc = thuoc.id_thuoc,
                     TenThuoc = thuoc.ten_thuoc,
@@ -74,7 +74,7 @@ namespace LapTrinhWeb_Nhom_12.Controllers
         }
         public ActionResult XoaGioHang(int id)
         {
-            var gioHang = Session["GioHang"] as List<CartItem>;
+            var gioHang = Session["GioHang"] as List<SanPhamTrongGioHang>;
             if (gioHang != null)
             {
                 var itemXoa = gioHang.FirstOrDefault(m => m.IdThuoc == id);
@@ -88,7 +88,7 @@ namespace LapTrinhWeb_Nhom_12.Controllers
         }
         public ActionResult CapNhatGioHang(int id, int soLuong)
         {
-            var gioHang = Session["GioHang"] as List<CartItem>;
+            var gioHang = Session["GioHang"] as List<SanPhamTrongGioHang>;
             if (gioHang != null)
             {
                 var itemSua = gioHang.FirstOrDefault(m => m.IdThuoc == id);
@@ -103,13 +103,13 @@ namespace LapTrinhWeb_Nhom_12.Controllers
         public ActionResult XemGioHang()
         {
             // 1. Lấy giỏ hàng từ Session
-            var gioHang = Session["GioHang"] as List<CartItem>;
+            var gioHang = Session["GioHang"] as List<SanPhamTrongGioHang>;
 
             // 2. Nếu giỏ hàng chưa có hoặc rỗng, khởi tạo list rỗng để tránh lỗi null ở View
             if (gioHang == null || gioHang.Count == 0)
             {
                 ViewBag.ThongBao = "Giỏ hàng đang trống";
-                return View(new List<CartItem>());
+                return View(new List<SanPhamTrongGioHang>());
             }
 
             // 3. Tính tổng tiền để hiển thị (hoặc tính trực tiếp bên View cũng được)
@@ -124,7 +124,7 @@ namespace LapTrinhWeb_Nhom_12.Controllers
         public ActionResult CapNhatSoLuongAjax(int id, int soLuong)
         {
             // 1. Lấy giỏ hàng từ Session
-            List<CartItem> gioHang = Session["GioHang"] as List<CartItem>;
+            List<SanPhamTrongGioHang> gioHang = Session["GioHang"] as List<SanPhamTrongGioHang>;
 
             if (gioHang != null)
             {
@@ -152,8 +152,8 @@ namespace LapTrinhWeb_Nhom_12.Controllers
         // Action này dùng để load nội dung Mini Cart
         public ActionResult GetMiniCart()
         {
-            List<CartItem> gioHang = Session["GioHang"] as List<CartItem>;
-            if (gioHang == null) gioHang = new List<CartItem>();
+            List<SanPhamTrongGioHang> gioHang = Session["GioHang"] as List<SanPhamTrongGioHang>;
+            if (gioHang == null) gioHang = new List<SanPhamTrongGioHang>();
 
             return PartialView("_MiniCartPartial", gioHang);
         }
@@ -163,16 +163,16 @@ namespace LapTrinhWeb_Nhom_12.Controllers
         public ActionResult ThemGioHangAjax(int id)
         {
             // 1. Lấy giỏ hàng từ Session
-            List<CartItem> gioHang = Session["GioHang"] as List<CartItem>;
+            List<SanPhamTrongGioHang> gioHang = Session["GioHang"] as List<SanPhamTrongGioHang>;
 
-            // 2. QUAN TRỌNG: Nếu chưa có thì tạo mới ngay (Khắc phục lỗi Null)
+            // 2. [QUAN TRỌNG] Kiểm tra NULL và khởi tạo nếu chưa có
             if (gioHang == null)
             {
-                gioHang = new List<CartItem>();
-                Session["GioHang"] = gioHang;
+                gioHang = new List<SanPhamTrongGioHang>();
+                Session["GioHang"] = gioHang; // Lưu danh sách mới vào Session ngay
             }
 
-            // 3. Logic thêm sản phẩm (Bạn cần đoạn này để hàng thực sự vào giỏ)
+            // 3. Logic thêm sản phẩm (Bạn đang thiếu đoạn này trong ảnh chụp lỗi)
             var sanPham = gioHang.FirstOrDefault(s => s.IdThuoc == id);
             if (sanPham != null)
             {
@@ -180,15 +180,16 @@ namespace LapTrinhWeb_Nhom_12.Controllers
             }
             else
             {
-                // Chưa có thì tìm trong DB và thêm mới
-                var thuoc = db.THUOCs.Find(id); // Đảm bảo 'db' đã được khai báo ở trên
+                // Truy vấn DB để lấy thông tin thuốc
+                var thuoc = db.THUOCs.Find(id);
                 if (thuoc != null)
                 {
-                    var newItem = new CartItem
+                    var newItem = new SanPhamTrongGioHang
                     {
                         IdThuoc = thuoc.id_thuoc,
                         TenThuoc = thuoc.ten_thuoc,
                         AnhThuoc = thuoc.anh_thuoc,
+                        // Xử lý null cho giá bán để tránh lỗi crash khác
                         DonGia = (int)(thuoc.gia_ban ?? 0),
                         SoLuong = 1,
                         DonViTinh = thuoc.don_vi_tinh
@@ -197,22 +198,149 @@ namespace LapTrinhWeb_Nhom_12.Controllers
                 }
             }
 
-            // 4. Tính tổng và trả về JSON
-            int tongSoLuong = gioHang.Sum(x => x.SoLuong);
-            return Json(new { success = true, totalQty = tongSoLuong });
+            // 4. Tính tổng (Lúc này gioHang chắc chắn không null nên .Sum() sẽ an toàn)
+            return Json(new { success = true, totalQty = gioHang.Sum(x => x.SoLuong) });
         }
 
         // Action Xóa item từ Mini Cart
         [HttpPost]
         public ActionResult XoaKhoiMiniCart(int id)
         {
-            List<CartItem> gioHang = Session["GioHang"] as List<CartItem>;
+            List<SanPhamTrongGioHang> gioHang = Session["GioHang"] as List<SanPhamTrongGioHang>;
             var item = gioHang.FirstOrDefault(x => x.IdThuoc == id);
             if (item != null)
             {
                 gioHang.Remove(item);
             }
             return Json(new { success = true });
+        }
+        [HttpPost]
+        public ActionResult DatHang(ThanhToanViewModel model)
+        {
+            // 1. Kiểm tra giỏ hàng
+            List<SanPhamTrongGioHang> cart = Session["GioHang"] as List<SanPhamTrongGioHang>;
+            if (cart == null || cart.Count == 0) return RedirectToAction("Index", "TrangChu");
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    // 2. XỬ LÝ ĐỊA CHỈ GIAO HÀNG
+                    string diaChiFinal = "";
+
+                    if (model.hinhThucNhan == "GiaoHang")
+                    {
+                        var tinh = db.TINH_THANH.Find(model.id_tinh_thanh_ship)?.ten ?? "";
+                        var quan = db.QUAN_HUYEN.Find(model.id_quan_huyen_ship)?.ten ?? "";
+                        var phuong = db.PHUONG_XA.Find(model.id_phuong_xa_ship)?.ten ?? "";
+
+                        diaChiFinal = $"{model.DiaChiCuThe}, {phuong}, {quan}, {tinh}";
+                    }
+                    else if (model.hinhThucNhan == "NhanTaiQuay")
+                    {
+                        var store = db.DIA_DIEM_NHA_THUOC.Find(model.id_dia_diem_nha_thuoc);
+                        if (store != null)
+                        {
+                            diaChiFinal = $"NHẬN TẠI CỬA HÀNG: {store.ten_nha_thuoc} - {store.so_duong_ten_duong}, {store.quan_huyen}, {store.thanh_pho_tinh}";
+                        }
+                        else
+                        {
+                            diaChiFinal = "Khách nhận tại cửa hàng (Chưa chọn địa điểm cụ thể)";
+                        }
+                    }
+
+                    // 3. TẠO HÓA ĐƠN (HOA_DON)
+                    HOA_DON hd = new HOA_DON();
+                    hd.ngay_ban = DateTime.Now;
+                    hd.tong_tien = cart.Sum(x => x.ThanhTien);
+
+                    // Lưu thông tin người nhận (Snapshot)
+                    hd.ten_nguoi_nhan = model.TenNguoiDat;
+                    hd.sdt_nguoi_nhan = model.SdtNguoiDat;
+                    hd.email_nguoi_mua = model.EmailNguoiDat;
+                    hd.dia_chi_giao_hang = diaChiFinal;
+
+                    // Xử lý thanh toán
+                    hd.hinh_thuc_thanh_toan = model.PhuongThucThanhToan;
+                    
+
+                    // Liên kết tài khoản nếu đã đăng nhập
+                    if (Session["User"] != null)
+                    {
+                        var user = Session["User"] as TAI_KHOAN;
+                        hd.id_nguoi_mua = user.id_tai_khoan;
+                    }
+                    else
+                    {
+                        hd.id_nguoi_mua = null; // Khách vãng lai
+                    }
+
+                    db.HOA_DON.Add(hd);
+                    db.SaveChanges(); // Lưu để lấy ID Hóa Đơn
+
+                    // 4. LƯU CHI TIẾT & TRỪ KHO (FEFO - Hết hạn trước xuất trước)
+                    foreach (var item in cart)
+                    {
+                        // Lấy các lô thuốc còn hạn và còn hàng, sắp xếp hạn sử dụng tăng dần
+                        var loThuocs = db.LO_THUOC
+                            .Where(l => l.id_thuoc == item.IdThuoc && l.so_luong_ton > 0 && l.han_su_dung > DateTime.Now)
+                            .OrderBy(l => l.han_su_dung)
+                            .ToList();
+
+                        int soLuongCanMua = item.SoLuong;
+
+                        foreach (var lo in loThuocs)
+                        {
+                            if (soLuongCanMua <= 0) break;
+
+                            int soLuongLay = 0;
+                            if (lo.so_luong_ton >= soLuongCanMua)
+                            {
+                                // Lô này đủ hàng
+                                soLuongLay = soLuongCanMua;
+                                lo.so_luong_ton -= soLuongCanMua;
+                                soLuongCanMua = 0;
+                            }
+                            else
+                            {
+                                // Lô này không đủ, lấy hết lô này rồi sang lô khác
+                                soLuongLay = (int)lo.so_luong_ton;
+                                soLuongCanMua -= (int)lo.so_luong_ton;
+                                lo.so_luong_ton = 0;
+                            }
+
+                            // Tạo chi tiết hóa đơn
+                            CHI_TIET_HOA_DON cthd = new CHI_TIET_HOA_DON();
+                            cthd.id_hoa_don = hd.id_hoa_don;
+                            cthd.id_lo_thuoc = lo.id_lo_thuoc; // Quan trọng: Lưu đúng ID Lô
+                            cthd.so_luong = soLuongLay;
+                            cthd.don_gia = item.DonGia;
+                            cthd.thanh_tien = soLuongLay * item.DonGia;
+
+                            db.CHI_TIET_HOA_DON.Add(cthd);
+                        }
+                    }
+
+                    db.SaveChanges(); // Lưu tất cả chi tiết và cập nhật kho
+
+                    // 5. Xóa giỏ hàng và chuyển hướng
+                    Session["GioHang"] = null;
+                    return RedirectToAction("DatHangThanhCong");
+                }
+                catch (Exception ex)
+                {
+                    ViewBag.Error = "Có lỗi xảy ra: " + ex.Message;
+                    // Trả về view giỏ hàng với dữ liệu cũ để khách nhập lại
+                    return View("Index", cart);
+                }
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult DatHangThanhCong()
+        {
+            return View();
         }
         protected override void Dispose(bool disposing)
         {

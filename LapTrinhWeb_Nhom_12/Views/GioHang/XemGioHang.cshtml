@@ -1,4 +1,4 @@
-﻿@model List<LapTrinhWeb_Nhom_12.Models.CartItem>
+﻿@model List<LapTrinhWeb_Nhom_12.Models.SanPhamTrongGioHang>
 
 @{
     ViewBag.Title = "Giỏ hàng của bạn";
@@ -275,12 +275,6 @@
                     <div id="shipping-form" class="checkout-section mb-4">
                         <h5 class="section-title"><i class="bi bi-geo-alt-fill"></i> Địa chỉ giao hàng</h5>
                         <div class="row g-3">
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="TenNguoiNhan" placeholder="Họ và tên người nhận">
-                            </div>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="SdtNguoiNhan" placeholder="Số điện thoại người nhận">
-                            </div>
                             <div class="col-md-4">
                                 <select class="form-select" id="dataApiTinhThanh" name="id_tinh_thanh_ship">
                                     <option value="">-- Tỉnh/Thành --</option>
@@ -298,9 +292,6 @@
                             </div>
                             <div class="col-12">
                                 <input type="text" class="form-control" name="DiaChiCuThe" placeholder="Số nhà, tên đường...">
-                            </div>
-                            <div class="col-12">
-                                <textarea class="form-control" name="GhiChu" rows="2" placeholder="Ghi chú giao hàng"></textarea>
                             </div>
                         </div>
                     </div>
@@ -364,27 +355,6 @@
                                 <span>Thanh toán chuyển khoản (QR Code)</span>
                             </div>
                         </label>
-
-                        <label class="payment-option">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="PhuongThucThanhToan" value="MOMO">
-                            </div>
-                            <div class="payment-content d-flex align-items-center ms-2">
-                                <img src="https://upload.wikimedia.org/wikipedia/vi/f/fe/MoMo_Logo.png" class="payment-icon" alt="MoMo">
-                                <span>Thanh toán bằng ví MoMo</span>
-                            </div>
-                        </label>
-
-                        <label class="payment-option">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="PhuongThucThanhToan" value="CARD">
-                            </div>
-                            <div class="payment-content d-flex align-items-center ms-2">
-                                <img src="https://cdn-icons-png.flaticon.com/512/6963/6963703.png" class="payment-icon" alt="Card">
-                                <span>Thanh toán thẻ quốc tế / ATM</span>
-                            </div>
-                        </label>
-
                     </div>
                 </div>
 
@@ -409,7 +379,13 @@
                                 <small class="text-muted">(Đã bao gồm VAT nếu có)</small>
                             </div>
 
-                            <button type="submit" class="btn btn-primary w-100 py-3 fw-bold fs-6 text-uppercase rounded-pill shadow-sm">
+                            @*<button type="submit" class="btn btn-primary w-100 py-3 fw-bold fs-6 text-uppercase rounded-pill shadow-sm">
+                                    Đặt hàng ngay
+                                </button>*@
+
+                            <button type="button" id="btnPlaceOrder"
+                                    data-total="@ViewBag.TongTien"
+                                    class="btn btn-primary w-100 py-3 fw-bold fs-6 text-uppercase rounded-pill shadow-sm">
                                 Đặt hàng ngay
                             </button>
 
@@ -457,38 +433,76 @@
 </style>
 
 
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+@*<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content custom-modal-content">
+
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-3 z-3" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                <div class="modal-body text-center p-4">
+                    <div class="mb-3">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3221/3221897.png"
+                             alt="Trash Bin"
+                             style="width: 120px; height: auto; object-fit: contain;">
+                    </div>
+
+                    <h5 class="fw-bold mb-2 text-dark">Thông báo</h5>
+
+                    <p class="text-secondary mb-4">
+                        Bạn chắc chắn muốn xóa sản phẩm này <br> khỏi giỏ hàng?
+                    </p>
+
+                    <div class="d-flex justify-content-center gap-3">
+                        <button type="button" class="btn btn-light rounded-pill px-4 py-2 fw-bold text-primary bg-blue-light" data-bs-dismiss="modal" style="min-width: 120px;">
+                            Đóng
+                        </button>
+
+                        <a href="#" class="btn btn-primary rounded-pill px-4 py-2 fw-bold" style="min-width: 120px; background-color: #1A3A6B; border: none;">
+                            Xóa
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+<div class="modal fade" id="qrModal" tabindex="-1" aria-labelledby="qrModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content custom-modal-content">
+            <div class="modal-header border-0 pb-0">
+                <h5 class="modal-title fw-bold text-primary mx-auto" id="qrModalLabel">Thanh toán chuyển khoản</h5>
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
 
-            <button type="button" class="btn-close position-absolute top-0 end-0 m-3 z-3" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-body text-center pt-0">
+                <p class="text-muted small mb-3">Vui lòng quét mã bên dưới để thanh toán</p>
 
-            <div class="modal-body text-center p-4">
-                <div class="mb-3">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3221/3221897.png"
-                         alt="Trash Bin"
-                         style="width: 120px; height: auto; object-fit: contain;">
+                <div class="qr-container p-3 mb-3 bg-light rounded shadow-sm d-inline-block">
+                    <img id="img-qr-code" src="https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif"
+                         alt="QR Code" style="width: 250px; height: 250px; object-fit: contain;">
                 </div>
 
-                <h5 class="fw-bold mb-2 text-dark">Thông báo</h5>
+                <div class="alert alert-warning bg-opacity-10 border-warning border-opacity-25 text-start small mb-3">
+                    <i class="bi bi-info-circle-fill text-warning me-1"></i>
+                    <strong>Lưu ý:</strong> <br>
+                    - Nội dung chuyển khoản: <strong class="text-dark" id="qr-content">DH...</strong><br>
+                    - Số tiền: <strong class="text-danger" id="qr-amount">0đ</strong><br>
+                    - Sau khi chuyển thành công, vui lòng bấm nút xác nhận bên dưới.
+                </div>
 
-                <p class="text-secondary mb-4">
-                    Bạn chắc chắn muốn xóa sản phẩm này <br> khỏi giỏ hàng?
-                </p>
-
-                <div class="d-flex justify-content-center gap-3">
-                    <button type="button" class="btn btn-light rounded-pill px-4 py-2 fw-bold text-primary bg-blue-light" data-bs-dismiss="modal" style="min-width: 120px;">
-                        Đóng
+                <div class="d-grid gap-2">
+                    <button type="button" class="btn btn-primary py-2 fw-bold" onclick="submitOrderAfterPayment()">
+                        <i class="bi bi-check-circle-fill me-2"></i> Tôi đã chuyển tiền
                     </button>
-
-                    <a href="#" class="btn btn-primary rounded-pill px-4 py-2 fw-bold" style="min-width: 120px; background-color: #1A3A6B; border: none;">
-                        Xóa
-                    </a>
+                    <button type="button" class="btn btn-light text-muted py-2" data-bs-dismiss="modal">
+                        Thanh toán sau / Đổi phương thức
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 <script>
     function confirmDelete(deleteUrl) {
         // 1. Tìm thẻ <a> nút Xóa bên trong Modal (ID modal là #deleteModal)
@@ -568,21 +582,21 @@
                     } else {
                         $.each(data, function (i, item) {
                             html += `
-                                    <label class="pharmacy-card d-block bg-white p-3 mb-2 border rounded position-relative" style="cursor: pointer;">
-                                        <div class="d-flex align-items-start">
-                                            <div class="me-3 mt-1">
-                                                <input type="radio" name="radioNhaThuoc" class="form-check-input" value="${item.id_dia_diem}" onchange="selectPharmacy(this)" style="transform: scale(1.2);">
-                                            </div>
-                                            <div class="flex-grow-1">
-                                                <h6 class="fw-bold text-primary mb-1">${item.ten_nha_thuoc}</h6>
-                                                <div class="badge bg-success bg-opacity-10 text-success mb-2 px-2 py-1"><i class="bi bi-check-circle-fill"></i> Còn hàng</div>
-                                                <div class="small text-secondary">
-                                                    <i class="bi bi-geo-alt-fill text-danger"></i>
-                                                    ${item.so_duong_ten_duong}, ${item.quan_huyen}, ${item.thanh_pho_tinh}
+                                        <label class="pharmacy-card d-block bg-white p-3 mb-2 border rounded position-relative" style="cursor: pointer;">
+                                            <div class="d-flex align-items-start">
+                                                <div class="me-3 mt-1">
+                                                    <input type="radio" name="radioNhaThuoc" class="form-check-input" value="${item.id_dia_diem}" onchange="selectPharmacy(this)" style="transform: scale(1.2);">
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="fw-bold text-primary mb-1">${item.ten_nha_thuoc}</h6>
+                                                    <div class="badge bg-success bg-opacity-10 text-success mb-2 px-2 py-1"><i class="bi bi-check-circle-fill"></i> Còn hàng</div>
+                                                    <div class="small text-secondary">
+                                                        <i class="bi bi-geo-alt-fill text-danger"></i>
+                                                        ${item.so_duong_ten_duong}, ${item.quan_huyen}, ${item.thanh_pho_tinh}
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </label>`;
+                                        </label>`;
                         });
                     }
                     $('#listNhaThuocArea').html(html);
@@ -605,15 +619,65 @@
                 type: 'GET',
                 success: function (data) {
                     $.each(data, function (i, item) {
-                        $('#dataApiTinhThanh').append($('<option>', { value: item.id_tinh_thanh, text: item.ten }));
+                        $('#dataApiTinhThanh').append($('<option>', {
+                            value: item.id_tinh_thanh,
+                            text: item.ten
+                        }));
                     });
                 }
             });
-            // ... (Giữ nguyên phần logic load Quận/Phường cho Ship như cũ) ...
+
+            // Sự kiện: Khi chọn Tỉnh/Thành -> Load Quận/Huyện
             $('#dataApiTinhThanh').change(function () {
                 var idTinh = $(this).val();
-                // Logic cũ load quận huyện theo ID...
-                // Bạn tự điền lại phần logic cũ ở đây nếu cần
+
+                // Reset dropdown Quận/Huyện và Phường/Xã
+                $('#dataApiQuanHuyen').empty().append('<option value="">-- Quận/Huyện --</option>').prop('disabled', true);
+                $('#dataApiPhuongXa').empty().append('<option value="">-- Phường/Xã --</option>').prop('disabled', true);
+
+                if (idTinh) {
+                    $.ajax({
+                        url: '/DiaDiem/GetQuanHuyen', // Cần action này trong Controller
+                        type: 'GET',
+                        data: { id_tinh_thanh: idTinh },
+                        success: function (data) {
+                            $.each(data, function (i, item) {
+                                $('#dataApiQuanHuyen').append($('<option>', {
+                                    value: item.id_quan_huyen,
+                                    text: item.ten
+                                }));
+                            });
+                            // Mở khóa dropdown Quận/Huyện
+                            $('#dataApiQuanHuyen').prop('disabled', false);
+                        }
+                    });
+                }
+            });
+
+            // Sự kiện: Khi chọn Quận/Huyện -> Load Phường/Xã
+            $('#dataApiQuanHuyen').change(function () {
+                var idQuan = $(this).val();
+
+                // Reset dropdown Phường/Xã
+                $('#dataApiPhuongXa').empty().append('<option value="">-- Phường/Xã --</option>').prop('disabled', true);
+
+                if (idQuan) {
+                    $.ajax({
+                        url: '/DiaDiem/GetPhuongXa', // Cần action này trong Controller
+                        type: 'GET',
+                        data: { id_quan_huyen: idQuan },
+                        success: function (data) {
+                            $.each(data, function (i, item) {
+                                $('#dataApiPhuongXa').append($('<option>', {
+                                    value: item.id_phuong_xa,
+                                    text: item.ten
+                                }));
+                            });
+                            // Mở khóa dropdown Phường/Xã
+                            $('#dataApiPhuongXa').prop('disabled', false);
+                        }
+                    });
+                }
             });
 
 
@@ -703,6 +767,63 @@
                     console.error('Error:', error);
                     inputElement.value = currentQty;
                 });
+        }
+    </script>
+    @*Xử lý thanh toán*@
+
+    <script>
+        const MY_BANK = {
+            BANK_ID: "BIDV",
+            ACCOUNT_NO: "6513796242",
+            TEMPLATE: "compact2",
+            ACCOUNT_NAME: "BUI TRUNG DUC"
+        };
+
+        $(document).ready(function () {
+            $('#btnPlaceOrder').click(function (e) {
+                e.preventDefault();
+
+                // 1. Kiểm tra Validate form (Họ tên, SĐT...)
+                var isValid = document.getElementById('checkoutForm').checkValidity();
+                if (!isValid) {
+                    document.getElementById('checkoutForm').reportValidity();
+                    return;
+                }
+
+                // 2. Kiểm tra phương thức thanh toán
+                var paymentMethod = $('input[name="PhuongThucThanhToan"]:checked').val();
+
+                if (paymentMethod === "BANK") {
+                    showQRCode();
+                } else {
+                    $('#checkoutForm').submit();
+                }
+            });
+        });
+
+        function showQRCode() {
+            // 1. Lấy tổng tiền từ nút đặt hàng
+            var totalAmount = $('#btnPlaceOrder').data('total');
+
+            // Tạo mã đơn hàng giả lập hoặc lấy timestamp để làm nội dung chuyển khoản cho duy nhất
+            var orderInfo = "DH" + Math.floor(Math.random() * 1000000);
+
+            // 2. Tạo Link API VietQR
+            var qrUrl = `https://img.vietqr.io/image/${MY_BANK.BANK_ID}-${MY_BANK.ACCOUNT_NO}-${MY_BANK.TEMPLATE}.png?amount=${totalAmount}&addInfo=${orderInfo}&accountName=${encodeURI(MY_BANK.ACCOUNT_NAME)}`;
+
+            // 3. Gán dữ liệu vào Modal
+            $('#img-qr-code').attr('src', qrUrl);
+            $('#qr-content').text(orderInfo);
+            $('#qr-amount').text(parseInt(totalAmount).toLocaleString('vi-VN') + "đ");
+
+            // 4. Hiển thị Modal
+            var qrModal = new bootstrap.Modal(document.getElementById('qrModal'));
+            qrModal.show();
+        }
+
+        function submitOrderAfterPayment() {
+            // Người dùng xác nhận đã chuyển -> Submit form để lưu đơn hàng
+            $('#checkoutForm').submit();
         }
     </script>
 }

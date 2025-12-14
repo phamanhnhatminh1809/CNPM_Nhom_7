@@ -28,15 +28,14 @@ namespace LapTrinhWeb_Nhom_12.Models
         public virtual DbSet<CHI_TIET_HOA_DON> CHI_TIET_HOA_DON { get; set; }
         public virtual DbSet<DANH_MUC_THUOC> DANH_MUC_THUOC { get; set; }
         public virtual DbSet<DIA_DIEM_NHA_THUOC> DIA_DIEM_NHA_THUOC { get; set; }
-        public virtual DbSet<HOA_DON> HOA_DON { get; set; }
-        public virtual DbSet<KHACH_HANG> KHACH_HANG { get; set; }
         public virtual DbSet<LO_THUOC> LO_THUOC { get; set; }
+        public virtual DbSet<LOAI_THUOC> LOAI_THUOC { get; set; }
+        public virtual DbSet<PHAN_QUYEN> PHAN_QUYEN { get; set; }
         public virtual DbSet<PHUONG_XA> PHUONG_XA { get; set; }
         public virtual DbSet<QUAN_HUYEN> QUAN_HUYEN { get; set; }
-        public virtual DbSet<TINH_THANH> TINH_THANH { get; set; }
-        public virtual DbSet<PHAN_QUYEN> PHAN_QUYEN { get; set; }
         public virtual DbSet<TAI_KHOAN> TAI_KHOAN { get; set; }
         public virtual DbSet<THUOC> THUOCs { get; set; }
-        public virtual DbSet<LOAI_THUOC> LOAI_THUOC { get; set; }
+        public virtual DbSet<TINH_THANH> TINH_THANH { get; set; }
+        public virtual DbSet<HOA_DON> HOA_DON { get; set; }
     }
 }

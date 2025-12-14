@@ -21,14 +21,17 @@ namespace LapTrinhWeb_Nhom_12.Models
         }
     
         public int id_hoa_don { get; set; }
-        public int id_tai_khoan { get; set; }
-        public Nullable<int> id_khach_hang { get; set; }
+        public Nullable<int> id_nguoi_mua { get; set; }
         public Nullable<System.DateTime> ngay_ban { get; set; }
         public Nullable<int> tong_tien { get; set; }
+        public string ten_nguoi_nhan { get; set; }
+        public string sdt_nguoi_nhan { get; set; }
+        public string dia_chi_giao_hang { get; set; }
+        public string email_nguoi_mua { get; set; }
+        public string hinh_thuc_thanh_toan { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHI_TIET_HOA_DON> CHI_TIET_HOA_DON { get; set; }
-        public virtual KHACH_HANG KHACH_HANG { get; set; }
         public virtual TAI_KHOAN TAI_KHOAN { get; set; }
     }
 }

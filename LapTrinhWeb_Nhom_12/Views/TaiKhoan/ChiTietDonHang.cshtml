@@ -1,0 +1,65 @@
+﻿@model LapTrinhWeb_Nhom_12.Models.LichSuHoaDonViewModel
+
+@{
+    ViewBag.Title = "Chi tiết đơn hàng #" + Model.IdHoaDon;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+
+            <div class="mb-3">
+                <a href="@Url.Action("DonHang", "TaiKhoan")" class="text-decoration-none text-muted">
+                    <i class="bi bi-arrow-left"></i> Quay lại danh sách
+                </a>
+            </div>
+
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0 fw-bold">Đơn hàng #@Model.IdHoaDon</h5>
+                    <span class="text-muted small">@Model.NgayDat.ToString("dd/MM/yyyy HH:mm")</span>
+                </div>
+                <div class="card-body">
+
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <h6 class="text-uppercase text-muted small fw-bold">Địa chỉ nhận hàng</h6>
+                            <p class="mb-0">@Model.DiaChiNhan</p>
+                        </div>
+                        
+                    </div>
+
+                    <hr />
+
+                    <h6 class="text-uppercase text-muted small fw-bold mb-3">Sản phẩm đã mua</h6>
+                    @foreach (var item in Model.ChiTiet)
+                    {
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="@Url.Content("~/Images/AnhThuoc/" + (item.AnhThuoc ?? "no-image.jpg"))"
+                                 class="rounded border p-1" style="width: 60px; height: 60px; object-fit: contain;"
+                                 onerror="this.src='https://via.placeholder.com/60'" />
+
+                            <div class="ms-3 flex-grow-1">
+                                <h6 class="mb-0 text-primary">@item.TenThuoc</h6>
+                                <small class="text-muted">x @item.SoLuong</small>
+                            </div>
+
+                            <div class="fw-bold">
+                                @item.ThanhTien.ToString("N0") đ
+                            </div>
+                        </div>
+                    }
+
+                    <hr />
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="h5 fw-bold">Tổng cộng</span>
+                        <span class="h4 fw-bold text-danger">@Model.TongTien.ToString("N0") đ</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

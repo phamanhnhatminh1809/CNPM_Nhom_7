@@ -188,39 +188,25 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\MaHoa.cs" />
-    <Compile Include="Models\CartItem.cs" />
-    <Compile Include="Models\ChiTietThuocViewModel.cs" />
-    <Compile Include="Controllers\User\GioHangController.cs" />
     <Compile Include="Models\CHI_TIET_HOA_DON.cs">
       <DependentUpon>NhaThuocDatabase.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DangNhapViewModel.cs" />
-    <Compile Include="Models\DangKyViewModel.cs" />
-    <Compile Include="Models\DanhSachThuocViewModel.cs" />
     <Compile Include="Models\DANH_MUC_THUOC.cs">
       <DependentUpon>NhaThuocDatabase.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DashboardViewModel.cs" />
-    <Compile Include="Models\DiaChi.cs" />
     <Compile Include="Models\DIA_DIEM_NHA_THUOC.cs">
       <DependentUpon>NhaThuocDatabase.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DiemDiemNhaThuoc.cs" />
-    <Compile Include="Models\GioHangViewModel.cs" />
-    <Compile Include="Models\HoaDonViewModel.cs" />
     <Compile Include="Models\HOA_DON.cs">
       <DependentUpon>NhaThuocDatabase.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\KHACH_HANG.cs">
-      <DependentUpon>NhaThuocDatabase.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\LichSuHoaDonViewModel.cs" />
     <Compile Include="Models\LOAI_THUOC.cs">
       <DependentUpon>NhaThuocDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\LO_THUOC.cs">
       <DependentUpon>NhaThuocDatabase.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\NhapLoViewModel.cs" />
     <Compile Include="Models\NhaThuocDatabase.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -236,33 +222,42 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>NhaThuocDatabase.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\NhaThuocLinqToSql.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NhaThuocLinqToSql.dbml</DependentUpon>
-    </Compile>
     <Compile Include="Models\PHAN_QUYEN.cs">
       <DependentUpon>NhaThuocDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PHUONG_XA.cs">
       <DependentUpon>NhaThuocDatabase.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\QuanLyLoThuocViewModel.cs" />
     <Compile Include="Models\QUAN_HUYEN.cs">
       <DependentUpon>NhaThuocDatabase.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SanPhamTrongGioHang.cs" />
+    <Compile Include="Models\ChiTietThuocViewModel.cs" />
+    <Compile Include="Controllers\User\GioHangController.cs" />
+    <Compile Include="Models\DangNhapViewModel.cs" />
+    <Compile Include="Models\DangKyViewModel.cs" />
+    <Compile Include="Models\DanhSachThuocViewModel.cs" />
+    <Compile Include="Models\DashboardViewModel.cs" />
+    <Compile Include="Models\DiaChi.cs" />
+    <Compile Include="Models\DiaDiemNhaThuoc.cs" />
+    <Compile Include="Models\GioHangViewModel.cs" />
+    <Compile Include="Models\HoaDonViewModel.cs" />
+    <Compile Include="Models\MailHelper.cs" />
+    <Compile Include="Models\NhapLoViewModel.cs" />
+    <Compile Include="Models\QuanLyLoThuocViewModel.cs" />
     <Compile Include="Models\TAI_KHOAN.cs">
       <DependentUpon>NhaThuocDatabase.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ThanhToanViewModel.cs" />
     <Compile Include="Models\THUOC.cs">
       <DependentUpon>NhaThuocDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ThuocAPI.cs" />
     <Compile Include="Models\ThuocViewModel.cs" />
+    <Compile Include="Models\TheThuocViewModel.cs" />
     <Compile Include="Models\TINH_THANH.cs">
       <DependentUpon>NhaThuocDatabase.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\TheThuocViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -291,14 +286,6 @@
     <Content Include="Models\NhaThuocDatabase.edmx.diagram">
       <DependentUpon>NhaThuocDatabase.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\NhaThuocLinqToSql.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>NhaThuocLinqToSql.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Models\NhaThuocLinqToSql.dbml.layout">
-      <DependentUpon>NhaThuocLinqToSql.dbml</DependentUpon>
-    </Content>
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\TrangChu\TrangChu.cshtml" />
@@ -309,7 +296,6 @@
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Views\Tool\AutoUpdateImages.cshtml" />
-    <Content Include="Views\GioHang\GioHang.cshtml" />
     <Content Include="Views\TrangChu\ChiTietThuoc.cshtml" />
     <Content Include="Views\GioHang\XemGioHang.cshtml" />
     <Content Include="Views\QuanLyThuoc\Themmoi.cshtml" />
@@ -330,6 +316,11 @@
     <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Views\GioHang\_MiniCartPartial.cshtml" />
     <Content Include="Views\TraCuu\Index.cshtml" />
+    <Content Include="Views\TaiKhoan\XacThucOTP.cshtml" />
+    <Content Include="Views\TaiKhoan\ThongTin.cshtml" />
+    <Content Include="Views\GioHang\DatHangThanhCong.cshtml" />
+    <Content Include="Views\TaiKhoan\DonHang.cshtml" />
+    <Content Include="Views\TaiKhoan\ChiTietDonHang.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -340,7 +331,6 @@
   <ItemGroup>
     <Folder Include="Images\AnhThuoc\" />
     <Folder Include="Views\ChiTietThuoc\" />
-    <Folder Include="Views\DanhSawch\" />
     <Folder Include="Views\Default\" />
     <Folder Include="Views\HoaDonViewModel\" />
   </ItemGroup>

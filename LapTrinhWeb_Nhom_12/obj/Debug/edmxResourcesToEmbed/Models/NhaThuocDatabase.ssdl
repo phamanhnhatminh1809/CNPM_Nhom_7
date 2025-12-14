@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="NHA_THUOC_RUN_LOCALModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="NHA_THUOC_LTWModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="CHI_TIET_HOA_DON">
     <Key>
       <PropertyRef Name="id_chi_tiet_hoa_don" />
     </Key>
     <Property Name="id_chi_tiet_hoa_don" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="id_hoa_don" Type="int" Nullable="false" />
-    <Property Name="id_lo_thuoc" Type="int" />
+    <Property Name="id_lo_thuoc" Type="int" Nullable="false" />
     <Property Name="so_luong" Type="int" Nullable="false" />
     <Property Name="don_gia" Type="int" />
     <Property Name="thanh_tien" Type="int" />
@@ -34,20 +34,14 @@
       <PropertyRef Name="id_hoa_don" />
     </Key>
     <Property Name="id_hoa_don" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="id_tai_khoan" Type="int" Nullable="false" />
-    <Property Name="id_khach_hang" Type="int" />
+    <Property Name="id_nguoi_mua" Type="int" />
     <Property Name="ngay_ban" Type="datetime" />
     <Property Name="tong_tien" Type="int" />
-  </EntityType>
-  <EntityType Name="KHACH_HANG">
-    <Key>
-      <PropertyRef Name="id_khach_hang" />
-    </Key>
-    <Property Name="id_khach_hang" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ten_khach_hang" Type="nvarchar" MaxLength="255" Nullable="false" />
-    <Property Name="dia_chi" Type="nvarchar" MaxLength="255" />
-    <Property Name="so_dien_thoai" Type="nvarchar" MaxLength="15" />
-    <Property Name="email" Type="nvarchar" MaxLength="255" />
+    <Property Name="ten_nguoi_nhan" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="sdt_nguoi_nhan" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="dia_chi_giao_hang" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="email_nguoi_mua" Type="nvarchar" MaxLength="255" />
+    <Property Name="hinh_thuc_thanh_toan" Type="nvarchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="LO_THUOC">
     <Key>
@@ -100,8 +94,10 @@
     <Property Name="id_tai_khoan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ten_dang_nhap" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="mat_khau" Type="nvarchar" MaxLength="255" Nullable="false" />
-    <Property Name="ho_ten" Type="nvarchar" MaxLength="255" />
-    <Property Name="quyen_han" Type="nvarchar" MaxLength="50" />
+    <Property Name="ho_ten" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="255" />
+    <Property Name="so_dien_thoai" Type="nvarchar" MaxLength="15" />
+    <Property Name="dia_chi" Type="nvarchar" MaxLength="255" />
     <Property Name="id_quyen" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="THUOC">
@@ -130,7 +126,7 @@
     <Property Name="id_tinh_thanh" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ten" Type="nvarchar" MaxLength="100" Nullable="false" />
   </EntityType>
-  <Association Name="FK__PHUONG_XA__id_qu__607251E5">
+  <Association Name="FK__PHUONG_XA__id_qu__68A8708A">
     <End Role="QUAN_HUYEN" Type="Self.QUAN_HUYEN" Multiplicity="0..1" />
     <End Role="PHUONG_XA" Type="Self.PHUONG_XA" Multiplicity="*" />
     <ReferentialConstraint>
@@ -142,7 +138,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__QUAN_HUYE__id_ti__5D95E53A">
+  <Association Name="FK__QUAN_HUYE__id_ti__65CC03DF">
     <End Role="TINH_THANH" Type="Self.TINH_THANH" Multiplicity="0..1" />
     <End Role="QUAN_HUYEN" Type="Self.QUAN_HUYEN" Multiplicity="*" />
     <ReferentialConstraint>
@@ -154,7 +150,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ChiTietHoaDon_HoaDon">
+  <Association Name="FK_ChiTiet_HoaDon">
     <End Role="HOA_DON" Type="Self.HOA_DON" Multiplicity="1" />
     <End Role="CHI_TIET_HOA_DON" Type="Self.CHI_TIET_HOA_DON" Multiplicity="*" />
     <ReferentialConstraint>
@@ -166,8 +162,8 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ChiTietHoaDon_LoThuoc">
-    <End Role="LO_THUOC" Type="Self.LO_THUOC" Multiplicity="0..1" />
+  <Association Name="FK_ChiTiet_LoThuoc">
+    <End Role="LO_THUOC" Type="Self.LO_THUOC" Multiplicity="1" />
     <End Role="CHI_TIET_HOA_DON" Type="Self.CHI_TIET_HOA_DON" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="LO_THUOC">
@@ -178,27 +174,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_HoaDon_KhachHang">
-    <End Role="KHACH_HANG" Type="Self.KHACH_HANG" Multiplicity="0..1" />
-    <End Role="HOA_DON" Type="Self.HOA_DON" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="KHACH_HANG">
-        <PropertyRef Name="id_khach_hang" />
-      </Principal>
-      <Dependent Role="HOA_DON">
-        <PropertyRef Name="id_khach_hang" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_HoaDon_TaiKhoan">
-    <End Role="TAI_KHOAN" Type="Self.TAI_KHOAN" Multiplicity="1" />
+  <Association Name="FK_HoaDon_NguoiMua">
+    <End Role="TAI_KHOAN" Type="Self.TAI_KHOAN" Multiplicity="0..1" />
     <End Role="HOA_DON" Type="Self.HOA_DON" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="TAI_KHOAN">
         <PropertyRef Name="id_tai_khoan" />
       </Principal>
       <Dependent Role="HOA_DON">
-        <PropertyRef Name="id_tai_khoan" />
+        <PropertyRef Name="id_nguoi_mua" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -250,12 +234,11 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="NHA_THUOC_RUN_LOCALModelStoreContainer">
+  <EntityContainer Name="NHA_THUOC_LTWModelStoreContainer">
     <EntitySet Name="CHI_TIET_HOA_DON" EntityType="Self.CHI_TIET_HOA_DON" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DANH_MUC_THUOC" EntityType="Self.DANH_MUC_THUOC" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DIA_DIEM_NHA_THUOC" EntityType="Self.DIA_DIEM_NHA_THUOC" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HOA_DON" EntityType="Self.HOA_DON" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="KHACH_HANG" EntityType="Self.KHACH_HANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LO_THUOC" EntityType="Self.LO_THUOC" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LOAI_THUOC" EntityType="Self.LOAI_THUOC" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PHAN_QUYEN" EntityType="Self.PHAN_QUYEN" Schema="dbo" store:Type="Tables" />
@@ -264,27 +247,23 @@
     <EntitySet Name="TAI_KHOAN" EntityType="Self.TAI_KHOAN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="THUOC" EntityType="Self.THUOC" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TINH_THANH" EntityType="Self.TINH_THANH" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__PHUONG_XA__id_qu__607251E5" Association="Self.FK__PHUONG_XA__id_qu__607251E5">
+    <AssociationSet Name="FK__PHUONG_XA__id_qu__68A8708A" Association="Self.FK__PHUONG_XA__id_qu__68A8708A">
       <End Role="QUAN_HUYEN" EntitySet="QUAN_HUYEN" />
       <End Role="PHUONG_XA" EntitySet="PHUONG_XA" />
     </AssociationSet>
-    <AssociationSet Name="FK__QUAN_HUYE__id_ti__5D95E53A" Association="Self.FK__QUAN_HUYE__id_ti__5D95E53A">
+    <AssociationSet Name="FK__QUAN_HUYE__id_ti__65CC03DF" Association="Self.FK__QUAN_HUYE__id_ti__65CC03DF">
       <End Role="TINH_THANH" EntitySet="TINH_THANH" />
       <End Role="QUAN_HUYEN" EntitySet="QUAN_HUYEN" />
     </AssociationSet>
-    <AssociationSet Name="FK_ChiTietHoaDon_HoaDon" Association="Self.FK_ChiTietHoaDon_HoaDon">
+    <AssociationSet Name="FK_ChiTiet_HoaDon" Association="Self.FK_ChiTiet_HoaDon">
       <End Role="HOA_DON" EntitySet="HOA_DON" />
       <End Role="CHI_TIET_HOA_DON" EntitySet="CHI_TIET_HOA_DON" />
     </AssociationSet>
-    <AssociationSet Name="FK_ChiTietHoaDon_LoThuoc" Association="Self.FK_ChiTietHoaDon_LoThuoc">
+    <AssociationSet Name="FK_ChiTiet_LoThuoc" Association="Self.FK_ChiTiet_LoThuoc">
       <End Role="LO_THUOC" EntitySet="LO_THUOC" />
       <End Role="CHI_TIET_HOA_DON" EntitySet="CHI_TIET_HOA_DON" />
     </AssociationSet>
-    <AssociationSet Name="FK_HoaDon_KhachHang" Association="Self.FK_HoaDon_KhachHang">
-      <End Role="KHACH_HANG" EntitySet="KHACH_HANG" />
-      <End Role="HOA_DON" EntitySet="HOA_DON" />
-    </AssociationSet>
-    <AssociationSet Name="FK_HoaDon_TaiKhoan" Association="Self.FK_HoaDon_TaiKhoan">
+    <AssociationSet Name="FK_HoaDon_NguoiMua" Association="Self.FK_HoaDon_NguoiMua">
       <End Role="TAI_KHOAN" EntitySet="TAI_KHOAN" />
       <End Role="HOA_DON" EntitySet="HOA_DON" />
     </AssociationSet>

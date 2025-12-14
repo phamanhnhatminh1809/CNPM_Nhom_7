@@ -131,6 +131,7 @@
             color: #1A3A6B;
         }
 </style>
+
 <div class="container auth-wrapper">
     <div class="auth-card">
         <h2 class="auth-title">Đăng Ký</h2>
@@ -146,8 +147,14 @@
 
             <div class="mb-3">
                 <label class="form-label">Tên đăng nhập <span class="text-danger">*</span></label>
-                @Html.TextBoxFor(m => m.TenDangNhap, new { @class = "form-control" })
+                @Html.TextBoxFor(m => m.TenDangNhap, new { @class = "form-control", @placeholder = "VD: user123" })
                 @Html.ValidationMessageFor(m => m.TenDangNhap, "", new { @class = "text-danger small" })
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Email <span class="text-danger">*</span></label>
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @type = "email", @placeholder = "VD: example@gmail.com" })
+                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger small" })
             </div>
 
             <div class="mb-3">

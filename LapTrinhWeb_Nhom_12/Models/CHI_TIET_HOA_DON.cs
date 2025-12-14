@@ -16,12 +16,12 @@ namespace LapTrinhWeb_Nhom_12.Models
     {
         public int id_chi_tiet_hoa_don { get; set; }
         public int id_hoa_don { get; set; }
-        public Nullable<int> id_lo_thuoc { get; set; }
+        public int id_lo_thuoc { get; set; }
         public int so_luong { get; set; }
         public Nullable<int> don_gia { get; set; }
         public Nullable<int> thanh_tien { get; set; }
     
-        public virtual HOA_DON HOA_DON { get; set; }
         public virtual LO_THUOC LO_THUOC { get; set; }
+        public virtual HOA_DON HOA_DON { get; set; }
     }
 }

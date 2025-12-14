@@ -24,11 +24,13 @@ namespace LapTrinhWeb_Nhom_12.Models
         public string ten_dang_nhap { get; set; }
         public string mat_khau { get; set; }
         public string ho_ten { get; set; }
-        public string quyen_han { get; set; }
+        public string email { get; set; }
+        public string so_dien_thoai { get; set; }
+        public string dia_chi { get; set; }
         public int id_quyen { get; set; }
     
+        public virtual PHAN_QUYEN PHAN_QUYEN { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOA_DON> HOA_DON { get; set; }
-        public virtual PHAN_QUYEN PHAN_QUYEN { get; set; }
     }
 }
