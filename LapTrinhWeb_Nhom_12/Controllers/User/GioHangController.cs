@@ -3,7 +3,10 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
+using System.Net.Mail;
+using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 namespace LapTrinhWeb_Nhom_12.Controllers
@@ -257,7 +260,6 @@ namespace LapTrinhWeb_Nhom_12.Controllers
                     hd.ngay_ban = DateTime.Now;
                     hd.tong_tien = cart.Sum(x => x.ThanhTien);
 
-                    // Lưu thông tin người nhận (Snapshot)
                     hd.ten_nguoi_nhan = model.TenNguoiDat;
                     hd.sdt_nguoi_nhan = model.SdtNguoiDat;
                     hd.email_nguoi_mua = model.EmailNguoiDat;
@@ -315,7 +317,7 @@ namespace LapTrinhWeb_Nhom_12.Controllers
                             // Tạo chi tiết hóa đơn
                             CHI_TIET_HOA_DON cthd = new CHI_TIET_HOA_DON();
                             cthd.id_hoa_don = hd.id_hoa_don;
-                            cthd.id_lo_thuoc = lo.id_lo_thuoc; // Quan trọng: Lưu đúng ID Lô
+                            cthd.id_lo_thuoc = lo.id_lo_thuoc;
                             cthd.so_luong = soLuongLay;
                             cthd.don_gia = item.DonGia;
                             cthd.thanh_tien = soLuongLay * item.DonGia;
@@ -325,10 +327,25 @@ namespace LapTrinhWeb_Nhom_12.Controllers
                     }
 
                     db.SaveChanges(); // Lưu tất cả chi tiết và cập nhật kho
+                    try
+                    {
+                        // Kiểm tra nếu có email thì mới gửi
+                        if (!string.IsNullOrEmpty(model.EmailNguoiDat))
+                        {
+                            GuiEmailHoaDon(hd, cart);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Ghi log lỗi gửi mail nếu cần, nhưng KHÔNG được throw lỗi
+                        // để tránh việc đơn hàng đã lưu thành công nhưng khách lại thấy báo lỗi trang web
+                        System.Diagnostics.Debug.WriteLine("Lỗi gửi mail: " + ex.Message);
+                    }
 
                     // 5. Xóa giỏ hàng và chuyển hướng
                     Session["GioHang"] = null;
                     return RedirectToAction("DatHangThanhCong");
+
                 }
                 catch (Exception ex)
                 {
@@ -390,6 +407,63 @@ namespace LapTrinhWeb_Nhom_12.Controllers
             }
 
             return Json(new { success = false }, JsonRequestBehavior.AllowGet);
+        }
+
+        // Hàm hỗ trợ gửi Email
+        private void GuiEmailHoaDon(HOA_DON hd, List<SanPhamTrongGioHang> cart)
+        {
+            var fromEmail = "phamanhnhatminh1809@gmail.com"; 
+            var fromPassword = "pqzl sevx yzlp fnyn";
+
+            var toEmail = hd.email_nguoi_mua;
+            string subject = $"Xác nhận đơn hàng #{hd.id_hoa_don} - Nhà Thuốc MedForAll";
+
+            // Tạo nội dung Email (HTML)
+            StringBuilder body = new StringBuilder();
+            body.Append($"<h3>Cảm ơn {hd.ten_nguoi_nhan} đã đặt hàng!</h3>");
+            body.Append($"<p>Mã đơn hàng: <b>#{hd.id_hoa_don}</b></p>");
+            body.Append($"<p>Ngày đặt: {hd.ngay_ban:dd/MM/yyyy HH:mm}</p>");
+            body.Append($"<p>Địa chỉ giao: {hd.dia_chi_giao_hang}</p>");
+            body.Append("<hr/>");
+            body.Append("<table border='1' cellpadding='5' cellspacing='0' style='border-collapse: collapse; width: 100%;'>");
+            body.Append("<thead><tr style='background-color: #f2f2f2;'><th>Tên thuốc</th><th>SL</th><th>Đơn giá</th><th>Thành tiền</th></tr></thead>");
+            body.Append("<tbody>");
+
+            foreach (var item in cart)
+            {
+                body.Append("<tr>");
+                body.Append($"<td>{item.TenThuoc}</td>");
+                body.Append($"<td style='text-align: center;'>{item.SoLuong}</td>");
+                body.Append($"<td style='text-align: right;'>{item.DonGia:N0} đ</td>");
+                body.Append($"<td style='text-align: right;'>{item.ThanhTien:N0} đ</td>");
+                body.Append("</tr>");
+            }
+
+            body.Append("</tbody>");
+            body.Append($"<tfoot><tr><td colspan='3' style='text-align: right; font-weight: bold;'>TỔNG TIỀN:</td><td style='text-align: right; font-weight: bold; color: red;'>{hd.tong_tien:N0} đ</td></tr></tfoot>");
+            body.Append("</table>");
+            body.Append("<p>Cảm ơn quý khách đã tin tưởng sử dụng dịch vụ.</p>");
+
+            // Cấu hình gửi mail (Google SMTP)
+            var smtp = new SmtpClient
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(fromEmail, fromPassword)
+            };
+
+            using (var message = new MailMessage(fromEmail, toEmail)
+            {
+                Subject = subject,
+                Body = body.ToString(),
+                IsBodyHtml = true
+            })
+            {
+                smtp.Send(message);
+            }
         }
     }
 }

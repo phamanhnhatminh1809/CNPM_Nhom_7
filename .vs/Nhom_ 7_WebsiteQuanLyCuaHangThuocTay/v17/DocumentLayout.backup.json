@@ -1,10 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Minh\\Common\\T\u00E0i_Li\u1EC7u_H\u1ECDc_Win11\\\u0110\u1EA1i h\u1ECDc\\Github\\C\u00F4ng ngh\u1EC7 ph\u1EA7n m\u1EC1m\\CNPM_Nhom_7\\CNPM_Nhom_7\\",
+  "WorkspaceRootPath": "C:\\Users\\Minh\\Desktop\\Code\\Nhom_ 7_WebsiteQuanLyCuaHangThuocTay\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F74B230D-6E59-4047-972F-26E9A0119023}|LapTrinhWeb_Nhom_12\\Nhom_ 7_WebsiteQuanLyCuaHangThuocTay.csproj|c:\\users\\minh\\common\\t\u00E0i_li\u1EC7u_h\u1ECDc_win11\\\u0111\u1EA1i h\u1ECDc\\github\\c\u00F4ng ngh\u1EC7 ph\u1EA7n m\u1EC1m\\cnpm_nhom_7\\cnpm_nhom_7\\laptrinhweb_nhom_12\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{F74B230D-6E59-4047-972F-26E9A0119023}|LapTrinhWeb_Nhom_12\\Nhom_ 7_WebsiteQuanLyCuaHangThuocTay.csproj|solutionrelative:laptrinhweb_nhom_12\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{F74B230D-6E59-4047-972F-26E9A0119023}|LapTrinhWeb_Nhom_12\\Nhom_ 7_WebsiteQuanLyCuaHangThuocTay.csproj|c:\\users\\minh\\desktop\\code\\nhom_ 7_websitequanlycuahangthuoctay\\laptrinhweb_nhom_12\\controllers\\user\\giohangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F74B230D-6E59-4047-972F-26E9A0119023}|LapTrinhWeb_Nhom_12\\Nhom_ 7_WebsiteQuanLyCuaHangThuocTay.csproj|solutionrelative:laptrinhweb_nhom_12\\controllers\\user\\giohangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,14 +27,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Web.config",
-              "DocumentMoniker": "C:\\Users\\Minh\\Common\\T\u00E0i_Li\u1EC7u_H\u1ECDc_Win11\\\u0110\u1EA1i h\u1ECDc\\Github\\C\u00F4ng ngh\u1EC7 ph\u1EA7n m\u1EC1m\\CNPM_Nhom_7\\CNPM_Nhom_7\\LapTrinhWeb_Nhom_12\\Web.config",
-              "RelativeDocumentMoniker": "LapTrinhWeb_Nhom_12\\Web.config",
-              "ToolTip": "C:\\Users\\Minh\\Common\\T\u00E0i_Li\u1EC7u_H\u1ECDc_Win11\\\u0110\u1EA1i h\u1ECDc\\Github\\C\u00F4ng ngh\u1EC7 ph\u1EA7n m\u1EC1m\\CNPM_Nhom_7\\CNPM_Nhom_7\\LapTrinhWeb_Nhom_12\\Web.config",
-              "RelativeToolTip": "LapTrinhWeb_Nhom_12\\Web.config",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAAAGEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2025-12-19T10:01:22.167Z",
+              "Title": "GioHangController.cs",
+              "DocumentMoniker": "C:\\Users\\Minh\\Desktop\\Code\\Nhom_ 7_WebsiteQuanLyCuaHangThuocTay\\LapTrinhWeb_Nhom_12\\Controllers\\User\\GioHangController.cs",
+              "RelativeDocumentMoniker": "LapTrinhWeb_Nhom_12\\Controllers\\User\\GioHangController.cs",
+              "ToolTip": "C:\\Users\\Minh\\Desktop\\Code\\Nhom_ 7_WebsiteQuanLyCuaHangThuocTay\\LapTrinhWeb_Nhom_12\\Controllers\\User\\GioHangController.cs",
+              "RelativeToolTip": "LapTrinhWeb_Nhom_12\\Controllers\\User\\GioHangController.cs",
+              "ViewState": "AgIAAA0BAAAAAAAAAAAkwFABAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T09:46:33.775Z",
               "EditorCaption": ""
             }
           ]
