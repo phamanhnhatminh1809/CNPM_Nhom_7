@@ -85,5 +85,26 @@ namespace LapTrinhWeb_Nhom_12.Controllers
 
             return PartialView("_ChiTietPartial", model);
         }
+        public JsonResult GetInvoiceDetails(int id)
+        {
+            var hoadon = db.HOA_DON.Find(id); // Lấy hóa đơn từ DB
+
+            // Tạo object data đơn giản để trả về
+            var result = new
+            {
+                idHoaDon = hoadon.id_hoa_don,
+                ngayBan = hoadon.ngay_ban?.ToString("dd/MM/yyyy") ?? "",
+                tenKhachHang = hoadon.TAI_KHOAN?.ten_dang_nhap ?? "Khách lẻ",
+                tongTien = hoadon.tong_tien,
+                chiTietHoaDon = hoadon.CHI_TIET_HOA_DON.Select(ct => new {
+                    tenThuoc = ct.LO_THUOC.THUOC.ten_thuoc,
+                    soLuong = ct.so_luong,
+                    donGia = ct.don_gia,
+                    thanhTien = ct.so_luong * ct.don_gia
+                }).ToList()
+            };
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
     }
 }

@@ -122,7 +122,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\NHA_THUOC.mdf" />
-    <Content Include="App_Data\NHA_THUOC_log.ldf" />
+    <Content Include="App_Data\NHA_THUOC_log.ldf">
+      <DependentUpon>NHA_THUOC.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\Bootstrap\bootstrap-grid.css" />
     <Content Include="Content\Bootstrap\bootstrap-grid.min.css" />
     <Content Include="Content\Bootstrap\bootstrap-grid.rtl.css" />
@@ -178,6 +180,7 @@
     <Compile Include="Controllers\Admin\LoThuocController.cs" />
     <Compile Include="Controllers\Admin\DashboardController.cs" />
     <Compile Include="Controllers\Admin\HoaDonController.cs" />
+    <Compile Include="Controllers\Admin\DanhMucController.cs" />
     <Compile Include="Controllers\User\DanhSachController.cs" />
     <Compile Include="Controllers\User\QuanLyThuocController.cs" />
     <Compile Include="Controllers\User\ToolController.cs" />
@@ -198,6 +201,7 @@
     <Compile Include="Models\DIA_DIEM_NHA_THUOC.cs">
       <DependentUpon>NhaThuocDatabase.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\GuiGmailHoaDon.cs" />
     <Compile Include="Models\HOA_DON.cs">
       <DependentUpon>NhaThuocDatabase.tt</DependentUpon>
     </Compile>
@@ -322,6 +326,8 @@
     <Content Include="Views\GioHang\DatHangThanhCong.cshtml" />
     <Content Include="Views\TaiKhoan\DonHang.cshtml" />
     <Content Include="Views\TaiKhoan\ChiTietDonHang.cshtml" />
+    <Content Include="Views\DanhMuc\Create.cshtml" />
+    <Content Include="Views\DanhMuc\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

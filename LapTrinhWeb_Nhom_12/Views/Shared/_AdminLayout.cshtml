@@ -84,9 +84,13 @@
             <i class="bi bi-box-seam me-2"></i> Quản lý Lô thuốc
         </a>
 
+        <a href="@Url.Action("Index", "DanhMuc")" class="@IsActive("DanhMuc", "Index")">
+            <i class="bi bi-tag-fill me-2"></i> Danh mục
+        </a>
+
         <a href="@Url.Action("Index", "HoaDon")" class="@IsActive("HoaDon")">
             <i class="bi bi-receipt me-2"></i> Hoá đơn
-        </a>    
+        </a>
     </div>
 
     <div class="main-content">

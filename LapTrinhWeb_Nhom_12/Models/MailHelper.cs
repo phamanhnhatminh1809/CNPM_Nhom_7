@@ -11,8 +11,8 @@ namespace LapTrinhWeb_Nhom_12.Models
     {
         public void SendMail(string toEmailAddress, string subject, string content)
         {
-            var fromEmailAddress = "akidiji1809@gmail.com";
-            var fromEmailPassword = "vksx yfwu jwnj gznf";
+            var fromEmailAddress = "phamanhnhatminh1809@gmail.com";
+            var fromEmailPassword = "pqzl sevx yzlp fnyn";
             var smtpHost = "smtp.gmail.com";
             var smtpPort = 587;
 

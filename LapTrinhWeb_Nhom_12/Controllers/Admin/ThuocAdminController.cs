@@ -38,7 +38,7 @@ namespace LapTrinhWeb_Nhom_12.Controllers
                 TenThuoc = item.Thuoc.ten_thuoc,
                 AnhThuoc = item.Thuoc.anh_thuoc,
                 TenDanhMuc = item.Thuoc.DANH_MUC_THUOC?.ten_danh_muc,
-                TenLoaiThuoc = item.Thuoc.LOAI_THUOC?.ten_loai, // Nếu bạn có bảng LOAI_THUOC
+                TenLoaiThuoc = item.Thuoc.LOAI_THUOC?.ten_loai, 
                 DonViTinh = item.Thuoc.don_vi_tinh,
                 GiaBan = item.Thuoc.gia_ban ?? 0,
 
@@ -127,7 +127,7 @@ namespace LapTrinhWeb_Nhom_12.Controllers
             ViewBag.IdLoaiThuoc = new SelectList(db.LOAI_THUOC, "id_loai_thuoc", "ten_loai", model.id_loai_thuoc);
             return View(model);
         }
-        [HttpPost] // Chỉ cho phép POST để bảo mật
+        [HttpPost] 
         public ActionResult Delete(int id)
         {
             try
@@ -147,10 +147,7 @@ namespace LapTrinhWeb_Nhom_12.Controllers
                 }
 
                 // 2. Kiểm tra xem thuốc này đã từng được bán chưa (Chi tiết hóa đơn)
-                // Lưu ý: Cần kiểm tra bảng CHI_TIET_HOA_DON nếu có liên kết trực tiếp
-                // Nếu bạn liên kết qua LO_THUOC thì kiểm tra ở trên là đủ.
 
-                // Nếu sạch sẽ, tiến hành xóa
                 db.THUOCs.Remove(thuoc);
                 db.SaveChanges();
 

@@ -17,7 +17,6 @@ namespace LapTrinhWeb_Nhom_12.Controllers
 
             if (id > -1)
             {
-                // Giữ nguyên id_loai_thuoc như code cũ của bạn
                 query = query.Where(t => t.id_loai_thuoc == id);
             }
 

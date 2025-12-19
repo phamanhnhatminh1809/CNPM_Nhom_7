@@ -379,10 +379,6 @@
                                 <small class="text-muted">(Đã bao gồm VAT nếu có)</small>
                             </div>
 
-                            @*<button type="submit" class="btn btn-primary w-100 py-3 fw-bold fs-6 text-uppercase rounded-pill shadow-sm">
-                                    Đặt hàng ngay
-                                </button>*@
-
                             <button type="button" id="btnPlaceOrder"
                                     data-total="@ViewBag.TongTien"
                                     class="btn btn-primary w-100 py-3 fw-bold fs-6 text-uppercase rounded-pill shadow-sm">
@@ -769,6 +765,11 @@
                         // 2. Cập nhật Tổng tiền cả giỏ hàng (Bạn cần thêm id="cart-total" vào chỗ hiển thị tổng tiền ở cột bên phải)
                         var cartTotalElements = document.querySelectorAll('.cart-total-display');
                         cartTotalElements.forEach(el => el.innerText = data.cartTotal);
+                        var rawPrice = data.cartTotal.replace(/\D/g, '');
+
+                        // Cập nhật vào nút
+                        $('#btnPlaceOrder').data('total', rawPrice);
+                        $('#btnPlaceOrder').attr('data-total', rawPrice);
                     } else {
                         alert(data.message);
                         // Nếu lỗi (ví dụ hết hàng), trả lại số lượng cũ

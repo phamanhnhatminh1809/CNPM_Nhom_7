@@ -32,16 +32,16 @@
                             @Html.ValidationMessageFor(model => model.ten_thuoc, "", new { @class = "text-danger small" })
                         </div>
 
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label class="form-label fw-bold">Danh mục <span class="text-danger">*</span></label>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">Danh mục <span class="text-danger">*</span></label>
+                            <div class="input-group">
                                 @Html.DropDownList("id_danh_muc", (IEnumerable<SelectListItem>)ViewBag.IdDanhMuc, "--- Chọn danh mục ---", new { @class = "form-select" })
-                                @Html.ValidationMessageFor(model => model.id_danh_muc, "", new { @class = "text-danger small" })
+
+                                <a href="@Url.Action("Create", "DanhMuc")" class="btn btn-outline-success" target="_blank" title="Thêm danh mục mới">
+                                    <i class="bi bi-plus-lg"></i>
+                                </a>
                             </div>
-                            <div class="col-md-6">
-                                <label class="form-label fw-bold">Loại thuốc</label>
-                                @Html.DropDownList("id_loai_thuoc", (IEnumerable<SelectListItem>)ViewBag.IdLoaiThuoc, "--- Chọn loại thuốc ---", new { @class = "form-select" })
-                            </div>
+                            @Html.ValidationMessageFor(model => model.id_danh_muc, "", new { @class = "text-danger small" })
                         </div>
 
                         <div class="row mb-3">

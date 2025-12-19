@@ -15,7 +15,6 @@ namespace LapTrinhWeb_Nhom_12.Controllers
     {
         private NHA_THUOCEntities db = new NHA_THUOCEntities();
 
-        // Cấu hình Google API (Thay bằng key của bạn)
         private const string API_KEY = "AIzaSyDeHm-65_GmM3TwVOlIm8BQFzUGETT4H_4";
         private const string SEARCH_ENGINE_ID = "173a299cc7efe4c35";
         // Action này sẽ chạy tool

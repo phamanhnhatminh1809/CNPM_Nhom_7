@@ -13,13 +13,11 @@ namespace LapTrinhWeb_Nhom_12.Controllers
 {
     public class TraCuuController : Controller
     {
-        // GET: Hiển thị trang tìm kiếm ban đầu
         public ActionResult Index()
         {
             return View(new List<ThuocAPI>());
         }
 
-        // POST: Xử lý khi người dùng bấm nút Tìm kiếm
         [HttpPost]
         public async Task<ActionResult> Index(string keyword)
         {
@@ -56,7 +54,6 @@ namespace LapTrinhWeb_Nhom_12.Controllers
                                 string rawStorage = item.storage_and_handling?.FirstOrDefault() ?? "";
 
                                 // 2. Dịch sang Tiếng Việt ngay tại Server
-                                // Lưu ý: Chỉ dịch nếu có nội dung để tránh lỗi
                                 results.Add(new ThuocAPI
                                 {
                                     BrandName = item.openfda?.brand_name?.FirstOrDefault() ?? "Đang cập nhật",
@@ -64,7 +61,6 @@ namespace LapTrinhWeb_Nhom_12.Controllers
                                     Manufacturer = item.openfda?.manufacturer_name?.FirstOrDefault() ?? "N/A",
                                     ActiveIngredient = item.active_ingredient?.FirstOrDefault(),
 
-                                    // Gọi hàm dịch cho từng trường
                                     Purpose = !string.IsNullOrEmpty(rawPurpose) ? TranslateText(rawPurpose) : "Chưa có thông tin",
                                     Dosage = !string.IsNullOrEmpty(rawDosage) ? TranslateText(rawDosage) : "Không có hướng dẫn cụ thể",
                                     Warnings = !string.IsNullOrEmpty(rawWarnings) ? TranslateText(rawWarnings) : "Không có cảnh báo",
@@ -96,7 +92,6 @@ namespace LapTrinhWeb_Nhom_12.Controllers
         {
             if (string.IsNullOrEmpty(input)) return "";
 
-            // Nếu văn bản quá dài (>2000 ký tự), cắt bớt để tránh lỗi URL
             if (input.Length > 2000) input = input.Substring(0, 2000) + "...";
 
             try
@@ -107,8 +102,6 @@ namespace LapTrinhWeb_Nhom_12.Controllers
                     webClient.Encoding = Encoding.UTF8;
                     string result = webClient.DownloadString(url);
 
-                    // Xử lý JSON trả về từ Google (Dạng mảng lồng nhau)
-                    // Cách đơn giản nhất là tìm chuỗi trong JSON
                     var jsonArray = JsonConvert.DeserializeObject<dynamic>(result);
                     string translatedText = "";
 

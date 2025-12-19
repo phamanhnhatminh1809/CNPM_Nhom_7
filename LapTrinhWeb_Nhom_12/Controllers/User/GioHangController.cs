@@ -265,7 +265,7 @@ namespace LapTrinhWeb_Nhom_12.Controllers
 
                     // Xử lý thanh toán
                     hd.hinh_thuc_thanh_toan = model.PhuongThucThanhToan;
-                    
+
 
                     // Liên kết tài khoản nếu đã đăng nhập
                     if (Session["User"] != null)
