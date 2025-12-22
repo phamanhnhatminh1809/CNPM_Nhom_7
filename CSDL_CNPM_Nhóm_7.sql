@@ -4,12 +4,12 @@
 USE master;
 GO
 
-IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'NHA_THUOC_LTW')
+IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'NHA_THUOC_CNPM')
 BEGIN
-    CREATE DATABASE NHA_THUOC_LTW;
+    CREATE DATABASE NHA_THUOC_CNPM;
 END
 GO
-USE NHA_THUOC_LTW;
+USE NHA_THUOC_CNPM;
 GO
 
 -- Tắt kiểm tra khóa ngoại để drop bảng dễ dàng
@@ -131,6 +131,7 @@ CREATE TABLE THUOC (
     lieu_dung NVARCHAR(MAX),
     chong_chi_dinh NVARCHAR(MAX),
     gia_ban INT, 
+    cho_phep_ban_online INT DEFAULT 1,
     anh_thuoc NVARCHAR(MAX),
     CONSTRAINT FK_Thuoc_DanhMucThuoc FOREIGN KEY (id_danh_muc) REFERENCES DANH_MUC_THUOC(id_danh_muc),
     CONSTRAINT FK_Thuoc_LoaiThuoc FOREIGN KEY (id_loai_thuoc) REFERENCES LOAI_THUOC(id_loai_thuoc)
@@ -146,6 +147,7 @@ CREATE TABLE LO_THUOC (
     so_luong_nhap INT DEFAULT 0,
     so_luong_ton INT DEFAULT 0,
     gia_nhap INT DEFAULT 0,
+    tieu_huy INT DEFAULT 0,
     CONSTRAINT FK_LoThuoc_Thuoc FOREIGN KEY (id_thuoc) REFERENCES Thuoc(id_thuoc)
 );
 
