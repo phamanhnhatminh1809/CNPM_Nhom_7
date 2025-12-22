@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7be55a7da9db4cbebdfe68b9c54f9039" Name="Diagram1">
+        <EntityTypeShape EntityType="NHA_THUOC_RUN_LOCALModel.CHI_TIET_HOA_DON" Width="1.5" PointX="9.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="NHA_THUOC_RUN_LOCALModel.DANH_MUC_THUOC" Width="1.5" PointX="3" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NHA_THUOC_RUN_LOCALModel.DIA_DIEM_NHA_THUOC" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NHA_THUOC_RUN_LOCALModel.HOA_DON" Width="1.5" PointX="7.5" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="NHA_THUOC_RUN_LOCALModel.KHACH_HANG" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NHA_THUOC_RUN_LOCALModel.LO_THUOC" Width="1.5" PointX="7.5" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NHA_THUOC_RUN_LOCALModel.NHA_CUNG_CAP" Width="1.5" PointX="5.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NHA_THUOC_RUN_LOCALModel.NHAN_VIEN" Width="1.5" PointX="5.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NHA_THUOC_RUN_LOCALModel.PHAN_QUYEN" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NHA_THUOC_RUN_LOCALModel.PHUONG_XA" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NHA_THUOC_RUN_LOCALModel.QUAN_HUYEN" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NHA_THUOC_RUN_LOCALModel.sysdiagram" Width="1.5" PointX="9.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NHA_THUOC_RUN_LOCALModel.TAI_KHOAN" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="NHA_THUOC_RUN_LOCALModel.THUOC" Width="1.5" PointX="5.25" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NHA_THUOC_RUN_LOCALModel.TINH_THANH" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="NHA_THUOC_RUN_LOCALModel.FK_ChiTietHoaDon_HoaDon" ManuallyRouted="false" />
+        <AssociationConnector Association="NHA_THUOC_RUN_LOCALModel.FK_ChiTietHoaDon_LoThuoc" ManuallyRouted="false" />
+        <AssociationConnector Association="NHA_THUOC_RUN_LOCALModel.FK_Thuoc_DanhMucThuoc" ManuallyRouted="false" />
+        <AssociationConnector Association="NHA_THUOC_RUN_LOCALModel.FK_HoaDon_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="NHA_THUOC_RUN_LOCALModel.FK_HoaDon_NhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="NHA_THUOC_RUN_LOCALModel.FK_KhachHang_TaiKhoan" ManuallyRouted="false" />
+        <AssociationConnector Association="NHA_THUOC_RUN_LOCALModel.FK_LoThuoc_NhaCungCap" ManuallyRouted="false" />
+        <AssociationConnector Association="NHA_THUOC_RUN_LOCALModel.FK_LoThuoc_Thuoc" ManuallyRouted="false" />
+        <AssociationConnector Association="NHA_THUOC_RUN_LOCALModel.FK_NhanVien_TaiKhoan" ManuallyRouted="false" />
+        <AssociationConnector Association="NHA_THUOC_RUN_LOCALModel.FK_TaiKhoan_PhanQuyen" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

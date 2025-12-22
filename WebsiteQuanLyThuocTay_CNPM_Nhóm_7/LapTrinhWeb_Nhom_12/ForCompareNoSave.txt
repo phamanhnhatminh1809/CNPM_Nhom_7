@@ -1,0 +1,231 @@
+﻿@model IEnumerable<LapTrinhWeb_Nhom_12.Models.HoaDonViewModel>
+
+@{
+    ViewBag.Title = "Quản lý hóa đơn";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card shadow-sm p-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h4 class="fw-bold text-primary"><i class="bi bi-receipt"></i> Lịch sử bán hàng</h4>
+        <div class="text-end">
+            <span class="badge bg-success p-2">Tổng hóa đơn: @Model.Count()</span>
+            <span class="badge bg-primary p-2">Doanh thu: @Model.Sum(x => x.TongTien).ToString("N0") đ</span>
+        </div>
+    </div>
+
+    <form method="get" class="row g-3 mb-4 bg-light p-3 rounded border">
+        <div class="col-md-3">
+            <label class="form-label fw-bold small">Từ ngày</label>
+            <input type="date" name="fromDate" value="@ViewBag.FromDate" class="form-control" />
+        </div>
+        <div class="col-md-3">
+            <label class="form-label fw-bold small">Đến ngày</label>
+            <input type="date" name="toDate" value="@ViewBag.ToDate" class="form-control" />
+        </div>
+        <div class="col-md-4">
+            <label class="form-label fw-bold small">Khách hàng / SĐT</label>
+            <input type="text" name="searchString" value="@ViewBag.SearchString" class="form-control" placeholder="Nhập tên khách..." />
+        </div>
+        <div class="col-md-2 d-flex align-items-end">
+            <button type="submit" class="btn btn-primary w-100"><i class="bi bi-funnel"></i> Lọc</button>
+        </div>
+    </form>
+
+    <div class="table-responsive">
+        <table class="table table-hover align-middle border">
+            <thead class="table-light">
+                <tr>
+                    <th>Mã HĐ</th>
+                    <th>Ngày bán</th>
+                    <th>Khách hàng</th>
+                    <th>Người bán</th>
+                    <th class="text-end">Tổng tiền</th>
+                    <th class="text-center">Tác vụ</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (!Model.Any())
+                {
+                    <tr>
+                        <td colspan="6" class="text-center py-4 text-muted">Không tìm thấy hóa đơn nào trong khoảng thời gian này.</td>
+                    </tr>
+                }
+                else
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td><span class="badge bg-secondary">#@item.IdHoaDon</span></td>
+                            <td>@item.NgayBan.ToString("dd/MM/yyyy HH:mm")</td>
+                            <td class="fw-bold text-dark">@item.TenKhachHang</td>
+                            <td>@item.TenNhanVien</td>
+                            <td class="text-end fw-bold text-success">@item.TongTien.ToString("N0")</td>
+                            <td class="text-center">
+                                <button class="btn btn-sm btn-outline-primary" onclick="showInvoiceDetail(@item.IdHoaDon)">
+                                    <i class="bi bi-eye"></i> Chi tiết
+                                </button>
+                                <button class="btn btn-sm btn-outline-secondary ms-1" onclick="printInvoice(@item.IdHoaDon)">
+                                    <i class="bi bi-printer"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="modal fade" id="invoiceModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title"><i class="bi bi-receipt-cutoff"></i> Chi tiết hóa đơn</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="modalInvoiceContent">
+                <div class="text-center py-5"><div class="spinner-border text-primary"></div></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    @@media print {
+    /* 1. Ẩn tất cả mọi thứ trên trang web */
+    body * {
+        visibility: hidden;
+    }
+
+    /* 2. Chỉ hiện vùng mẫu hóa đơn */
+    #invoice-print-template, #invoice-print-template * {
+        visibility: visible;
+    }
+
+    /* 3. Định dạng lại mẫu hóa đơn để chiếm toàn màn hình in */
+    #invoice-print-template {
+        display: block !important; /* Ghi đè class d-none */
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        margin: 0;
+        padding: 20px;
+        background-color: white;
+    }
+
+    /* Tinh chỉnh table cho đẹp khi in đen trắng */
+    .invoice-table th, .invoice-table td {
+        border: 1px solid #000 !important;
+    }
+}
+</style>
+<div id="invoice-print-template" class="d-none">
+    <div class="invoice-box">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold">NHÀ THUỐC MedForAll</h2>
+            <p class="mb-0">Địa chỉ: 123 Đường Lê Lâm, Quận Tân Phú, TP.HCM</p>
+            <p>Hotline: 0909.123.456</p>
+            <hr class="border-2 border-dark">
+        </div>
+
+        <div class="mb-4">
+            <div class="row">
+                <div class="col-6">
+                    <p><strong>Mã HĐ:</strong> <span id="p-mahd">...</span></p>
+                    <p><strong>Ngày:</strong> <span id="p-ngay">...</span></p>
+                </div>
+                <div class="col-6 text-end">
+                    <p><strong>Khách hàng:</strong> <span id="p-khach">...</span></p>
+                </div>
+            </div>
+        </div>
+
+        <table class="table table-bordered border-dark invoice-table">
+            <thead>
+                <tr class="table-light border-dark">
+                    <th>Tên thuốc/SP</th>
+                    <th class="text-center">SL</th>
+                    <th class="text-end">Đơn giá</th>
+                    <th class="text-end">Thành tiền</th>
+                </tr>
+            </thead>
+            <tbody id="p-table-body">
+            </tbody>
+        </table>
+
+        <div class="row mt-3">
+            <div class="col-6"></div>
+            <div class="col-6 text-end">
+                <h5 class="fw-bold">TỔNG TIỀN: <span id="p-tongtien">0</span> đ</h5>
+            </div>
+        </div>
+
+        <div class="text-center mt-5 fst-italic">
+            <p class="mb-1">Cảm ơn quý khách và hẹn gặp lại!</p>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script>
+        function showInvoiceDetail(id) {
+            var modal = new bootstrap.Modal(document.getElementById('invoiceModal'));
+            modal.show();
+
+            var url = '@Url.Action("GetChiTiet", "HoaDon")/' + id;
+            $('#modalInvoiceContent').load(url, function(response, status, xhr) {
+                if (status == "error") {
+                    $('#modalInvoiceContent').html('<div class="alert alert-danger">Lỗi tải dữ liệu: ' + xhr.status + '</div>');
+                }
+            });
+        }
+
+    </script>
+    <script>
+        function printInvoice(idHoaDon) {
+            // 1. Gọi AJAX để lấy chi tiết hóa đơn từ Server
+            // Giả sử bạn có API hoặc Action trả về JSON chi tiết hóa đơn
+            $.ajax({
+                url: '/HoaDon/GetInvoiceDetails', // Thay bằng đường dẫn thật của bạn
+                type: 'GET',
+                data: { id: idHoaDon },
+                success: function (data) {
+                    // data trả về gồm: MaHD, Ngay, TenKhach, TenNV, ChiTiet[] (TenThuoc, SL, Gia, ThanhTien)
+                    console.log("Dữ liệu nhận được:", data);
+                    console.log("Ngày bán gốc:", data.ngayBan);
+                    // 2. Điền dữ liệu vào mẫu HTML (Invoice Template)
+                    $('#p-mahd').text('#' + data.idHoaDon);
+                    $('#p-ngay').text(data.ngayBan);
+                    $('#p-khach').text(data.tenKhachHang);
+                    $('#p-tongtien').text(new Intl.NumberFormat('vi-VN').format(data.tongTien));
+
+                    // Xóa dòng cũ và thêm dòng mới vào bảng chi tiết
+                    var rows = '';
+                    $.each(data.chiTietHoaDon, function (i, item) {
+                        rows += `
+                            <tr>
+                                <td>${item.tenThuoc}</td>
+                                <td class="text-center">${item.soLuong}</td>
+                                <td class="text-end">${new Intl.NumberFormat('vi-VN').format(item.donGia)}</td>
+                                <td class="text-end">${new Intl.NumberFormat('vi-VN').format(item.thanhTien)}</td>
+                            </tr>
+                        `;
+                    });
+                    $('#p-table-body').html(rows);
+
+                    // 3. Gọi lệnh in trình duyệt
+                    setTimeout(function () {
+                        window.print();
+                    }, 500);
+                },
+                error: function () {
+                    alert('Không thể tải dữ liệu hóa đơn để in!');
+                }
+            });
+        }
+    </script>   
+}

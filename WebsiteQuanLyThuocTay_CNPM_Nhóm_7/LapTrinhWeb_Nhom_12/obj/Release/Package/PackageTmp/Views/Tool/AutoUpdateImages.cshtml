@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Tool Cập nhật ảnh";
+}
+
+<h2>Kết quả chạy Tool</h2>
+<p><strong>Số lượng cập nhật thành công:</strong> @ViewBag.Count</p>
+
+<h3>Chi tiết log:</h3>
+<ul>
+    @if (ViewBag.Logs != null)
+    {
+        foreach (var log in ViewBag.Logs)
+        {
+            <li>@log</li>
+        }
+    }
+</ul>
+
+<a href="@Url.Action("AutoUpdateImages")" class="btn btn-primary">Chạy tiếp 10 thuốc nữa</a>

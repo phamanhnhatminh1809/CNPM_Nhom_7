@@ -1,0 +1,176 @@
+﻿@model LapTrinhWeb_Nhom_12.Models.THUOC
+
+@{
+    ViewBag.Title = "Thêm thuốc mới";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3 class="fw-bold text-success"><i class="bi bi-plus-circle"></i> Thêm thuốc mới</h3>
+        <a href="@Url.Action("Index")" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left"></i> Quay lại danh sách
+        </a>
+    </div>
+
+    @using (Html.BeginForm("Create", "ThuocAdmin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-white py-3">
+                        <h5 class="mb-0 fw-bold text-primary">1. Thông tin cơ bản</h5>
+                    </div>
+                    <div class="card-body">
+                        @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Tên thuốc <span class="text-danger">*</span></label>
+                            @Html.EditorFor(model => model.ten_thuoc, new { htmlAttributes = new { @class = "form-control form-control-lg", placeholder = "Ví dụ: Panadol Extra..." } })
+                            @Html.ValidationMessageFor(model => model.ten_thuoc, "", new { @class = "text-danger small" })
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">Danh mục <span class="text-danger">*</span></label>
+                            <div class="input-group">
+                                @Html.DropDownList("id_danh_muc", (IEnumerable<SelectListItem>)ViewBag.IdDanhMuc, "--- Chọn danh mục ---", new { @class = "form-select" })
+
+                                <a href="@Url.Action("Create", "DanhMuc")" class="btn btn-outline-success" target="_blank" title="Thêm danh mục mới">
+                                    <i class="bi bi-plus-lg"></i>
+                                </a>
+                            </div>
+                            @Html.ValidationMessageFor(model => model.id_danh_muc, "", new { @class = "text-danger small" })
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Thương hiệu / Hãng</label>
+                                @Html.EditorFor(model => model.hang, new { htmlAttributes = new { @class = "form-control", placeholder = "VD: GSK" } })
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Hoạt chất chính</label>
+                                @Html.EditorFor(model => model.hoat_chat, new { htmlAttributes = new { @class = "form-control", placeholder = "VD: Paracetamol" } })
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <label class="form-label">Đơn vị tính</label>
+                                @Html.EditorFor(model => model.don_vi_tinh, new { htmlAttributes = new { @class = "form-control", placeholder = "Hộp/Vỉ..." } })
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Dạng bào chế</label>
+                                @Html.EditorFor(model => model.dang_bao_che, new { htmlAttributes = new { @class = "form-control", placeholder = "Viên nén..." } })
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Hàm lượng</label>
+                                @Html.EditorFor(model => model.ham_luong, new { htmlAttributes = new { @class = "form-control", placeholder = "500mg" } })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-white py-3">
+                        <h5 class="mb-0 fw-bold text-primary">2. Thông tin y tế</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Công dụng</label>
+                            @Html.TextAreaFor(model => model.cong_dung, new { @class = "form-control", rows = "3", placeholder = "Thuốc dùng để điều trị..." })
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Liều dùng & Cách dùng</label>
+                            @Html.TextAreaFor(model => model.lieu_dung, new { @class = "form-control", rows = "3" })
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold text-danger">Chống chỉ định</label>
+                            @Html.TextAreaFor(model => model.chong_chi_dinh, new { @class = "form-control", rows = "2" })
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold text-danger">Cho phép bán online ?</label>
+                            @Html.DropDownListFor(
+                                model => model.cho_phep_ban_online,
+                                new List<SelectListItem>
+                                {
+                                    new SelectListItem { Text = "Có", Value = "1" },
+                                    new SelectListItem { Text = "Không", Value = "0" }
+                                },
+                                new { @class = "form-select" }
+                            )
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-white py-3">
+                        <h5 class="mb-0 fw-bold">Thiết lập giá</h5>
+                    </div>
+                    <div class="card-body">
+                        <label class="form-label fw-bold">Giá bán niêm yết</label>
+                        <div class="input-group">
+                            @Html.EditorFor(model => model.gia_ban, new { htmlAttributes = new { @class = "form-control fw-bold text-success", type = "number", min = "0" } })
+                            <span class="input-group-text">₫</span>
+                        </div>
+                        <small class="text-muted">Giá này sẽ hiển thị trên trang bán hàng.</small>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm">
+                    <div class="card-header bg-white py-3">
+                        <h5 class="mb-0 fw-bold">Hình ảnh</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <div class="mb-3 p-2 border rounded bg-light" style="min-height: 200px; display: flex; align-items: center; justify-content: center;">
+                            <img id="previewImage"
+                                 src="https://via.placeholder.com/300?text=Chưa+có+ảnh"
+                                 alt="Preview"
+                                 class="img-fluid"
+                                 style="max-height: 250px;" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="uploadAnh" class="form-label fw-bold w-100 text-start">Tải ảnh lên</label>
+                            <input type="file" name="uploadAnh" id="uploadAnh" class="form-control" accept="image/*" onchange="previewFile(this);" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-success w-100 py-3 fw-bold text-uppercase shadow">
+                        <i class="bi bi-check-circle-fill"></i> Thêm thuốc mới
+                    </button>
+                    <div class="text-center mt-2">
+                        <small class="text-muted">Lưu ý: Sau khi thêm, tồn kho sẽ bằng 0.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        function previewFile(input) {
+            var preview = document.getElementById('previewImage');
+            var file = input.files[0];
+            var reader = new FileReader();
+
+            reader.onloadend = function () {
+                preview.src = reader.result;
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = "https://via.placeholder.com/300?text=Chưa+có+ảnh";
+            }
+        }
+    </script>
+}

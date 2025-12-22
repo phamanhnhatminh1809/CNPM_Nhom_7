@@ -1,0 +1,321 @@
+﻿@model LapTrinhWeb_Nhom_12.Models.DashboardViewModel
+
+@{
+    ViewBag.Title = "Tổng quan";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<style>
+    @@media print {
+        /* 1. Ẩn toàn bộ giao diện web gốc */
+        body * {
+            visibility: hidden;
+        }
+        /* 2. Chỉ hiện vùng báo cáo */
+        #print-area, #print-area * {
+            visibility: visible;
+        }
+        /* 3. Căn chỉnh vùng báo cáo full màn hình giấy */
+        #print-area {
+            display: block !important;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background: white;
+        }
+        /* Ngắt trang hợp lý */
+        .break-inside-avoid {
+            page-break-inside: avoid;
+        }
+    }
+</style>
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+    <button onclick="printDashboard()" class="btn btn-sm btn-primary shadow-sm">
+        <i class="bi bi-printer-fill"></i> In Báo Cáo Nhanh
+    </button>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-3">
+        <div class="card shadow-sm border-start border-4 border-success h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs fw-bold text-success text-uppercase mb-1">Doanh thu hôm nay</div>
+                        <div class="h5 mb-0 fw-bold text-gray-800">@Model.DoanhThuHomNay.ToString("N0") đ</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="bi bi-currency-dollar fs-2 text-gray-300 opacity-50"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow-sm border-start border-4 border-primary h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs fw-bold text-primary text-uppercase mb-1">Đơn hàng mới</div>
+                        <div class="h5 mb-0 fw-bold text-gray-800">@Model.DonHangHomNay</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="bi bi-cart-check fs-2 text-gray-300 opacity-50"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow-sm border-start border-4 border-warning h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs fw-bold text-warning text-uppercase mb-1">Lô sắp hết hạn</div>
+                        <div class="h5 mb-0 fw-bold text-gray-800">@Model.ThuocSapHetHan</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="bi bi-exclamation-triangle fs-2 text-gray-300 opacity-50"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow-sm border-start border-4 border-danger h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs fw-bold text-danger text-uppercase mb-1">Thuốc hết hàng</div>
+                        <div class="h5 mb-0 fw-bold text-gray-800">@Model.ThuocHetHang</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="bi bi-box-seam fs-2 text-gray-300 opacity-50"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-lg-8 mb-4">
+        <div class="card shadow-sm h-100">
+            <div class="card-header bg-white py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 fw-bold text-primary"><i class="bi bi-graph-up"></i> Biểu đồ doanh thu 7 ngày qua</h6>
+            </div>
+            <div class="card-body">
+                <div class="chart-area" style="height: 320px;">
+                    <canvas id="myAreaChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4 mb-4">
+        <div class="card shadow-sm h-100">
+            <div class="card-header bg-white py-3">
+                <h6 class="m-0 fw-bold text-success"><i class="bi bi-trophy"></i> Top 5 Bán Chạy</h6>
+            </div>
+            <div class="card-body p-0">
+                <div class="list-group list-group-flush">
+                    @foreach (var item in Model.TopBanChay)
+                    {
+                        <div class="list-group-item d-flex align-items-center p-3">
+                            <img src="~/Images/AnhThuoc/@(item.AnhThuoc ?? "default.png")" class="rounded border me-3" width="45" height="45" style="object-fit: contain;">
+                            <div class="flex-grow-1">
+                                <h6 class="mb-0 fw-bold text-truncate" style="max-width: 150px;">@item.TenThuoc</h6>
+                                <small class="text-muted">Đã bán: @item.SoLuongBan</small>
+                            </div>
+                            <span class="fw-bold text-success">@item.DoanhThu.ToString("#,##0")</span>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card shadow-sm mb-4">
+    <div class="card-header bg-white py-3">
+        <h6 class="m-0 fw-bold text-dark"><i class="bi bi-clock-history"></i> Giao dịch gần đây</h6>
+    </div>
+    <div class="table-responsive">
+        <table class="table align-middle mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th>Mã HĐ</th>
+                    <th>Người bán</th>
+                    <th>Người nhận</th>
+                    <th>Thời gian</th>
+                    <th>Tổng tiền</th>
+                    <th>Trạng thái</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.DonHangMoi)
+                {
+                    <tr>
+                        <td><a href="#" class="text-decoration-none fw-bold">#@item.IdHoaDon</a></td>
+                        <td>@item.TenNguoiBan</td>
+                        <td>@item.TenNguoiNhan</td>
+                        <td>@item.NgayBan.ToString("dd/MM/yyyy HH:mm")</td>
+                        <td class="fw-bold text-primary">@item.TongTien.ToString("N0") đ</td>
+                        <td><span class="badge bg-success bg-opacity-10 text-success px-3">Hoàn thành</span></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<div id="print-area" class="d-none">
+    <div class="p-4">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold text-uppercase">BÁO CÁO HOẠT ĐỘNG TRONG NGÀY</h2>
+            <p>Ngày xuất báo cáo: @DateTime.Now.ToString("dd/MM/yyyy")</p>
+            <hr />
+        </div>
+
+        <h5 class="fw-bold border-bottom pb-2 mb-3">1. Tổng hợp số liệu hôm nay</h5>
+        <table class="table table-bordered border-dark text-center mb-4">
+            <thead class="table-light border-dark">
+                <tr>
+                    <th>Doanh thu hôm nay</th>
+                    <th>Đơn hàng mới</th>
+                    <th>Lô sắp hết hạn</th>
+                    <th>Thuốc hết hàng</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="fw-bold fs-5">@Model.DoanhThuHomNay.ToString("N0") đ</td>
+                    <td class="fw-bold fs-5">@Model.DonHangHomNay</td>
+                    <td class="fw-bold fs-5 text-danger">@Model.ThuocSapHetHan</td>
+                    <td class="fw-bold fs-5 text-danger">@Model.ThuocHetHang</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="mb-4 break-inside-avoid">
+            <h5 class="fw-bold border-bottom pb-2 mb-3">2. Biểu đồ doanh thu 7 ngày qua</h5>
+            <div class="text-center border p-2">
+                <img id="print-chart-img" style="max-width: 100%; height: auto;" />
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <h5 class="fw-bold border-bottom pb-2 mb-3">3. Top 5 Thuốc bán chạy nhất</h5>
+            <table class="table table-bordered border-dark align-middle">
+                <thead>
+                    <tr class="table-light border-dark">
+                        <th style="width: 50px">#</th>
+                        <th>Tên thuốc</th>
+                        <th class="text-center">Số lượng bán</th>
+                        <th class="text-end">Doanh thu đóng góp</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{ int i = 1; }
+                    @foreach (var item in Model.TopBanChay)
+                    {
+                        <tr>
+                            <td class="text-center">@(i++)</td>
+                            <td>@item.TenThuoc</td>
+                            <td class="text-center">@item.SoLuongBan</td>
+                            <td class="text-end fw-bold">@item.DoanhThu.ToString("N0")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // Lấy dữ liệu từ C# đổ vào biến JS
+        var labels = @Html.Raw(Json.Encode(Model.ChartLabels));
+        var dataValues = @Html.Raw(Json.Encode(Model.ChartValues));
+
+        // Vẽ biểu đồ
+        var ctx = document.getElementById("myAreaChart");
+        var myLineChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: "Doanh thu",
+                    lineTension: 0.3,
+                    backgroundColor: "rgba(78, 115, 223, 0.05)",
+                    borderColor: "rgba(78, 115, 223, 1)",
+                    pointRadius: 3,
+                    pointBackgroundColor: "rgba(78, 115, 223, 1)",
+                    pointBorderColor: "rgba(78, 115, 223, 1)",
+                    pointHoverRadius: 3,
+                    pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
+                    pointHoverBorderColor: "rgba(78, 115, 223, 1)",
+                    pointHitRadius: 10,
+                    pointBorderWidth: 2,
+                    data: dataValues,
+                }],
+            },
+            options: {
+                maintainAspectRatio: false,
+                layout: { padding: { left: 10, right: 25, top: 25, bottom: 0 } },
+                scales: {
+                    x: { grid: { display: false, drawBorder: false } },
+                    y: {
+                        grid: { color: "rgb(234, 236, 244)", zeroLineColor: "rgb(234, 236, 244)", drawBorder: false, borderDash: [2], zeroLineBorderDash: [2] },
+                        ticks: {
+                            callback: function(value, index, values) {
+                                return value.toLocaleString('vi-VN') + ' đ';
+                            }
+                        }
+                    },
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                var label = context.dataset.label || '';
+                                if (label) { label += ': '; }
+                                if (context.parsed.y !== null) {
+                                    label += context.parsed.y.toLocaleString('vi-VN') + ' đ';
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+    <script>
+        function printDashboard() {
+            // 1. Lấy thẻ Canvas của biểu đồ gốc
+            var canvas = document.getElementById('myAreaChart');
+
+            if (canvas) {
+                // 2. Chuyển nội dung Canvas thành ảnh dạng Base64
+                var dataUrl = canvas.toDataURL('image/png');
+
+                // 3. Gán ảnh đó vào thẻ img trong vùng in
+                var printImg = document.getElementById('print-chart-img');
+                printImg.src = dataUrl;
+            }
+
+            // 4. Đợi 1 chút để ảnh load xong rồi gọi lệnh in
+            setTimeout(function () {
+                window.print();
+            }, 500);
+        }
+    </script>
+}

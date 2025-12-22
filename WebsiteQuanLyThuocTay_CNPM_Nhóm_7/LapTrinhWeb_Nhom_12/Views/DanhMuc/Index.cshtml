@@ -1,0 +1,47 @@
+﻿@model IEnumerable<LapTrinhWeb_Nhom_12.Models.DANH_MUC_THUOC>
+
+@{
+    ViewBag.Title = "Quản lý danh mục";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h4 class="fw-bold text-primary">Danh mục thuốc</h4>
+    <a href="@Url.Action("Create")" class="btn btn-success"><i class="bi bi-plus-lg"></i> Thêm mới</a>
+</div>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+
+<div class="card shadow-sm">
+    <div class="card-body p-0">
+        <table class="table table-hover align-middle mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th class="ps-4">ID</th>
+                    <th>Tên danh mục</th>
+                    <th>Mô tả</th>
+                    <th class="text-end pe-4">Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="ps-4 fw-bold">#@item.id_danh_muc</td>
+                        <td>
+                            <span class="badge bg-info text-dark">@item.ten_danh_muc</span>
+                        </td>
+                        <td class="text-muted small">@item.mo_ta</td>
+                        <td class="text-end pe-4">
+                            @* Bạn có thể thêm chức năng Sửa/Xóa sau này *@
+                            <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-pencil"></i></button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

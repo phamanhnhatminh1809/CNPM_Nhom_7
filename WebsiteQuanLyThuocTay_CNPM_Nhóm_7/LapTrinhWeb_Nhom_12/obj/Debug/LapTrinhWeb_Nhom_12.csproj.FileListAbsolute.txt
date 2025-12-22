@@ -1,0 +1,522 @@
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\LapTrinhWeb_Nhom_12.dll.config
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\LapTrinhWeb_Nhom_12.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\LapTrinhWeb_Nhom_12.pdb
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\csc.exe
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\csc.exe.config
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\csc.rsp
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\csi.exe
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\csi.exe.config
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\csi.rsp
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.Managed.Core.targets
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.Win32.Primitives.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.AppContext.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Collections.Immutable.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Console.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Globalization.Calendars.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.IO.Compression.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.IO.Compression.ZipFile.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.IO.FileSystem.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Net.Http.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Net.Sockets.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Reflection.Metadata.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Threading.Tasks.Extensions.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.ValueTuple.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Xml.XmlDocument.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Xml.XPath.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\vbc.exe
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\vbc.exe.config
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\vbc.rsp
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\VBCSCompiler.exe
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\VBCSCompiler.exe.config
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\EntityFramework.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\EntityFramework.SqlServer.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\Microsoft.Web.Infrastructure.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\Newtonsoft.Json.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Data.SQLite.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Data.SQLite.EF6.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Data.SQLite.Linq.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Net.Http.Formatting.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Helpers.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Http.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Http.WebHost.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Mvc.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Razor.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.Deployment.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.Razor.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\EntityFramework.xml
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\EntityFramework.SqlServer.xml
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Razor.xml
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.xml
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.Deployment.xml
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.Razor.xml
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Helpers.xml
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Mvc.xml
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\Newtonsoft.Json.xml
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Net.Http.Formatting.xml
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Http.xml
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Http.WebHost.xml
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\obj\Debug\LapTrinhWeb_Nhom_12.csproj.AssemblyReference.cache
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\obj\Debug\LapTrinhWeb_Nhom_12.csproj.CoreCompileInputs.cache
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\obj\Debug\LapTrinh.2BF148EB.Up2Date
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\obj\Debug\LapTrinhWeb_Nhom_12.dll
+E:\LuuDuLieuSinhVien\BuiTrungDuc\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\obj\Debug\LapTrinhWeb_Nhom_12.pdb
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\LapTrinhWeb_Nhom_12.dll.config
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\LapTrinhWeb_Nhom_12.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\LapTrinhWeb_Nhom_12.pdb
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\csc.exe
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\csc.exe.config
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\csc.rsp
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\csi.exe
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\csi.exe.config
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\csi.rsp
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.AppContext.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Console.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.IO.Compression.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Net.Http.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.ValueTuple.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\vbc.exe
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\vbc.exe.config
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\vbc.rsp
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\VBCSCompiler.exe
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\EntityFramework.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\EntityFramework.SqlServer.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\Newtonsoft.Json.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Data.SQLite.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Data.SQLite.EF6.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Data.SQLite.Linq.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Net.Http.Formatting.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Helpers.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Http.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Http.WebHost.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Mvc.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Razor.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.Razor.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\EntityFramework.xml
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\EntityFramework.SqlServer.xml
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Razor.xml
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.xml
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.Razor.xml
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Helpers.xml
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Mvc.xml
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\Newtonsoft.Json.xml
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Net.Http.Formatting.xml
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Http.xml
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Http.WebHost.xml
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\obj\Debug\LapTrinhWeb_Nhom_12.csproj.AssemblyReference.cache
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\obj\Debug\LapTrinhWeb_Nhom_12.csproj.CoreCompileInputs.cache
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\obj\Debug\LapTrinh.2BF148EB.Up2Date
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\obj\Debug\LapTrinhWeb_Nhom_12.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\HK5\Lập trình web\Đồ án\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\obj\Debug\LapTrinhWeb_Nhom_12.pdb
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\LapTrinhWeb_Nhom_12.dll.config
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\LapTrinhWeb_Nhom_12.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\LapTrinhWeb_Nhom_12.pdb
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\csc.exe
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\csc.exe.config
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\csc.rsp
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\csi.exe
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\csi.exe.config
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\csi.rsp
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.AppContext.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Collections.Immutable.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Console.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Globalization.Calendars.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.IO.Compression.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.IO.FileSystem.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Net.Http.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Net.Sockets.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Reflection.Metadata.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.ValueTuple.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Xml.XPath.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\vbc.exe
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\vbc.exe.config
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\vbc.rsp
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\VBCSCompiler.exe
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\VBCSCompiler.exe.config
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\EntityFramework.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\EntityFramework.SqlServer.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\Microsoft.Web.Infrastructure.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\Newtonsoft.Json.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Data.SQLite.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Data.SQLite.EF6.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Data.SQLite.Linq.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Net.Http.Formatting.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Helpers.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Http.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Http.WebHost.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Mvc.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Razor.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.Deployment.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.Razor.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\EntityFramework.xml
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\EntityFramework.SqlServer.xml
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Razor.xml
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.xml
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.Deployment.xml
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.Razor.xml
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Helpers.xml
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Mvc.xml
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\Newtonsoft.Json.xml
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Net.Http.Formatting.xml
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Http.xml
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Http.WebHost.xml
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\obj\Debug\LapTrinhWeb_Nhom_12.csproj.AssemblyReference.cache
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\obj\Debug\LapTrinhWeb_Nhom_12.csproj.CoreCompileInputs.cache
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\obj\Debug\LapTrinh.2BF148EB.Up2Date
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\obj\Debug\LapTrinhWeb_Nhom_12.dll
+D:\Code\LapTrinhWeb\DoAn_LTWeb\SourceCode_1.4\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\obj\Debug\LapTrinhWeb_Nhom_12.pdb
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\LapTrinhWeb_Nhom_12.dll.config
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\LapTrinhWeb_Nhom_12.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\LapTrinhWeb_Nhom_12.pdb
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\csc.exe
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\csc.exe.config
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\csc.rsp
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\csi.exe
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\csi.exe.config
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\csi.rsp
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.AppContext.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Console.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.IO.Compression.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Net.Http.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.ValueTuple.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\vbc.exe
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\vbc.exe.config
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\vbc.rsp
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\VBCSCompiler.exe
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\EntityFramework.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\EntityFramework.SqlServer.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\Newtonsoft.Json.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Data.SQLite.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Data.SQLite.EF6.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Data.SQLite.Linq.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Net.Http.Formatting.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Web.Helpers.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Web.Http.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Web.Http.WebHost.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Web.Mvc.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Web.Razor.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.Razor.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\EntityFramework.xml
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\EntityFramework.SqlServer.xml
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Web.Razor.xml
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.xml
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.Razor.xml
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Web.Helpers.xml
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Web.Mvc.xml
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\Newtonsoft.Json.xml
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Net.Http.Formatting.xml
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Web.Http.xml
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Web.Http.WebHost.xml
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\obj\Debug\LapTrinhWeb_Nhom_12.csproj.AssemblyReference.cache
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\obj\Debug\LapTrinhWeb_Nhom_12.csproj.CoreCompileInputs.cache
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\obj\Debug\LapTrinh.2BF148EB.Up2Date
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\obj\Debug\LapTrinhWeb_Nhom_12.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuoc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\obj\Debug\LapTrinhWeb_Nhom_12.pdb
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\LapTrinhWeb_Nhom_12.dll.config
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\LapTrinhWeb_Nhom_12.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\LapTrinhWeb_Nhom_12.pdb
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\csc.exe
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\csc.exe.config
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\csc.rsp
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\csi.exe
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\csi.exe.config
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\csi.rsp
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.AppContext.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Console.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.IO.Compression.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Net.Http.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.ValueTuple.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\vbc.exe
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\vbc.exe.config
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\vbc.rsp
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\VBCSCompiler.exe
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\EntityFramework.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\EntityFramework.SqlServer.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\Newtonsoft.Json.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Data.SQLite.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Data.SQLite.EF6.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Data.SQLite.Linq.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Net.Http.Formatting.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Web.Helpers.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Web.Http.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Web.Http.WebHost.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Web.Mvc.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Web.Razor.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.Razor.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\EntityFramework.xml
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\EntityFramework.SqlServer.xml
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Web.Razor.xml
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.xml
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.Razor.xml
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Web.Helpers.xml
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Web.Mvc.xml
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\Newtonsoft.Json.xml
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Net.Http.Formatting.xml
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Web.Http.xml
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\System.Web.Http.WebHost.xml
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\obj\Debug\LapTrinhWeb_Nhom_12.csproj.AssemblyReference.cache
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\obj\Debug\LapTrinhWeb_Nhom_12.csproj.CoreCompileInputs.cache
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\obj\Debug\LapTrinh.2BF148EB.Up2Date
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\obj\Debug\LapTrinhWeb_Nhom_12.dll
+C:\Users\Minh\Desktop\Nhóm_12_WebsiteBanThuocc\Nhóm_12_WebsiteBanThuoc\LapTrinhWeb_Nhom_12\obj\Debug\LapTrinhWeb_Nhom_12.pdb
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\LapTrinhWeb_Nhom_12.dll.config
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\LapTrinhWeb_Nhom_12.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\LapTrinhWeb_Nhom_12.pdb
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\csc.exe
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\csc.exe.config
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\csc.rsp
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\csi.exe
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\csi.exe.config
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\csi.rsp
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.AppContext.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Console.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.IO.Compression.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Net.Http.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.ValueTuple.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\vbc.exe
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\vbc.exe.config
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\vbc.rsp
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\VBCSCompiler.exe
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\EntityFramework.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\EntityFramework.SqlServer.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\Newtonsoft.Json.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Data.SQLite.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Data.SQLite.EF6.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Data.SQLite.Linq.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Net.Http.Formatting.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Helpers.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Http.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Http.WebHost.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Mvc.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Razor.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.Razor.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\EntityFramework.xml
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\EntityFramework.SqlServer.xml
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Razor.xml
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.xml
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Webpages.Razor.xml
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Helpers.xml
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Mvc.xml
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\Newtonsoft.Json.xml
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Net.Http.Formatting.xml
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Http.xml
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\System.Web.Http.WebHost.xml
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\obj\Debug\LapTrinhWeb_Nhom_12.csproj.AssemblyReference.cache
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\obj\Debug\LapTrinhWeb_Nhom_12.csproj.CoreCompileInputs.cache
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\obj\Debug\LapTrinh.2BF148EB.Up2Date
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\obj\Debug\LapTrinhWeb_Nhom_12.dll
+C:\Users\Minh\Common\Tài_Liệu_Học_Win11\Đại học\Github\Lập trình web\LapTrinhWeb_Nhom_12\LapTrinhWeb_Nhom_12\obj\Debug\LapTrinhWeb_Nhom_12.pdb

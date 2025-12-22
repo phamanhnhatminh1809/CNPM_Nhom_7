@@ -1,0 +1,45 @@
+﻿
+@model IEnumerable<LapTrinhWeb_Nhom_12.Models.LoThuocViewModel>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-warning">Thuốc này chưa có lô hàng nào trong kho.</div>
+}
+else
+{
+    <table class="table table-bordered table-sm">
+        <thead class="table-light">
+            <tr>
+                <th>Số lô</th>
+                <th>NSX</th>
+                <th>HSD</th>
+                <th>Giá nhập</th>
+                <th>Tồn kho</th>
+                <th>Trạng thái</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var lo in Model)
+            {
+                // Logic tính trạng thái Hạn sử dụng
+                var daysLeft = lo.HanSuDung.HasValue ? (lo.HanSuDung.Value - DateTime.Now).TotalDays : 0;
+                string rowClass = "";
+                string statusText = "Còn hạn";
+
+                if (daysLeft < 0) { rowClass = "table-danger"; statusText = "Đã hết hạn"; }
+                else if (daysLeft < 90) { rowClass = "table-warning"; statusText = "Sắp hết hạn"; }
+
+                <tr class="@rowClass">
+                    <td class="fw-bold">@lo.SoLo</td>
+                    <td>@(lo.NgaySanXuat?.ToString("dd/MM/yyyy") ?? "-")</td>
+                    <td>@(lo.HanSuDung?.ToString("dd/MM/yyyy") ?? "-")</td>
+                    <td>@lo.GiaNhap.ToString("N0")</td>
+                    <td class="fw-bold text-center">@lo.SoLuongTon</td>
+                    <td>
+                        <small>@statusText</small>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

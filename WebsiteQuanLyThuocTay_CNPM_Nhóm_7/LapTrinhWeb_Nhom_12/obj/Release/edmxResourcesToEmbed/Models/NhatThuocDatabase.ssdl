@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NHA_THUOCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CHI_TIET_HOA_DON">
+    <Key>
+      <PropertyRef Name="id_chi_tiet_hoa_don" />
+    </Key>
+    <Property Name="id_chi_tiet_hoa_don" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_hoa_don" Type="int" Nullable="false" />
+    <Property Name="id_lo_thuoc" Type="int" />
+    <Property Name="so_luong" Type="int" Nullable="false" />
+    <Property Name="don_gia" Type="int" />
+    <Property Name="thanh_tien" Type="int" />
+  </EntityType>
+  <EntityType Name="DANH_MUC_THUOC">
+    <Key>
+      <PropertyRef Name="id_danh_muc" />
+    </Key>
+    <Property Name="id_danh_muc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ten_danh_muc" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="mo_ta" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="DIA_DIEM_NHA_THUOC">
+    <Key>
+      <PropertyRef Name="id_dia_diem" />
+    </Key>
+    <Property Name="id_dia_diem" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ten_nha_thuoc" Type="nvarchar" MaxLength="255" />
+    <Property Name="thanh_pho_tinh" Type="nvarchar" MaxLength="255" />
+    <Property Name="quan_huyen" Type="nvarchar" MaxLength="255" />
+    <Property Name="so_duong_ten_duong" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="HOA_DON">
+    <Key>
+      <PropertyRef Name="id_hoa_don" />
+    </Key>
+    <Property Name="id_hoa_don" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_nhan_vien" Type="int" Nullable="false" />
+    <Property Name="id_khach_hang" Type="int" />
+    <Property Name="ngay_ban" Type="datetime" />
+    <Property Name="tong_tien" Type="int" />
+  </EntityType>
+  <EntityType Name="KHACH_HANG">
+    <Key>
+      <PropertyRef Name="id_khach_hang" />
+    </Key>
+    <Property Name="id_khach_hang" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ten_khach_hang" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="dia_chi" Type="nvarchar" MaxLength="255" />
+    <Property Name="so_dien_thoai" Type="nvarchar" MaxLength="15" />
+    <Property Name="email" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="LO_THUOC">
+    <Key>
+      <PropertyRef Name="id_lo_thuoc" />
+    </Key>
+    <Property Name="id_lo_thuoc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_thuoc" Type="int" />
+    <Property Name="id_nha_cung_cap" Type="int" />
+    <Property Name="so_lo" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="han_su_dung" Type="date" />
+    <Property Name="ngay_san_xuat" Type="date" />
+    <Property Name="so_luong_nhap" Type="int" />
+    <Property Name="so_luong_ton" Type="int" />
+    <Property Name="gia_nhap" Type="int" />
+  </EntityType>
+  <EntityType Name="NHA_CUNG_CAP">
+    <Key>
+      <PropertyRef Name="id_nha_cung_cap" />
+    </Key>
+    <Property Name="id_nha_cung_cap" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ten_nha_cung_cap" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="dia_chi" Type="nvarchar" MaxLength="255" />
+    <Property Name="so_dien_thoai" Type="varchar" MaxLength="20" />
+    <Property Name="email" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="NHAN_VIEN">
+    <Key>
+      <PropertyRef Name="id_nhan_vien" />
+    </Key>
+    <Property Name="id_nhan_vien" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ten_nhan_vien" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="dia_chi" Type="nvarchar" MaxLength="255" />
+    <Property Name="so_dien_thoai" Type="varchar" MaxLength="20" />
+    <Property Name="email" Type="varchar" MaxLength="255" />
+    <Property Name="id_tai_khoan" Type="int" />
+  </EntityType>
+  <EntityType Name="PHAN_QUYEN">
+    <Key>
+      <PropertyRef Name="id_quyen" />
+    </Key>
+    <Property Name="id_quyen" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ten_quyen" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="mo_ta" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="PHUONG_XA">
+    <Key>
+      <PropertyRef Name="id_phuong_xa" />
+    </Key>
+    <Property Name="id_phuong_xa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ten" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="id_quan_huyen" Type="int" />
+  </EntityType>
+  <EntityType Name="QUAN_HUYEN">
+    <Key>
+      <PropertyRef Name="id_quan_huyen" />
+    </Key>
+    <Property Name="id_quan_huyen" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ten" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="id_tinh_thanh" Type="int" />
+  </EntityType>
+  <EntityType Name="TAI_KHOAN">
+    <Key>
+      <PropertyRef Name="id_tai_khoan" />
+    </Key>
+    <Property Name="id_tai_khoan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ten_dang_nhap" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="mat_khau" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="trang_thai" Type="nvarchar" MaxLength="255" />
+    <Property Name="id_quyen" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="THUOC">
+    <Key>
+      <PropertyRef Name="id_thuoc" />
+    </Key>
+    <Property Name="id_thuoc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_danh_muc" Type="int" Nullable="false" />
+    <Property Name="ten_thuoc" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="hang" Type="nvarchar" MaxLength="255" />
+    <Property Name="hoat_chat" Type="nvarchar" MaxLength="255" />
+    <Property Name="don_vi_tinh" Type="nvarchar" MaxLength="255" />
+    <Property Name="dang_bao_che" Type="nvarchar" MaxLength="100" />
+    <Property Name="ham_luong" Type="nvarchar" MaxLength="100" />
+    <Property Name="cong_dung" Type="nvarchar(max)" />
+    <Property Name="lieu_dung" Type="nvarchar(max)" />
+    <Property Name="chong_chi_dinh" Type="nvarchar(max)" />
+    <Property Name="gia_ban" Type="int" />
+    <Property Name="anh_thuoc" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TINH_THANH">
+    <Key>
+      <PropertyRef Name="id_tinh_thanh" />
+    </Key>
+    <Property Name="id_tinh_thanh" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ten" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__PHUONG_XA__id_qu__526F16A8">
+    <End Role="QUAN_HUYEN" Type="Self.QUAN_HUYEN" Multiplicity="0..1" />
+    <End Role="PHUONG_XA" Type="Self.PHUONG_XA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QUAN_HUYEN">
+        <PropertyRef Name="id_quan_huyen" />
+      </Principal>
+      <Dependent Role="PHUONG_XA">
+        <PropertyRef Name="id_quan_huyen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__QUAN_HUYE__id_ti__4F92A9FD">
+    <End Role="TINH_THANH" Type="Self.TINH_THANH" Multiplicity="0..1" />
+    <End Role="QUAN_HUYEN" Type="Self.QUAN_HUYEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TINH_THANH">
+        <PropertyRef Name="id_tinh_thanh" />
+      </Principal>
+      <Dependent Role="QUAN_HUYEN">
+        <PropertyRef Name="id_tinh_thanh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChiTietHoaDon_HoaDon">
+    <End Role="HOA_DON" Type="Self.HOA_DON" Multiplicity="1" />
+    <End Role="CHI_TIET_HOA_DON" Type="Self.CHI_TIET_HOA_DON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOA_DON">
+        <PropertyRef Name="id_hoa_don" />
+      </Principal>
+      <Dependent Role="CHI_TIET_HOA_DON">
+        <PropertyRef Name="id_hoa_don" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChiTietHoaDon_LoThuoc">
+    <End Role="LO_THUOC" Type="Self.LO_THUOC" Multiplicity="0..1" />
+    <End Role="CHI_TIET_HOA_DON" Type="Self.CHI_TIET_HOA_DON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LO_THUOC">
+        <PropertyRef Name="id_lo_thuoc" />
+      </Principal>
+      <Dependent Role="CHI_TIET_HOA_DON">
+        <PropertyRef Name="id_lo_thuoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HoaDon_KhachHang">
+    <End Role="KHACH_HANG" Type="Self.KHACH_HANG" Multiplicity="0..1" />
+    <End Role="HOA_DON" Type="Self.HOA_DON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACH_HANG">
+        <PropertyRef Name="id_khach_hang" />
+      </Principal>
+      <Dependent Role="HOA_DON">
+        <PropertyRef Name="id_khach_hang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HoaDon_NhanVien">
+    <End Role="NHAN_VIEN" Type="Self.NHAN_VIEN" Multiplicity="1" />
+    <End Role="HOA_DON" Type="Self.HOA_DON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHAN_VIEN">
+        <PropertyRef Name="id_nhan_vien" />
+      </Principal>
+      <Dependent Role="HOA_DON">
+        <PropertyRef Name="id_nhan_vien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LoThuoc_NhaCungCap">
+    <End Role="NHA_CUNG_CAP" Type="Self.NHA_CUNG_CAP" Multiplicity="0..1" />
+    <End Role="LO_THUOC" Type="Self.LO_THUOC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHA_CUNG_CAP">
+        <PropertyRef Name="id_nha_cung_cap" />
+      </Principal>
+      <Dependent Role="LO_THUOC">
+        <PropertyRef Name="id_nha_cung_cap" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LoThuoc_Thuoc">
+    <End Role="THUOC" Type="Self.THUOC" Multiplicity="0..1" />
+    <End Role="LO_THUOC" Type="Self.LO_THUOC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="THUOC">
+        <PropertyRef Name="id_thuoc" />
+      </Principal>
+      <Dependent Role="LO_THUOC">
+        <PropertyRef Name="id_thuoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NhanVien_TaiKhoan">
+    <End Role="TAI_KHOAN" Type="Self.TAI_KHOAN" Multiplicity="0..1" />
+    <End Role="NHAN_VIEN" Type="Self.NHAN_VIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAI_KHOAN">
+        <PropertyRef Name="id_tai_khoan" />
+      </Principal>
+      <Dependent Role="NHAN_VIEN">
+        <PropertyRef Name="id_tai_khoan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TaiKhoan_PhanQuyen">
+    <End Role="PHAN_QUYEN" Type="Self.PHAN_QUYEN" Multiplicity="1" />
+    <End Role="TAI_KHOAN" Type="Self.TAI_KHOAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PHAN_QUYEN">
+        <PropertyRef Name="id_quyen" />
+      </Principal>
+      <Dependent Role="TAI_KHOAN">
+        <PropertyRef Name="id_quyen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Thuoc_DanhMucThuoc">
+    <End Role="DANH_MUC_THUOC" Type="Self.DANH_MUC_THUOC" Multiplicity="1" />
+    <End Role="THUOC" Type="Self.THUOC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DANH_MUC_THUOC">
+        <PropertyRef Name="id_danh_muc" />
+      </Principal>
+      <Dependent Role="THUOC">
+        <PropertyRef Name="id_danh_muc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NHA_THUOCModelStoreContainer">
+    <EntitySet Name="CHI_TIET_HOA_DON" EntityType="Self.CHI_TIET_HOA_DON" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DANH_MUC_THUOC" EntityType="Self.DANH_MUC_THUOC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DIA_DIEM_NHA_THUOC" EntityType="Self.DIA_DIEM_NHA_THUOC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HOA_DON" EntityType="Self.HOA_DON" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KHACH_HANG" EntityType="Self.KHACH_HANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LO_THUOC" EntityType="Self.LO_THUOC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NHA_CUNG_CAP" EntityType="Self.NHA_CUNG_CAP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NHAN_VIEN" EntityType="Self.NHAN_VIEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PHAN_QUYEN" EntityType="Self.PHAN_QUYEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PHUONG_XA" EntityType="Self.PHUONG_XA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QUAN_HUYEN" EntityType="Self.QUAN_HUYEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TAI_KHOAN" EntityType="Self.TAI_KHOAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="THUOC" EntityType="Self.THUOC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TINH_THANH" EntityType="Self.TINH_THANH" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__PHUONG_XA__id_qu__526F16A8" Association="Self.FK__PHUONG_XA__id_qu__526F16A8">
+      <End Role="QUAN_HUYEN" EntitySet="QUAN_HUYEN" />
+      <End Role="PHUONG_XA" EntitySet="PHUONG_XA" />
+    </AssociationSet>
+    <AssociationSet Name="FK__QUAN_HUYE__id_ti__4F92A9FD" Association="Self.FK__QUAN_HUYE__id_ti__4F92A9FD">
+      <End Role="TINH_THANH" EntitySet="TINH_THANH" />
+      <End Role="QUAN_HUYEN" EntitySet="QUAN_HUYEN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChiTietHoaDon_HoaDon" Association="Self.FK_ChiTietHoaDon_HoaDon">
+      <End Role="HOA_DON" EntitySet="HOA_DON" />
+      <End Role="CHI_TIET_HOA_DON" EntitySet="CHI_TIET_HOA_DON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChiTietHoaDon_LoThuoc" Association="Self.FK_ChiTietHoaDon_LoThuoc">
+      <End Role="LO_THUOC" EntitySet="LO_THUOC" />
+      <End Role="CHI_TIET_HOA_DON" EntitySet="CHI_TIET_HOA_DON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HoaDon_KhachHang" Association="Self.FK_HoaDon_KhachHang">
+      <End Role="KHACH_HANG" EntitySet="KHACH_HANG" />
+      <End Role="HOA_DON" EntitySet="HOA_DON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HoaDon_NhanVien" Association="Self.FK_HoaDon_NhanVien">
+      <End Role="NHAN_VIEN" EntitySet="NHAN_VIEN" />
+      <End Role="HOA_DON" EntitySet="HOA_DON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LoThuoc_NhaCungCap" Association="Self.FK_LoThuoc_NhaCungCap">
+      <End Role="NHA_CUNG_CAP" EntitySet="NHA_CUNG_CAP" />
+      <End Role="LO_THUOC" EntitySet="LO_THUOC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LoThuoc_Thuoc" Association="Self.FK_LoThuoc_Thuoc">
+      <End Role="THUOC" EntitySet="THUOC" />
+      <End Role="LO_THUOC" EntitySet="LO_THUOC" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NhanVien_TaiKhoan" Association="Self.FK_NhanVien_TaiKhoan">
+      <End Role="TAI_KHOAN" EntitySet="TAI_KHOAN" />
+      <End Role="NHAN_VIEN" EntitySet="NHAN_VIEN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TaiKhoan_PhanQuyen" Association="Self.FK_TaiKhoan_PhanQuyen">
+      <End Role="PHAN_QUYEN" EntitySet="PHAN_QUYEN" />
+      <End Role="TAI_KHOAN" EntitySet="TAI_KHOAN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Thuoc_DanhMucThuoc" Association="Self.FK_Thuoc_DanhMucThuoc">
+      <End Role="DANH_MUC_THUOC" EntitySet="DANH_MUC_THUOC" />
+      <End Role="THUOC" EntitySet="THUOC" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

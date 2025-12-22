@@ -1,0 +1,43 @@
+﻿@model IEnumerable<LapTrinhWeb_Nhom_12.Models.THUOC>
+@{
+    ViewBag.Title = "Quản lý thuốc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <h2>Danh sách thuốc</h2>
+    <p>
+        <a href="@Url.Action("Themmoi")" class="btn btn-primary">
+            <i class="bi bi-plus-lg"></i> Thêm thuốc mới
+        </a>
+    </p>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Ảnh</th>
+                <th>Tên thuốc</th>
+                <th>Danh mục</th>
+                <th>Giá bán</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td style="width:100px text-align:center">
+                        <img src="~/Images/AnhThuoc/@item.anh_thuoc" style="width:80px" />
+                    </td>
+                    <td>@item.ten_thuoc</td>
+                    <td>@(item.DANH_MUC_THUOC != null ? item.DANH_MUC_THUOC.ten_danh_muc : "")</td>
+                    <td>@String.Format("{0:0,0}", item.gia_ban)</td>
+                    <td>
+                        <a href="@Url.Action("ChinhSua", new { id=item.id_thuoc })" class="btn btn-sm btn-warning">Sửa</a> |
+                        <a href="@Url.Action("Xoa", new { id=item.id_thuoc })" class="btn btn-sm btn-danger" onclick="return confirm('Bạn có chắc muốn xóa không?');">Xóa</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

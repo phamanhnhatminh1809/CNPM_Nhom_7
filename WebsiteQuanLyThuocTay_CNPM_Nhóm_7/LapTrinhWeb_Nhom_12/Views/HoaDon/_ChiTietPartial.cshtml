@@ -1,0 +1,70 @@
+﻿@model LapTrinhWeb_Nhom_12.Models.ChiTietHoaDonViewModel
+
+<div class="p-2">
+    <div class="row mb-4 border-bottom pb-3">
+        <div class="col-6">
+            <h5 class="fw-bold text-uppercase">Nhà Thuốc MedForAll</h5>
+            <small class="text-muted d-block">Địa chỉ: 62 Đường Lê Lâm, Quận Tân Phú</small>
+            <small class="text-muted">Hotline: 1900 1234</small>
+        </div>
+        <div class="col-6 text-end">
+            <h4 class="fw-bold text-primary">HÓA ĐƠN BÁN LẺ</h4>
+            <div class="text-muted">Số: #@Model.IdHoaDon</div>
+            <div class="text-muted">Ngày: @Model.NgayBan.ToString("dd/MM/yyyy HH:mm")</div>
+        </div>
+    </div>
+
+    <div class="row mb-3 bg-light p-2 rounded mx-0">
+        <div class="col-md-6">
+            <strong>Khách hàng:</strong> @Model.TenKhachHang
+        </div>
+        <div class="col-md-6">
+            <strong>Số điện thoại:</strong> @Model.SoDienThoai
+        </div>
+        <div class="col-md-12 mt-1">
+            <strong>Nhân viên bán:</strong> @Model.TenNhanVien
+        </div>
+    </div>
+
+    <table class="table table-bordered table-sm">
+        <thead class="table-light text-center">
+            <tr>
+                <th style="width: 5%">STT</th>
+                <th style="width: 45%">Tên thuốc</th>
+                <th style="width: 10%">ĐVT</th>
+                <th style="width: 10%">SL</th>
+                <th style="width: 15%">Đơn giá</th>
+                <th style="width: 15%">Thành tiền</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{ int i = 1; }
+            @foreach (var item in Model.DanhSachThuoc)
+            {
+                <tr>
+                    <td class="text-center">@i</td>
+                    <td>
+                        <span class="fw-bold">@item.TenThuoc</span>
+                        <br />
+                        <small class="text-muted" style="font-size: 0.8em;">(Lô: @item.SoLo)</small>
+                    </td>
+                    <td class="text-center">@item.DonViTinh</td>
+                    <td class="text-center fw-bold">@item.SoLuong</td>
+                    <td class="text-end">@item.DonGia.ToString("N0")</td>
+                    <td class="text-end fw-bold">@item.ThanhTien.ToString("N0")</td>
+                </tr>
+                i++;
+            }
+        </tbody>
+        <tfoot class="table-light">
+            <tr>
+                <td colspan="5" class="text-end fw-bold fs-5">TỔNG CỘNG:</td>
+                <td class="text-end fw-bold fs-5 text-danger">@Model.TongTien.ToString("N0") đ</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <div class="text-center mt-4 fst-italic text-muted">
+        <small>Cảm ơn quý khách và hẹn gặp lại!</small>
+    </div>
+</div>

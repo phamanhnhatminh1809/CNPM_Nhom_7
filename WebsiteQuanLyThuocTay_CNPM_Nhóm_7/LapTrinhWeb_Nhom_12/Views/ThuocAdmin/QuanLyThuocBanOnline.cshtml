@@ -1,0 +1,165 @@
+﻿
+@{
+    ViewBag.Title = "QuanLyThuocBanOnline";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="card p-4">
+    <div class="row mb-3 align-items-center">
+        <div class="col-md-4">
+            <form method="get" class="d-flex">
+                <input type="text" name="searchString" class="form-control me-2" placeholder="Tìm tên thuốc...">
+                @Html.DropDownList("categoryId", (SelectList)ViewBag.DanhMuc, "Tất cả danh mục", new { @class = "form-select me-2", @style = "width: 180px;" })
+                <button type="submit" class="btn btn-primary"><i class="bi bi-search"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th style="width: 60px;">Ảnh</th>
+                    <th>Tên thuốc / Hoạt chất</th>
+                    <th>Danh mục</th>
+                    <th class="text-center">Tồn kho</th>
+                    <th>Giá bán</th>
+                    <th class="text-center">Trạng thái</th>
+                    <th class="text-end">Cho phép bán online ?</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <img src="~/Images/AnhThuoc/@(item.AnhThuoc ?? "default.png")"
+                                 class="rounded border" width="50" height="50" style="object-fit: contain;">
+                        </td>
+                        <td>
+                            <div class="fw-bold text-primary">@item.TenThuoc</div>
+                            <small class="text-muted">ĐVT: @item.DonViTinh</small>
+                        </td>
+                        <td>
+                            <span class="badge bg-light text-dark border">@item.TenDanhMuc</span>
+                        </td>
+                        <td class="text-center">
+                            @if (item.TongTonKho == 0)
+                            {
+                                <span class="badge bg-danger rounded-pill">Hết hàng</span>
+                            }
+                            else if (item.TongTonKho < 50)
+                            {
+                                <span class="badge bg-warning text-dark rounded-pill">@item.TongTonKho (Thấp)</span>
+                            }
+                            else
+                            {
+                                <span class="fw-bold text-success">@item.TongTonKho</span>
+                            }
+                        </td>
+                        <td>@item.GiaBan.ToString("N0") đ</td>
+                        <td class="text-center">
+                            @if (item.SoLoSapHetHan > 0)
+                            {
+                                <i class="bi bi-exclamation-triangle-fill text-warning"
+                                   data-bs-toggle="tooltip" title="Có @item.SoLoSapHetHan lô sắp hết hạn"></i>
+                            }
+                            else
+                            {
+                                <i class="bi bi-check-circle-fill text-success" title="Ổn định"></i>
+                            }
+                        </td>
+                        <td class="text-end" style="min-width: 200px;">
+                            <select class="form-select form-select-sm border-0 shadow-sm status-select"
+                                    data-id="@item.IdThuoc"
+                                    style="background-color: @(item.ChoPhepBanOnline ? "#e8f5e9" : "#ffebee");
+                   color: @(item.ChoPhepBanOnline ? "#198754" : "#dc3545");
+                   font-weight: 600; cursor: pointer;">
+
+                                <option value="1" @(item.ChoPhepBanOnline ? "selected" : "")
+                                        style="color: #198754; background-color: white; font-weight: bold;">
+                                    ● Cho phép bán online
+                                </option>
+
+                                <option value="0" @(!item.ChoPhepBanOnline ? "selected" : "")
+                                        style="color: #dc3545; background-color: white; font-weight: bold;">
+                                    ● Không cho phép bán online
+                                </option>
+                            </select>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="modal fade" id="batchModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Chi tiết lô hàng: <span id="modalThuocName" class="fw-bold text-primary"></span></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="modalBatchContent">
+                <div class="text-center py-3"><div class="spinner-border text-primary"></div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+    function showBatchDetails(id, name) {
+        // 1. Cập nhật tiêu đề Modal
+        $('#modalThuocName').text(name);
+
+        // 2. Hiển thị Modal
+        var modal = new bootstrap.Modal(document.getElementById('batchModal'));
+        modal.show();
+
+        // 3. Gọi Ajax
+        var url = '@Url.Action("GetLoThuoc", "ThuocAdmin")' + '/' + id;
+
+        // Xóa nội dung cũ và hiện loading trước khi tải
+        $('#modalBatchContent').html('<div class="text-center py-3"><div class="spinner-border text-primary"></div></div>');
+
+        $.get(url, function (data) {
+            $('#modalBatchContent').html(data);
+        }).fail(function() {
+            $('#modalBatchContent').html('<p class="text-danger">Lỗi tải dữ liệu lô thuốc.</p>');
+        });
+    }
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.status-select').change(function () {
+                var selectBox = $(this);
+                var idThuoc = selectBox.data('id');
+                var statusVal = selectBox.val(); // Giá trị nhận được là "1" hoặc "0"
+
+                // Đổi màu giao diện (so sánh chuỗi "1")
+                if (statusVal === "1") {
+                    selectBox.css({ 'background-color': '#e8f5e9', 'color': '#198754' });
+                } else {
+                    selectBox.css({ 'background-color': '#ffebee', 'color': '#dc3545' });
+                }
+
+                // Gửi Ajax
+                $.ajax({
+                    url: '/ThuocAdmin/UpdateTrangThaiBan',
+                    type: 'POST',
+                    data: { id: idThuoc, status: statusVal }, // Gửi 1 hoặc 0 xuống Controller
+                    success: function (res) {
+                        if (res.success) {
+                            console.log("Đã lưu: " + statusVal);
+                        } else {
+                            alert(res.msg);
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+}
