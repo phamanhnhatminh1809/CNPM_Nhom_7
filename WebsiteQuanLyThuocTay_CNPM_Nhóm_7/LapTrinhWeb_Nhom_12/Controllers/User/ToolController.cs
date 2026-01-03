@@ -15,8 +15,8 @@ namespace LapTrinhWeb_Nhom_12.Controllers
     {
         private NHA_THUOCEntities db = new NHA_THUOCEntities();
 
-        private const string API_KEY = "AIzaSyDeHm-65_GmM3TwVOlIm8BQFzUGETT4H_4";
-        private const string SEARCH_ENGINE_ID = "173a299cc7efe4c35";
+        private const string API_KEY = "A";
+        private const string SEARCH_ENGINE_ID = "1";
         // Action này sẽ chạy tool
         public async Task<ActionResult> AutoUpdateImages()
         {
